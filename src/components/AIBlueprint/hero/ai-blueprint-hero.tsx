@@ -65,10 +65,10 @@ export function AIBlueprintHero() {
           className="mb-8"
         >
           <h1 className="text-5xl md:text-7xl font-bold mb-4">
-            <span className="text-white">Crea tu SaaS o APP</span>
+            <span className="text-white">Construye tu Saas en 30 Días</span>
             <br />
             <span className="bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 bg-clip-text text-transparent">
-              con IA en 30 días
+              Sin Escribir Código
             </span>
           </h1>
           

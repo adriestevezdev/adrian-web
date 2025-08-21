@@ -112,6 +112,12 @@ const reviews = [
         body: "Reducción del 32% en costes logísticos con planificación inteligente de rutas.",
         img: "https://i.pravatar.cc/150?img=18", // Hombre
     },
+    {
+        name: "Álvaro Arancibia",
+        username: "@alvaroarancibia",
+        body: "Llevo tiempo siguiendo los videos de Adrià y me parecen excelentes. Estoy realmente apasionado con el tema y espero seguir aprendiendo muchísimo.",
+        img: "https://i.pravatar.cc/150?img=19", // Hombre
+    },
 ];
 
 const firstRow = reviews.slice(0, reviews.length / 2);
@@ -169,7 +175,7 @@ export function MarqueeDemo() {
             <div className="w-screen relative">
                 {/* Primera fila de marquee */}
                 <div className="w-full opacity-0 animate-fade-in">
-                    <Marquee pauseOnHover className="[--duration:80s] mb-4">
+                    <Marquee pauseOnHover className="[--duration:80s] mb-1">
                         {firstRow.map((review) => (
                             <ReviewCard key={review.username} {...review} />
                         ))}
