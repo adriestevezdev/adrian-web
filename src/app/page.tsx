@@ -74,7 +74,7 @@ export default function AIBlueprintPage() {
     <div className="min-h-screen bg-black text-white">
       {/* Sticky Banner - Shows once at the top */}
       <StickyBanner 
-        message={<><span className="font-medium">Last Chance</span> · Price increases to $1,297 this Sunday →</>} 
+        message={<><span className="font-medium">Última Oportunidad</span> · El precio sube a $1,297 este domingo →</>} 
       />
       
       {/* Hero Section - First thing visitors see with padding for banner */}

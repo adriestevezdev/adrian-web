@@ -14,23 +14,23 @@ export function AIBlueprintTestimonials() {
   const testimonials: Testimonial[] = [
     {
       id: 1,
-      text: "As someone brand new to coding, this course has been fantastic. The lessons strike a perfect balance between clarity and ambition. This is one of the best investments in my own journey. For example, Supabase for user authentication with and through a template was perfect and worked on the first try.",
+      text: "Como alguien completamente nuevo en programación, este bootcamp ha sido fantástico. Las lecciones logran un equilibrio perfecto entre claridad y ambición. Esta es una de las mejores inversiones en mi propio camino. Por ejemplo, Supabase para autenticación de usuario funcionó perfectamente desde el primer intento.",
       author: "Shawn Hank",
-      role: "Tech Enthusiast",
+      role: "Entusiasta de la Tecnología",
       rating: 5
     },
     {
       id: 2,
-      text: "I'm finally done distracting myself and wasting energy on browsing YouTube videos about how to build your app being a non-technical person. The way Robin teaches is a great. Going through the lessons is a pleasure.",
+      text: "Finalmente terminé de distraerme y gastar energía navegando videos de YouTube sobre cómo construir tu app siendo una persona no técnica. La forma en que Adrià enseña es genial. Pasar por las lecciones es un placer.",
       author: "Pavel Szczebel",
-      role: "Founder at Unlearn Knowledge Base",
+      role: "Fundador en Unlearn Knowledge Base",
       rating: 5
     },
     {
       id: 3,
-      text: "At first, I was a bit hesitant since I don't come from a coding background, but the way each concept is introduced and gradually builds on the previous ones made it surprisingly approachable.",
+      text: "Al principio, estaba un poco reacio ya que no vengo de un background de programación, pero la forma en que cada concepto se introduce y se construye gradualmente sobre los anteriores lo hizo sorprendentemente accesible.",
       author: "Ratandeep B.",
-      role: "Entrepreneur",
+      role: "Emprendedor",
       rating: 5
     },
     {
@@ -111,19 +111,19 @@ export function AIBlueprintTestimonials() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <div className="text-[#C9A880] font-semibold mb-2">Testimonials</div>
+          <div className="text-[#C9A880] font-semibold mb-2">Testimonios</div>
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            <span className="text-white">97% Say </span>
+            <span className="text-white">97% Dice </span>
             <span className="bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 bg-clip-text text-transparent">
-              "I Should
+              "Debería Haber
             </span>
             <br />
             <span className="bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 bg-clip-text text-transparent">
-              Have Started Sooner"
+              Empezado Antes"
             </span>
           </h2>
           <p className="text-gray-300 text-lg">
-            The other 3% were too busy building their second app
+            El otro 3% estaba muy ocupado construyendo su segunda app
           </p>
         </motion.div>
 

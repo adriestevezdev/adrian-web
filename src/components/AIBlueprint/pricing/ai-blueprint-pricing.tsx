@@ -5,10 +5,10 @@ import { CheckIcon } from "@heroicons/react/24/outline";
 
 export function AIBlueprintPricing() {
   const features = [
-    "16+ Video Lessons",
-    "Exclusive Live Streams", 
-    "Student Community Access",
-    "Direct Access to Me"
+    "16+ Lecciones en Video",
+    "Llamadas en Vivo Exclusivas", 
+    "Acceso a la Comunidad de Estudiantes",
+    "Acceso Directo Conmigo"
   ];
 
   const companiesUsed = [
@@ -35,17 +35,17 @@ export function AIBlueprintPricing() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <div className="text-[#C9A880] font-semibold mb-2">AI Coding Blueprint</div>
+          <div className="text-[#C9A880] font-semibold mb-2">Bootcamp Desarrollo con IA</div>
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            <span className="text-white">Join </span>
+            <span className="text-white">Únete a </span>
             <span className="bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 bg-clip-text text-transparent">
-              141+ Non-Coders
+              141+ Emprendedores
             </span>
             <br />
-            <span className="text-white">Already Building Apps</span>
+            <span className="text-white">Ya Construyendo Apps</span>
           </h2>
           <p className="text-gray-300 text-lg">
-            This isn't another course. It's your career pivot.
+            Esto no es otro curso. Es tu cambio de carrera profesional.
           </p>
         </motion.div>
 
@@ -62,13 +62,13 @@ export function AIBlueprintPricing() {
               <div className="grid lg:grid-cols-2 gap-0">
                 {/* Left Side - Features */}
                 <div className="p-8">
-                  <h3 className="text-2xl font-bold text-white mb-2">Get Instant Access</h3>
+                  <h3 className="text-2xl font-bold text-white mb-2">Obtén Acceso Instantáneo</h3>
                   <p className="text-gray-300 mb-6">
-                    Get the complete blueprint, access to the community, and help when you get stuck.
+                    Obtén el blueprint completo, acceso a la comunidad y ayuda cuando te quedes atascado.
                   </p>
                   
                   <div className="mb-8">
-                    <h4 className="text-blue-400 font-semibold mb-4">What's included</h4>
+                    <h4 className="text-blue-400 font-semibold mb-4">Qué está incluido</h4>
                     <div className="space-y-3">
                       {features.map((feature, index) => (
                         <div key={index} className="flex items-center gap-3">
@@ -85,7 +85,7 @@ export function AIBlueprintPricing() {
                 {/* Right Side - Price & CTA */}
                 <div className="p-8 bg-[#111111] flex flex-col justify-center items-center text-center">
                   <div className="mb-6">
-                    <div className="text-gray-400 text-sm mb-1">Buy once, enjoy for life</div>
+                    <div className="text-gray-400 text-sm mb-1">Compra una vez, disfruta de por vida</div>
                     <div className="text-5xl font-bold text-white mb-2">
                       $847
                       <span className="text-lg text-gray-400 font-normal ml-1">USD</span>
@@ -97,11 +97,11 @@ export function AIBlueprintPricing() {
                     whileTap={{ scale: 0.95 }}
                     className="w-full bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 shadow-lg hover:shadow-blue-500/25 mb-4"
                   >
-                    Buy Now
+                    Comprar Ahora
                   </motion.button>
 
                   <div className="text-blue-400 text-sm">
-                    Includes 30-Day Money-Back Guarantee
+                    Incluye Garantía de Devolución de 30 Días
                   </div>
                 </div>
               </div>
@@ -118,7 +118,7 @@ export function AIBlueprintPricing() {
           className="text-center mt-16"
         >
           <div className="text-gray-400 text-sm mb-6 font-medium">
-            Built With Leading AI Companies
+            Construido con Empresas Líderes en IA
           </div>
           
           <div className="flex flex-wrap justify-center items-center gap-8 opacity-60">

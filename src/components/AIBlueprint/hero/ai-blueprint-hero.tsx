@@ -54,7 +54,7 @@ export function AIBlueprintHero() {
               </div>
             ))}
           </div>
-          <span className="text-gray-400 text-sm ml-3">Join 147+ non-technical founders</span>
+          <span className="text-gray-400 text-sm ml-3">Únete a 147+ emprendedores sin experiencia técnica</span>
         </motion.div>
 
         {/* Main headline */}
@@ -65,16 +65,16 @@ export function AIBlueprintHero() {
           className="mb-8"
         >
           <h1 className="text-5xl md:text-7xl font-bold mb-4">
-            <span className="text-white">Stop Hiring Developers.</span>
+            <span className="text-white">Crea tu SaaS o APP</span>
             <br />
             <span className="bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 bg-clip-text text-transparent">
-              Start Building Yourself.
+              con IA en 30 días
             </span>
           </h1>
           
           <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            My blueprint teaches you how to build apps with AI, without writing code. 
-            And my 20+ years of experience will make it feel easy!
+            Aprende con Vibe Coding a construir, lanzar y conseguir tus primeros clientes 
+            usando herramientas no-code y un proceso simple de 30 días.
           </p>
         </motion.div>
 
@@ -92,23 +92,23 @@ export function AIBlueprintHero() {
                   <div className="w-3 h-3 rounded-full bg-red-500"></div>
                   <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
                   <div className="w-3 h-3 rounded-full bg-green-500"></div>
-                  <span className="text-gray-400 text-sm ml-4">No Prompt Writing Required</span>
+                  <span className="text-gray-400 text-sm ml-4">Sin necesidad de escribir código</span>
                 </div>
                 
                 <div className="space-y-4">
                   <div className="bg-[#2a2a2a] rounded-lg p-4 border border-gray-600">
-                    <h3 className="text-[#C9A880] font-semibold mb-2">Build Beautiful Apps Without Code</h3>
+                    <h3 className="text-[#C9A880] font-semibold mb-2">Construye Apps Profesionales Sin Código</h3>
                     <p className="text-gray-300 text-sm">
-                      Create professional applications using AI tools and no-code platforms. 
-                      Perfect for entrepreneurs and business owners.
+                      Crea aplicaciones profesionales usando herramientas de IA y plataformas no-code. 
+                      Perfecto para emprendedores y dueños de negocios.
                     </p>
                   </div>
                   
                   <div className="flex items-center gap-4">
                     <div className="flex-1 bg-[#2a2a2a] rounded-lg p-3 border border-gray-600">
-                      <div className="text-blue-400 text-sm font-medium">How NiftyCDK Works</div>
+                      <div className="text-blue-400 text-sm font-medium">Cómo funciona Vibe Coding</div>
                       <div className="text-gray-400 text-xs mt-1">
-                        Plan an application with simple prompts and deploy in hours...
+                        Planifica tu aplicación con prompts simples y despliega en horas...
                       </div>
                     </div>
                     
@@ -120,7 +120,7 @@ export function AIBlueprintHero() {
                   </div>
                   
                   <div className="bg-blue-600 text-white px-4 py-2 rounded-lg text-center font-medium">
-                    Jan shipped his
+                    Carlos lanzó su primer SaaS
                   </div>
                 </div>
               </div>
@@ -135,7 +135,7 @@ export function AIBlueprintHero() {
           transition={{ duration: 0.6, delay: 0.8 }}
         >
           <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-blue-500/25">
-            I want to build with AI
+            Quiero crear con IA
           </button>
         </motion.div>
       </div>

@@ -17,109 +17,109 @@ export function AIBlueprintCurriculum() {
   const [expandedModule, setExpandedModule] = useState<number | null>(null);
 
   const testimonial = {
-    text: "As someone brand new to coding, this course has been fantastic. The lessons strike a perfect balance between clarity and ambition. This is one of the best investments in my own journey. For example, Supabase for user authentication with and through a template was perfect and worked on the first try.",
+    text: "Como alguien completamente nuevo en programación, este bootcamp ha sido fantástico. Las lecciones logran un equilibrio perfecto entre claridad y ambición. Esta es una de las mejores inversiones en mi propio camino. Por ejemplo, Supabase para autenticación de usuario funcionó perfectamente desde el primer intento.",
     author: "Shawn Hank",
-    role: "Tech Enthusiast"
+    role: "Entusiasta de la Tecnología"
   };
 
   const modules: LessonModule[] = [
     {
       id: 1,
-      title: "Getting Started",
+      title: "Primeros Pasos",
       duration: "6 min",
-      description: "Set up your development environment and understand the AI-first approach to building applications."
+      description: "Configura tu entorno de desarrollo y entiende el enfoque AI-first para construir aplicaciones."
     },
     {
       id: 2,
-      title: "Install Your App Builder Tools",
+      title: "Instala tus Herramientas de Construcción",
       duration: "16 min",
       isFree: true,
-      description: "Download and configure all the essential no-code and AI tools you'll need for the entire course."
+      description: "Descarga y configura todas las herramientas no-code e IA esenciales que necesitarás para todo el bootcamp."
     },
     {
       id: 3,
-      title: "Build Your First Working Button",
+      title: "Construye tu Primer Botón Funcional",
       duration: "17 min",
-      description: "Create your first interactive component using AI assistance and visual builders."
+      description: "Crea tu primer componente interactivo usando asistencia de IA y constructores visuales."
     },
     {
       id: 4,
-      title: "Turn Your Idea Into a Blueprint",
+      title: "Convierte tu Idea en un Plan",
       duration: "19 min",
-      description: "Learn to translate your app concept into a structured plan that AI can help you execute."
+      description: "Aprende a traducir el concepto de tu app en un plan estructurado que la IA puede ayudarte a ejecutar."
     },
     {
       id: 5,
-      title: "Add User Login to Your App",
+      title: "Añade Login de Usuario a tu App",
       duration: "20 min",
-      description: "Implement secure user authentication using modern tools like Supabase without writing code."
+      description: "Implementa autenticación segura de usuarios usando herramientas modernas como Supabase sin escribir código."
     },
     {
       id: 6,
-      title: "Understanding Your App's Structure",
+      title: "Entendiendo la Estructura de tu App",
       duration: "25 min",
-      description: "Master the architecture patterns that make scalable applications, explained for non-technical minds."
+      description: "Domina los patrones de arquitectura que hacen aplicaciones escalables, explicado para mentes no técnicas."
     },
     {
       id: 7,
-      title: "Design Your App's Main Screen",
+      title: "Diseña la Pantalla Principal de tu App",
       duration: "31 min",
-      description: "Create beautiful, professional interfaces using design systems and AI-powered layout tools."
+      description: "Crea interfaces hermosas y profesionales usando sistemas de diseño y herramientas de layout potenciadas por IA."
     },
     {
       id: 8,
-      title: "Make Your App Look Professional",
+      title: "Haz que tu App se Vea Profesional",
       duration: "28 min",
-      description: "Apply advanced styling techniques and visual polish to create market-ready applications."
+      description: "Aplica técnicas avanzadas de estilo y pulido visual para crear aplicaciones listas para el mercado."
     },
     {
       id: 9,
-      title: "Save and Backup Your Work",
+      title: "Guarda y Respalda tu Trabajo",
       duration: "24 min",
       isFree: true,
-      description: "Establish robust version control and backup systems to protect your application development."
+      description: "Establece sistemas robustos de control de versiones y respaldos para proteger el desarrollo de tu aplicación."
     },
     {
       id: 10,
-      title: "Make Your App Smart With AI",
+      title: "Haz tu App Inteligente con IA",
       duration: "39 min",
-      description: "Integrate AI capabilities like chat, image generation, and data analysis into your application."
+      description: "Integra capacidades de IA como chat, generación de imágenes y análisis de datos en tu aplicación."
     },
     {
       id: 11,
-      title: "Add AI Features Users Love",
+      title: "Añade Funciones de IA que los Usuarios Aman",
       duration: "37 min",
-      description: "Implement advanced AI features that provide real value to your users and differentiate your app."
+      description: "Implementa funciones avanzadas de IA que proporcionan valor real a tus usuarios y diferencian tu app."
     },
     {
       id: 12,
-      title: "Make Your App Even Smarter With AI",
+      title: "Haz tu App Aún Más Inteligente con IA",
       duration: "42 min",
-      description: "Advanced AI integration techniques for creating truly intelligent application experiences."
+      description: "Técnicas avanzadas de integración de IA para crear experiencias de aplicación verdaderamente inteligentes."
     },
     {
       id: 13,
-      title: "Connect Stripe (& Get Paid)",
+      title: "Conecta Stripe (y Cobra)",
       duration: "29 min",
-      description: "Set up payment processing, subscriptions, and monetization for your application."
+      description: "Configura procesamiento de pagos, suscripciones y monetización para tu aplicación."
     },
     {
       id: 14,
-      title: "Set Up Subscriptions",
+      title: "Configura Suscripciones",
       duration: "31 min",
-      description: "Create recurring revenue models with subscription tiers and automated billing."
+      description: "Crea modelos de ingresos recurrentes con niveles de suscripción y facturación automatizada."
     },
     {
       id: 15,
-      title: "Protect Your App From Hackers",
+      title: "Protege tu App de Hackers",
       duration: "28 min",
-      description: "Implement essential security measures and best practices for production applications."
+      description: "Implementa medidas de seguridad esenciales y mejores prácticas para aplicaciones en producción."
     },
     {
       id: 16,
-      title: "Go Live and Get Your First User",
+      title: "Lanza y Consigue tu Primer Usuario",
       duration: "23 min",
-      description: "Deploy your application to production and acquire your first paying customers."
+      description: "Despliega tu aplicación en producción y consigue tus primeros clientes pagantes."
     }
   ];
 
@@ -173,18 +173,18 @@ export function AIBlueprintCurriculum() {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <div className="text-[#C9A880] font-semibold mb-2">Curriculum</div>
+          <div className="text-[#C9A880] font-semibold mb-2">Currículum</div>
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            <span className="text-white">Learn </span>
+            <span className="text-white">Aprende </span>
             <span className="bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 bg-clip-text text-transparent">
               Vibe Coding
             </span>
-            <span className="text-white"> for</span>
+            <span className="text-white"> para</span>
             <br />
-            <span className="text-white">Non-Technical People!</span>
+            <span className="text-white">Personas Sin Experiencia Técnica</span>
           </h2>
           <p className="text-gray-300 text-lg max-w-2xl mx-auto">
-            Every lesson is designed to be practical and immediately applicable
+            Cada lección está diseñada para ser práctica y aplicable inmediatamente
           </p>
         </motion.div>
 
@@ -215,7 +215,7 @@ export function AIBlueprintCurriculum() {
                     </div>
                     {module.isFree && (
                       <span className="bg-blue-600 text-white text-xs px-2 py-1 rounded-full font-medium">
-                        Free Preview
+                        Vista Previa Gratis
                       </span>
                     )}
                     <div className="text-gray-400 text-sm min-w-[50px] text-right">

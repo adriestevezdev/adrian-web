@@ -16,8 +16,8 @@ export function AIBlueprintFAQ() {
   const faqItems: FAQItem[] = [
     {
       id: 1,
-      question: "Do you have a refund policy?",
-      answer: "Yes! We offer a 30-day money-back guarantee. If you're not completely satisfied with the course, we'll refund your purchase in full, no questions asked."
+      question: "¿Tienen política de reembolso?",
+      answer: "¡Sí! Ofrecemos una garantía de devolución de dinero de 30 días. Si no estás completamente satisfecho con el bootcamp, te reembolsamos tu compra completa, sin preguntas."
     },
     {
       id: 2,
@@ -26,8 +26,8 @@ export function AIBlueprintFAQ() {
     },
     {
       id: 3,
-      question: "Who is this blueprint for?",
-      answer: "This course is designed for non-technical founders, entrepreneurs, and business owners who want to build their own applications without learning traditional coding. It's perfect for people who have app ideas but don't want to hire expensive developers."
+      question: "¿Para quién es este bootcamp?",
+      answer: "Este bootcamp está diseñado para fundadores no técnicos, emprendedores y dueños de negocios que quieren construir sus propias aplicaciones sin aprender programación tradicional. Es perfecto para personas que tienen ideas de apps pero no quieren contratar desarrolladores costosos."
     },
     {
       id: 4,
@@ -36,8 +36,8 @@ export function AIBlueprintFAQ() {
     },
     {
       id: 5,
-      question: "Do I need coding skills?",
-      answer: "No! This course is specifically designed for non-technical people. We use visual builders, AI assistants, and no-code platforms to create applications. You don't need any prior programming experience."
+      question: "¿Necesito habilidades de programación?",
+      answer: "¡No! Este bootcamp está específicamente diseñado para personas no técnicas. Usamos constructores visuales, asistentes de IA y plataformas no-code para crear aplicaciones. No necesitas experiencia previa en programación."
     },
     {
       id: 6,
@@ -90,9 +90,9 @@ export function AIBlueprintFAQ() {
           className="text-center mb-12"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            <span className="text-white">Frequently </span>
+            <span className="text-white">Preguntas </span>
             <span className="bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 bg-clip-text text-transparent">
-              Asked Questions
+              Frecuentes
             </span>
           </h2>
         </motion.div>
