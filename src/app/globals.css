@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer base {
+  :root {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+      Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+      sans-serif;
+    --color-1: 38 43% 78%; /* #C9A880 */
+    --color-2: 35 37% 65%; /* #A78355 */
+    --color-3: 40 30% 60%; /* Darker gold */
+    --color-4: 36 45% 70%; /* Medium gold */
+    --color-5: 32 50% 75%; /* Lighter gold */
+  }
+  .dark {
+    --color-1: 38 43% 78%; /* #C9A880 */
+    --color-2: 35 37% 65%; /* #A78355 */
+    --color-3: 40 30% 60%; /* Darker gold */
+    --color-4: 36 45% 70%; /* Medium gold */
+    --color-5: 32 50% 75%; /* Lighter gold */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    overflow-x: hidden; /* Previene scroll horizontal */
+  }
+  html {
+    overflow-x: hidden; /* Asegura que no haya scroll horizontal a nivel del documento */
+    scroll-behavior: smooth; /* Asegura que todos los scrolls sean suaves */
+  }
+  /* Ajustar espacio superior para secciones con ID para scroll */
+  section[id] {
+    scroll-margin-top: 80px;
+  }
+  /* Específicamente para el formulario de newsletter */
+  #newsletter-form {
+    scroll-margin-top: 100px; /* Más espacio para asegurar visibilidad */
+    scroll-behavior: smooth;
+    position: relative;
+  }
+  /* Indicador visual cuando llegamos al destino del scroll */
+  #newsletter-form::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, #c9a880, #a78355);
+    opacity: 0;
+    transform: scaleX(0);
+    transition: opacity 0.4s, transform 0.4s;
+    z-index: 50;
+  }
+  #newsletter-form:target::before {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+}
+.magic-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.magic-card:hover {
+  transform: translateY(-5px);
+  /* Ajuste del color de la sombra a dorado */
+  box-shadow: 0 8px 32px rgba(201, 168, 128, 0.15);
+}
