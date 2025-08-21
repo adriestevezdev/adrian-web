@@ -62,7 +62,6 @@ export function AIBlueprintTestimonials() {
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-[#0a0a0a] via-blue-900/5 to-[#0a0a0a]" />
       
-
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         {/* Section Header */}
         <motion.div
@@ -73,18 +72,14 @@ export function AIBlueprintTestimonials() {
           className="text-center mb-16"
         >
           <div className="text-[#C9A880] font-semibold mb-2">Testimonios del Bootcamp</div>
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            <span className="text-white">97% de Nuestros Estudiantes del </span>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 max-w-4xl mx-auto leading-tight">
+            <span className="text-white">Personas No Técnicas Que Ahora </span>
             <span className="bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 bg-clip-text text-transparent">
-              Bootcamp Dicen:
-            </span>
-            <br />
-            <span className="bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 bg-clip-text text-transparent">
-              "Debería Haber Empezado Antes"
+              Construyen Apps Reales
             </span>
           </h2>
           <p className="text-gray-300 text-lg">
-            El otro 3% estaba muy ocupado construyendo su segunda app con IA
+            97% de nuestros estudiantes del bootcamp dicen: "Debería haber empezado antes"
           </p>
         </motion.div>
 
@@ -113,6 +108,13 @@ export function AIBlueprintTestimonials() {
             </motion.div>
           ))}
         </motion.div>
+
+        {/* CTA Button */}
+        <div className="text-center mt-12">
+          <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-blue-500/25">
+            Join 147+ Other Students
+          </button>
+        </div>
       </div>
     </section>
   );
