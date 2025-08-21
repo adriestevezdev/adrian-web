@@ -21,8 +21,8 @@ export function AIBlueprintFAQ() {
     },
     {
       id: 2,
-      question: "Do you offer discounts?",
-      answer: "We occasionally offer limited-time promotions. The best way to stay updated on any discounts is to join our newsletter. However, we believe the course provides exceptional value at its current price."
+      question: "¿Ofrecen descuentos?",
+      answer: "Ocasionalmente ofrecemos promociones por tiempo limitado. La mejor manera de mantenerte actualizado sobre descuentos es suscribirte a nuestro newsletter. Sin embargo, creemos que el curso ofrece un valor excepcional a su precio actual."
     },
     {
       id: 3,
@@ -31,8 +31,8 @@ export function AIBlueprintFAQ() {
     },
     {
       id: 4,
-      question: "What exactly does the blueprint cover?",
-      answer: "The blueprint covers everything from setting up your development environment to deploying a full application with AI features, user authentication, payments, and more. You'll learn to use no-code tools, AI assistants, and modern platforms to build professional applications."
+      question: "¿Qué cubre exactamente el blueprint?",
+      answer: "El blueprint cubre todo desde configurar tu entorno de desarrollo hasta desplegar una aplicación completa con funciones de IA, autenticación de usuarios, pagos y más. Aprenderás a usar herramientas no-code, asistentes de IA y plataformas modernas para construir aplicaciones profesionales."
     },
     {
       id: 5,
@@ -41,33 +41,33 @@ export function AIBlueprintFAQ() {
     },
     {
       id: 6,
-      question: "What computer do I need?",
-      answer: "You can use any modern computer - Mac, Windows, or Linux. Most of the tools we use are web-based, so you just need a reliable internet connection and a modern web browser."
+      question: "¿Qué computadora necesito?",
+      answer: "Puedes usar cualquier computadora moderna - Mac, Windows o Linux. La mayoría de las herramientas que usamos están basadas en web, así que solo necesitas una conexión a internet confiable y un navegador web moderno."
     },
     {
       id: 7,
-      question: "What AI tools are used?",
-      answer: "We use a variety of AI tools including Claude, ChatGPT, Cursor AI, and other AI-powered development assistants. You'll learn how to effectively prompt these tools and integrate AI capabilities into your applications."
+      question: "¿Qué herramientas de IA se usan?",
+      answer: "Usamos una variedad de herramientas de IA incluyendo Claude, ChatGPT, Cursor AI y otros asistentes de desarrollo impulsados por IA. Aprenderás cómo hacer prompts efectivos con estas herramientas e integrar capacidades de IA en tus aplicaciones."
     },
     {
       id: 8,
-      question: "What if I get stuck?",
-      answer: "You'll have access to our exclusive community where you can ask questions and get help from both me and other students. Plus, you get direct access to me for personalized guidance when you need it."
+      question: "¿Qué pasa si me quedo atascado?",
+      answer: "Tendrás acceso a nuestra comunidad exclusiva donde puedes hacer preguntas y obtener ayuda tanto de mí como de otros estudiantes. Además, tienes acceso directo a mí para orientación personalizada cuando la necesites."
     },
     {
       id: 9,
-      question: "Any additional costs?",
-      answer: "The course covers free and paid tools. While many tools have free tiers that are sufficient for learning, some advanced features or production deployments may require paid subscriptions to third-party services (like hosting or AI APIs)."
+      question: "¿Hay costos adicionales?",
+      answer: "El curso cubre herramientas gratuitas y de pago. Mientras que muchas herramientas tienen niveles gratuitos suficientes para aprender, algunas características avanzadas o despliegues en producción pueden requerir suscripciones de pago a servicios de terceros (como hosting o APIs de IA)."
     },
     {
       id: 10,
-      question: "What are lifetime updates?",
-      answer: "As AI and no-code tools evolve rapidly, I continuously update the course content to reflect the latest best practices and tools. Once you purchase, you get access to all future updates at no additional cost."
+      question: "¿Qué son las actualizaciones de por vida?",
+      answer: "Como las herramientas de IA y no-code evolucionan rápidamente, actualizo continuamente el contenido del curso para reflejar las mejores prácticas y herramientas más recientes. Una vez que compras, obtienes acceso a todas las actualizaciones futuras sin costo adicional."
     },
     {
       id: 11,
-      question: "Is this like Lovable or Replit?",
-      answer: "While we do cover some AI-powered development platforms, this course goes much deeper. You'll learn the principles behind building scalable applications, not just how to use specific tools. This knowledge transfers across platforms and will serve you long-term."
+      question: "¿Es esto como Lovable o Replit?",
+      answer: "Aunque sí cubrimos algunas plataformas de desarrollo impulsadas por IA, este curso va mucho más profundo. Aprenderás los principios detrás de la construcción de aplicaciones escalables, no solo cómo usar herramientas específicas. Este conocimiento se transfiere entre plataformas y te servirá a largo plazo."
     }
   ];
 
@@ -152,10 +152,10 @@ export function AIBlueprintFAQ() {
           className="text-center mt-12 pt-8 border-t border-gray-800"
         >
           <p className="text-gray-400 mb-2">
-            © 2025 SUNSTORY F.Z.C & Robin Ebers. All rights reserved.
+            © 2025 Adria Estevez. Todos los derechos reservados.
           </p>
           <div className="flex items-center justify-center gap-4 text-sm">
-            <span className="text-gray-500">Need help?</span>
+            <span className="text-gray-500">¿Necesitas ayuda?</span>
             <div className="flex items-center gap-2">
               <span className="text-blue-400">✕</span>
               <span className="text-blue-400">✉</span>

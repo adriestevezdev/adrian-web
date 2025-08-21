@@ -189,7 +189,7 @@ export default function TermsAndConditionsPage() {
       <footer className="bg-[#070707] border-t border-white/10 py-8 px-4">
         <div className="max-w-7xl mx-auto text-center">
           <p className="text-white/60 text-sm">
-            © {new Date().getFullYear()} Arquitectos IA Community. Todos los derechos reservados.
+            © {new Date().getFullYear()} Adria Estevez. Todos los derechos reservados.
           </p>
           <div className="mt-4 flex justify-center space-x-6">
             <Link href="/privacy" className="text-[#C9A880] hover:text-[#D9B890] text-sm">
