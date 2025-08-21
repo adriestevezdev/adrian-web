@@ -1,18 +1,14 @@
 "use client";
 
 import { useEffect } from "react";
+import { AIBlueprintHero } from "@/components/AIBlueprint/hero/ai-blueprint-hero";
+import { AIBlueprintCurriculum } from "@/components/AIBlueprint/curriculum/ai-blueprint-curriculum";
+import { AIBlueprintTestimonials } from "@/components/AIBlueprint/testimonials/ai-blueprint-testimonials";
+import { AIBlueprintPricing } from "@/components/AIBlueprint/pricing/ai-blueprint-pricing";
+import { AIBlueprintFAQ } from "@/components/AIBlueprint/faq/ai-blueprint-faq";
+import { StickyBanner } from "@/components/ui/StickyBanner";
 
-import { Footer } from "@/components/footer-component";
-import { NewsletterBenefits } from "@/components/Newsletter/benefits/newsletter-benefits";
-import { NewsletterCommunity } from "@/components/Newsletter/community/newsletter-community";
-import { NewsletterCourses } from "@/components/Newsletter/courses/newsletter-courses";
-import { NewsletterGifts } from "@/components/Newsletter/gifts/newsletter-gifts";
-import { NewsletterPricing } from "@/components/Newsletter/pricing/newsletter-pricing";
-import { NewsletterSkills } from "@/components/Newsletter/skills/newsletter-skills";
-import { NewsletterWaitlist } from "@/components/Newsletter/waitlist/newsletter-waitlist";
-import { MarqueeDemo } from "@/components/testimonials";
-
-export default function ComunidadPage() {
+export default function AIBlueprintPage() {
   // Implementar scroll suave para los enlaces de anclaje y manejar hash en URL
   useEffect(() => {
     // Función para hacer scroll a un elemento
@@ -76,47 +72,35 @@ export default function ComunidadPage() {
 
   return (
     <div className="min-h-screen bg-black text-white">
-      {/* Waitlist Form - First thing visitors see */}
-      <NewsletterWaitlist />
-
-      {/* Pricing Section */}
-      <div className="relative">
-        <div className="absolute inset-0 bg-[#080604] z-0"></div>
-        <NewsletterPricing />
+      {/* Sticky Banner - Shows once at the top */}
+      <StickyBanner 
+        message={<><span className="font-medium">Last Chance</span> · Price increases to $1,297 this Sunday →</>} 
+      />
+      
+      {/* Hero Section - First thing visitors see with padding for banner */}
+      <div className="pt-10">
+        <AIBlueprintHero />
       </div>
 
-      {/* Benefits Section */}
-      <section id="benefits" className="mt-0 bg-[#0a0a0a]">
-        <NewsletterBenefits />
+      {/* Curriculum Section */}
+      <section id="curriculum" className="relative">
+        <AIBlueprintCurriculum />
       </section>
 
-      {/* Community Section */}
-      <NewsletterCommunity />
-
-      {/* Skills Section */}
-      <NewsletterSkills />
-
-      {/* Free Gifts Section */}
-      <NewsletterGifts />
-
-
-
-      {/* Testimonials Marquee */}
-      <section className="relative w-full overflow-hidden bg-[#0a0a0a] pt-4 pb-16">
-        <div className="absolute inset-0 flex items-center justify-center -z-10">
-          <div className="h-full w-full bg-gradient-to-r from-[#C9A880]/20 to-[#C9A880]/10 blur-[120px]" />
-        </div>
-        <MarqueeDemo />
+      {/* Testimonials Section */}
+      <section id="testimonials" className="relative">
+        <AIBlueprintTestimonials />
       </section>
 
-      {/* Cursos IA Section */}
-      <NewsletterCourses />
+      {/* Pricing Section */}
+      <section id="pricing" className="relative">
+        <AIBlueprintPricing />
+      </section>
 
-      {/* Spacer */}
-      <div className="h-16 bg-[#0a0a0a]"></div>
-
-      {/* Footer */}
-      <Footer />
+      {/* FAQ Section */}
+      <section id="faq" className="relative">
+        <AIBlueprintFAQ />
+      </section>
     </div>
   );
 }
