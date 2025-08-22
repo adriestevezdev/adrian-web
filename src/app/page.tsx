@@ -85,6 +85,9 @@ export default function HomePage() {
         <NewsletterPricing />
       </div>
 
+      {/* Free Gifts Section */}
+      <NewsletterGifts />
+
       {/* Benefits Section */}
       <section id="benefits" className="mt-0 bg-[#0a0a0a]">
         <NewsletterBenefits />
@@ -95,11 +98,6 @@ export default function HomePage() {
 
       {/* Skills Section */}
       <NewsletterSkills />
-
-      {/* Free Gifts Section */}
-      <NewsletterGifts />
-
-
 
       {/* Testimonials Marquee */}
       <section className="relative w-full overflow-hidden bg-[#0a0a0a] pt-4 pb-16">
