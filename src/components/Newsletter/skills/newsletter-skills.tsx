@@ -18,7 +18,7 @@ export function NewsletterSkills() {
     "Subir a producción",
     "Casos de Uso de IA en el Mundo Real",
     "Monetización de Agentes de IA",
-    "Agentes A2A y A2Z",
+    "Crear tu propio SaaS con IA",
     "Herramientas y Frameworks de IA"
   ];
 
