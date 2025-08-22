@@ -12,7 +12,7 @@ export default function TermsAndConditionsPage() {
       <header className="w-full bg-[#070707] backdrop-blur-md border-b border-white/10 py-5 px-8 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto flex items-center justify-center md:justify-start">
           <Logo width={40} height={40} className="h-10 w-auto group-hover:scale-105 transition-transform" />
-          <a href="/comunidad" className="ml-2 group">
+          <a href="/" className="ml-2 group">
             <span className="text-white text-xl md:text-2xl font-semibold group-hover:text-white/90 transition-colors">
               Arquitectos IA <span className="text-[#C9A880] group-hover:text-[#D9B890] transition-colors">Community</span>
             </span>

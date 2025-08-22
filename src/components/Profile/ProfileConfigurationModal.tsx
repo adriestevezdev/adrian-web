@@ -115,7 +115,7 @@ export const ProfileConfigurationModal: React.FC<ProfileConfigurationModalProps>
 
     try {
       // URLs de retorno para Stripe
-      const successUrl = `${window.location.origin}/comunidad`;
+      const successUrl = `${window.location.origin}/`;
       const cancelUrl = `${window.location.origin}/perfil/configuracion`;
 
       console.log("Iniciando proceso de suscripción");
