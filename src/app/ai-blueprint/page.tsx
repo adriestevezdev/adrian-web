@@ -6,7 +6,6 @@ import { AIPlantillaCurriculum } from "@/components/AIBlueprint/curriculum/ai-bl
 import { AIPlantillaTestimonials } from "@/components/AIBlueprint/testimonials/ai-blueprint-testimonials";
 import { AIPlantillaPricing } from "@/components/AIBlueprint/pricing/ai-blueprint-pricing";
 import { AIPlantillaFAQ } from "@/components/AIBlueprint/faq/ai-blueprint-faq";
-import { StickyBanner } from "@/components/ui/StickyBanner";
 
 export default function AIPlantillaPage() {
   // Implementar scroll suave para los enlaces de anclaje y manejar hash en URL
@@ -72,13 +71,8 @@ export default function AIPlantillaPage() {
 
   return (
     <div className="min-h-screen bg-black text-white">
-      {/* Sticky Banner - Shows once at the top */}
-      <StickyBanner 
-        message={<><span className="font-medium">Última Oportunidad</span> · El precio sube a $1,297 este domingo →</>} 
-      />
-      
-      {/* Hero Section - First thing visitors see with padding for banner */}
-      <div className="pt-10">
+      {/* Hero Section */}
+      <div>
         <AIPlantillaHero />
       </div>
 

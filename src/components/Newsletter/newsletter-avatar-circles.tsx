@@ -7,38 +7,30 @@ import { AvatarCircles } from "@/components/magicui/avatar-circles";
 import { cn } from "@/lib/utils";
 import { beehiivService } from "@/services/beehiiv";
 
-// Avatares predefinidos - Mejor lista con más variedad
+// Avatares reales de testimonios
 const avatars = [
     {
-        imageUrl: "https://randomuser.me/api/portraits/women/33.jpg",
+        imageUrl: "/testimonios/avatares/avatar_alfonso-valcarcel.jpg",
         profileUrl: "#",
     },
     {
-        imageUrl: "https://randomuser.me/api/portraits/men/54.jpg",
+        imageUrl: "/testimonios/avatares/avatar_cesar-salinas.jpg",
         profileUrl: "#",
     },
     {
-        imageUrl: "https://randomuser.me/api/portraits/women/29.jpg",
+        imageUrl: "/testimonios/avatares/avatar_juan-carlos.jfif",
         profileUrl: "#",
     },
     {
-        imageUrl: "https://randomuser.me/api/portraits/men/42.jpg",
+        imageUrl: "/testimonios/avatares/avatar_lucas-noailles.jpg",
         profileUrl: "#",
     },
     {
-        imageUrl: "https://randomuser.me/api/portraits/women/77.jpg",
+        imageUrl: "/testimonios/avatares/avatar_manel-hernandez.jpg",
         profileUrl: "#",
     },
     {
-        imageUrl: "https://randomuser.me/api/portraits/men/12.jpg",
-        profileUrl: "#",
-    },
-    {
-        imageUrl: "https://randomuser.me/api/portraits/women/45.jpg",
-        profileUrl: "#",
-    },
-    {
-        imageUrl: "https://randomuser.me/api/portraits/men/28.jpg",
+        imageUrl: "/testimonios/avatares/avatar_marcos-valverde.jpg",
         profileUrl: "#",
     },
 ];
@@ -94,7 +86,7 @@ export function NewsletterAvatarCircles({
     // Función para crear avatares con efecto de animación
     const avatarsWithAnimation = () => (
         <AvatarCircles
-            numPeople={99}
+            numPeople={40}
             avatarUrls={visibleAvatars}
             className={cn("transform transition-all duration-300 hover:scale-105", className)}
         />
