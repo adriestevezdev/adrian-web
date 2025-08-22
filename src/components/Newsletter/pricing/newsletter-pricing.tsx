@@ -227,7 +227,7 @@ export function NewsletterPricing() {
 
             {/* CTA Button */}
             <div className="text-center">
-              <a href="https://www.skool.com/arquitectos-ia-5565" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.skool.com/arquitectos-ia" target="_blank" rel="noopener noreferrer">
                 <RainbowButtonDemo className="px-16 py-6 text-xl font-bold">
                   <span className="flex items-center justify-center">
                     <span>Unirme Ahora - $49/mes</span>
@@ -303,7 +303,7 @@ export function NewsletterPricing() {
 
             {/* CTA Button */}
             <div className="text-center mt-16">
-              <a href="https://www.skool.com/arquitectos-ia-5565" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.skool.com/arquitectos-ia" target="_blank" rel="noopener noreferrer">
                 <RainbowButtonDemo className="px-12 py-6 text-xl font-bold">
                   <span className="flex items-center justify-center">
                     <span>Únete a +40 Estudiantes</span>

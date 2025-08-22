@@ -7,7 +7,7 @@ import { RainbowButtonDemo } from "@/components/rainbowButton";
 
 export function NewsletterWaitlist() {
   const handleJoinCommunity = () => {
-    window.open('https://www.skool.com/arquitectos-ia-5565', '_blank');
+    window.open('https://www.skool.com/arquitectos-ia', '_blank');
   };
 
   return (
@@ -80,7 +80,7 @@ export function NewsletterWaitlist() {
           <div className="flex items-center justify-center mb-12">
             <div className="flex items-center space-x-4 bg-white/5 backdrop-blur-sm rounded-2xl px-6 py-4 border border-white/10">
               <div className="text-white/60 text-sm italic">
-                Hosted by
+                Creado por
               </div>
               <div className="flex items-center space-x-3">
                 <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-[#C9A880]/30">
