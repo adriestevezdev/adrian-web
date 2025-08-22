@@ -13,11 +13,11 @@ interface LessonModule {
   description?: string;
 }
 
-export function AIBlueprintCurriculum() {
+export function AIPlantillaCurriculum() {
   const [expandedModule, setExpandedModule] = useState<number | null>(null);
 
   const testimonial = {
-    text: "Como alguien completamente nuevo en programación, este bootcamp ha sido fantástico. Las lecciones logran un equilibrio perfecto entre claridad y ambición. Esta es una de las mejores inversiones en mi propio camino. Por ejemplo, Supabase para autenticación de usuario funcionó perfectamente desde el primer intento.",
+    text: "Como alguien completamente nuevo en programación, la comunidad ha sido fantástica. Las lecciones logran un equilibrio perfecto entre claridad y ambición. Esta es una de las mejores inversiones en mi propio camino. Por ejemplo, Supabase para autenticación de usuario funcionó perfectamente desde el primer intento.",
     author: "Shawn Hank",
     role: "Entusiasta de la Tecnología"
   };
@@ -34,7 +34,7 @@ export function AIBlueprintCurriculum() {
       title: "Instala tus Herramientas de Construcción",
       duration: "16 min",
       isFree: true,
-      description: "Descarga y configura todas las herramientas no-code e IA esenciales que necesitarás para todo el bootcamp."
+      description: "Descarga y configura todas las herramientas no-code e IA esenciales que necesitarás para toda la comunidad."
     },
     {
       id: 3,
@@ -128,7 +128,7 @@ export function AIBlueprintCurriculum() {
   };
 
   return (
-    <section className="relative bg-[#0a0a0a] py-16">
+    <section className="relative bg-[#0a0a0a] pt-48 pb-16">
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-[#0a0a0a] via-blue-900/10 to-[#0a0a0a]" />
       

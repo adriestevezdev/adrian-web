@@ -2,22 +2,23 @@
 
 import { motion } from "framer-motion";
 import { CheckIcon } from "@heroicons/react/24/outline";
+import Image from "next/image";
 
-export function AIBlueprintPricing() {
+export function AIPlantillaPricing() {
   const features = [
-    "16+ Lecciones en Video",
+    "+55 Lecciones en Video",
     "Llamadas en Vivo Exclusivas", 
     "Acceso a la Comunidad de Estudiantes",
     "Acceso Directo Conmigo"
   ];
 
   const companiesUsed = [
-    { name: "Claude", logo: "🤖" },
-    { name: "Cursor", logo: "⚡" },
-    { name: "Vercel", logo: "▲" },
-    { name: "Supabase", logo: "⚡" },
-    { name: "Stripe", logo: "💳" },
-    { name: "OpenAI", logo: "🧠" }
+    { name: "Claude", logo: "/tecnologias/claude.webp", isImage: true },
+    { name: "Cursor", logo: "/tecnologias/cursor.webp", isImage: true },
+    { name: "Vercel", logo: "▲", isImage: false },
+    { name: "Supabase", logo: "/tecnologias/supabase.webp", isImage: true },
+    { name: "Stripe", logo: "/tecnologias/stripe.webp", isImage: true },
+    { name: "OpenAI", logo: "/tecnologias/openai.webp", isImage: true }
   ];
 
   return (
@@ -35,11 +36,11 @@ export function AIBlueprintPricing() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <div className="text-[#C9A880] font-semibold mb-2">Bootcamp Desarrollo con IA</div>
+          <div className="text-[#C9A880] font-semibold mb-2">La Comunidad Desarrollo con IA</div>
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             <span className="text-white">Únete a </span>
             <span className="bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 bg-clip-text text-transparent">
-              141+ Emprendedores
+              +40 Emprendedores
             </span>
             <br />
             <span className="text-white">Ya Construyendo Apps</span>
@@ -64,7 +65,7 @@ export function AIBlueprintPricing() {
                 <div className="p-8">
                   <h3 className="text-2xl font-bold text-white mb-2">Obtén Acceso Instantáneo</h3>
                   <p className="text-gray-300 mb-6">
-                    Obtén el blueprint completo, acceso a la comunidad y ayuda cuando te quedes atascado.
+                    Obtén la plantilla completa, acceso a la comunidad y ayuda cuando te quedes atascado.
                   </p>
                   
                   <div className="mb-8">
@@ -124,7 +125,17 @@ export function AIBlueprintPricing() {
           <div className="flex flex-wrap justify-center items-center gap-8 opacity-60">
             {companiesUsed.map((company, index) => (
               <div key={index} className="flex items-center gap-2 text-gray-400">
-                <span className="text-2xl">{company.logo}</span>
+                {company.isImage ? (
+                  <Image
+                    src={company.logo}
+                    alt={`${company.name} logo`}
+                    width={24}
+                    height={24}
+                    className="w-6 h-6 object-contain"
+                  />
+                ) : (
+                  <span className="text-2xl">{company.logo}</span>
+                )}
                 <span className="font-semibold text-lg">{company.name}</span>
               </div>
             ))}

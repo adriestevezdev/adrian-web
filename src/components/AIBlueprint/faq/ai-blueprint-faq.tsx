@@ -10,14 +10,14 @@ interface FAQItem {
   answer: string;
 }
 
-export function AIBlueprintFAQ() {
+export function AIPlantillaFAQ() {
   const [expandedFAQ, setExpandedFAQ] = useState<number | null>(null);
 
   const faqItems: FAQItem[] = [
     {
       id: 1,
       question: "¿Tienen política de reembolso?",
-      answer: "¡Sí! Ofrecemos una garantía de devolución de dinero de 30 días. Si no estás completamente satisfecho con el bootcamp, te reembolsamos tu compra completa, sin preguntas."
+      answer: "¡Sí! Ofrecemos una garantía de devolución de dinero de 30 días. Si no estás completamente satisfecho con la comunidad, te reembolsamos tu compra completa, sin preguntas."
     },
     {
       id: 2,
@@ -26,18 +26,18 @@ export function AIBlueprintFAQ() {
     },
     {
       id: 3,
-      question: "¿Para quién es este bootcamp?",
-      answer: "Este bootcamp está diseñado para fundadores no técnicos, emprendedores y dueños de negocios que quieren construir sus propias aplicaciones sin aprender programación tradicional. Es perfecto para personas que tienen ideas de apps pero no quieren contratar desarrolladores costosos."
+      question: "¿Para quién es la comunidad?",
+      answer: "La comunidad está diseñada para fundadores no técnicos, emprendedores y dueños de negocios que quieren construir sus propias aplicaciones sin aprender programación tradicional. Es perfecta para personas que tienen ideas de apps pero no quieren contratar desarrolladores costosos."
     },
     {
       id: 4,
-      question: "¿Qué cubre exactamente el blueprint?",
-      answer: "El blueprint cubre todo desde configurar tu entorno de desarrollo hasta desplegar una aplicación completa con funciones de IA, autenticación de usuarios, pagos y más. Aprenderás a usar herramientas no-code, asistentes de IA y plataformas modernas para construir aplicaciones profesionales."
+      question: "¿Qué cubre exactamente la plantilla?",
+      answer: "La plantilla cubre todo desde configurar tu entorno de desarrollo hasta desplegar una aplicación completa con funciones de IA, autenticación de usuarios, pagos y más. Aprenderás a usar herramientas no-code, asistentes de IA y plataformas modernas para construir aplicaciones profesionales."
     },
     {
       id: 5,
       question: "¿Necesito habilidades de programación?",
-      answer: "¡No! Este bootcamp está específicamente diseñado para personas no técnicas. Usamos constructores visuales, asistentes de IA y plataformas no-code para crear aplicaciones. No necesitas experiencia previa en programación."
+      answer: "¡No! La comunidad está específicamente diseñada para personas no técnicas. Usamos constructores visuales, asistentes de IA y plataformas no-code para crear aplicaciones. No necesitas experiencia previa en programación."
     },
     {
       id: 6,

@@ -9,7 +9,7 @@ interface Testimonial {
   author: string;
 }
 
-export function AIBlueprintTestimonials() {
+export function AIPlantillaTestimonials() {
   const testimonials: Testimonial[] = [
     {
       id: 1,
@@ -71,7 +71,7 @@ export function AIBlueprintTestimonials() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <div className="text-[#C9A880] font-semibold mb-2">Testimonios del Bootcamp</div>
+          <div className="text-[#C9A880] font-semibold mb-2">Testimonios de la Comunidad</div>
           <h2 className="text-4xl md:text-5xl font-bold mb-4 max-w-4xl mx-auto leading-tight">
             <span className="text-white">Personas No Técnicas Que Ahora </span>
             <span className="bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 bg-clip-text text-transparent">
@@ -79,40 +79,50 @@ export function AIBlueprintTestimonials() {
             </span>
           </h2>
           <p className="text-gray-300 text-lg">
-            97% de nuestros estudiantes del bootcamp dicen: "Debería haber empezado antes"
+            97% de nuestros estudiantes de la comunidad dicen: "Debería haber empezado antes"
           </p>
         </motion.div>
 
-        {/* Testimonials Bento Grid */}
+        {/* Testimonials Discord-style Grid */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid grid-cols-2 gap-2 max-w-[1200px] mx-auto"
+          className="max-w-6xl mx-auto"
         >
-          {testimonials.map((testimonial) => (
-            <motion.div
-              key={testimonial.id}
-              variants={itemVariants}
-              className="relative"
-            >
-              <Image
-                src={testimonial.image}
-                alt={`Testimonio de ${testimonial.author}`}
-                width={800}
-                height={1200}
-                className="w-full h-auto"
-                sizes="(max-width: 1024px) 50vw, 50vw"
-              />
-            </motion.div>
-          ))}
+          {/* Masonry-style testimonials layout inspired by Discord messages */}
+          <div className="columns-1 md:columns-2 lg:columns-3 gap-4 space-y-4">
+            {testimonials.map((testimonial, index) => (
+              <motion.div
+                key={testimonial.id}
+                variants={itemVariants}
+                className="break-inside-avoid mb-4"
+                style={{
+                  transform: `translateY(${(index % 3) * 20}px)`
+                }}
+              >
+                <div className="relative group transition-transform duration-300 hover:scale-105">
+                  <div className="bg-[#2f3136] border border-[#40444b] rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300">
+                    <Image
+                      src={testimonial.image}
+                      alt={`Testimonio de ${testimonial.author}`}
+                      width={600}
+                      height={800}
+                      className="w-full h-auto object-cover"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    />
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </motion.div>
 
         {/* CTA Button */}
-        <div className="text-center mt-12">
-          <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-blue-500/25">
-            Join 147+ Other Students
+        <div className="text-center mt-16">
+          <button className="bg-blue-600 hover:bg-blue-700 text-white px-12 py-6 rounded-xl font-bold text-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-blue-500/25">
+            Únete a +40 Estudiantes
           </button>
         </div>
       </div>

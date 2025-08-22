@@ -4,7 +4,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
-export function AIBlueprintHero() {
+export function AIPlantillaHero() {
   const [email, setEmail] = useState("");
 
   const testimonialAvatars = [
@@ -16,7 +16,7 @@ export function AIBlueprintHero() {
   ];
 
   return (
-    <section className="relative min-h-screen bg-[#0a0a0a] flex items-center justify-center pt-16 pb-8">
+    <section className="relative bg-[#0a0a0a] flex items-center justify-center pt-8 pb-8">
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-blue-900/20 via-[#0a0a0a] to-[#0a0a0a]" />
       
@@ -54,7 +54,7 @@ export function AIBlueprintHero() {
               </div>
             ))}
           </div>
-          <span className="text-gray-400 text-sm ml-3">Únete a 147+ emprendedores sin experiencia técnica</span>
+          <span className="text-gray-400 text-sm ml-3">Únete a +40 emprendedores sin experiencia técnica</span>
         </motion.div>
 
         {/* Main headline */}
@@ -62,7 +62,7 @@ export function AIBlueprintHero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="mb-8"
+          className="mb-6"
         >
           <h1 className="text-5xl md:text-7xl font-bold mb-4">
             <span className="text-white">Construye tu Saas en 30 Días</span>

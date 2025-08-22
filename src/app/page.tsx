@@ -1,14 +1,14 @@
 "use client";
 
 import { useEffect } from "react";
-import { AIBlueprintHero } from "@/components/AIBlueprint/hero/ai-blueprint-hero";
-import { AIBlueprintCurriculum } from "@/components/AIBlueprint/curriculum/ai-blueprint-curriculum";
-import { AIBlueprintTestimonials } from "@/components/AIBlueprint/testimonials/ai-blueprint-testimonials";
-import { AIBlueprintPricing } from "@/components/AIBlueprint/pricing/ai-blueprint-pricing";
-import { AIBlueprintFAQ } from "@/components/AIBlueprint/faq/ai-blueprint-faq";
+import { AIPlantillaHero } from "@/components/AIBlueprint/hero/ai-blueprint-hero";
+import { AIPlantillaCurriculum } from "@/components/AIBlueprint/curriculum/ai-blueprint-curriculum";
+import { AIPlantillaTestimonials } from "@/components/AIBlueprint/testimonials/ai-blueprint-testimonials";
+import { AIPlantillaPricing } from "@/components/AIBlueprint/pricing/ai-blueprint-pricing";
+import { AIPlantillaFAQ } from "@/components/AIBlueprint/faq/ai-blueprint-faq";
 import { StickyBanner } from "@/components/ui/StickyBanner";
 
-export default function AIBlueprintPage() {
+export default function AIPlantillaPage() {
   // Implementar scroll suave para los enlaces de anclaje y manejar hash en URL
   useEffect(() => {
     // Función para hacer scroll a un elemento
@@ -79,27 +79,27 @@ export default function AIBlueprintPage() {
       
       {/* Hero Section - First thing visitors see with padding for banner */}
       <div className="pt-10">
-        <AIBlueprintHero />
+        <AIPlantillaHero />
       </div>
 
       {/* Curriculum Section */}
       <section id="curriculum" className="relative">
-        <AIBlueprintCurriculum />
+        <AIPlantillaCurriculum />
       </section>
 
       {/* Testimonials Section */}
       <section id="testimonials" className="relative">
-        <AIBlueprintTestimonials />
+        <AIPlantillaTestimonials />
       </section>
 
       {/* Pricing Section */}
       <section id="pricing" className="relative">
-        <AIBlueprintPricing />
+        <AIPlantillaPricing />
       </section>
 
       {/* FAQ Section */}
       <section id="faq" className="relative">
-        <AIBlueprintFAQ />
+        <AIPlantillaFAQ />
       </section>
     </div>
   );
