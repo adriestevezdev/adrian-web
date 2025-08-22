@@ -16,8 +16,6 @@ services:
       - ./traefik/acme:/etc/traefik/acme
     environment:
       - TZ=Europe/Madrid
-    labels:
-      - "traefik.enable=true"
     networks:
       - proxy
 
