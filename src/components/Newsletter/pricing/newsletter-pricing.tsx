@@ -70,22 +70,6 @@ export function NewsletterPricing() {
 
       <div className="relative z-20 container mx-auto px-6 max-w-6xl">
 
-        {/* Hero Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
-          <div className="text-[#C9A880] font-semibold mb-4">Pricing que Evoluciona Contigo</div>
-          <h2 className="text-4xl md:text-6xl font-bold mb-6 max-w-4xl mx-auto leading-tight text-white">
-            Únete a Arquitectos IA
-          </h2>
-          <p className="text-white/70 text-xl mb-12 max-w-2xl mx-auto">
-            Bloquea tu precio para siempre.
-          </p>
-        </motion.div>
 
         {/* Timeline Section - Now with more prominence */}
         <motion.div
