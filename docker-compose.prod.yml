@@ -18,12 +18,6 @@ services:
       - TZ=Europe/Madrid
     labels:
       - "traefik.enable=true"
-      # Dashboard
-      - "traefik.http.routers.dashboard.rule=Host(`traefik.adriaestevez.com`)"
-      - "traefik.http.routers.dashboard.service=api@internal"
-      - "traefik.http.routers.dashboard.entrypoints=websecure"
-      - "traefik.http.routers.dashboard.tls.certresolver=letsencrypt"
-      - "traefik.http.routers.dashboard.middlewares=dashboard-auth@file"
     networks:
       - proxy
 
