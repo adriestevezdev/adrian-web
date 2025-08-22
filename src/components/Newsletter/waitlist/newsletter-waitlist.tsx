@@ -38,11 +38,11 @@ export function NewsletterWaitlist() {
 
           {/* Subtitle */}
           <p className="text-white/70 text-lg md:text-xl max-w-2xl mx-auto mb-12 font-light">
-            Aprende, construye y crece en una comunidad de Builders
+            Aprende, construye y crece en una comunidad de Arquitectos IA
           </p>
 
           {/* Single prominent CTA button */}
-          <div className="max-w-xs mx-auto">
+          <div className="max-w-xs mx-auto mb-12">
             <RainbowButtonDemo
               onClick={handleJoinCommunity}
               className="w-full py-4 transform transition-transform hover:scale-[1.02] active:scale-[0.98] text-lg"
@@ -54,6 +54,74 @@ export function NewsletterWaitlist() {
                 </svg>
               </span>
             </RainbowButtonDemo>
+          </div>
+
+          {/* Hero Video */}
+          <div className="relative mb-8 mx-auto max-w-4xl">
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/10">
+              <video
+                autoPlay
+                muted
+                loop
+                playsInline
+                className="w-full h-auto object-cover"
+                style={{ aspectRatio: '16/9' }}
+              >
+                <source src="/hero-video.mp4" type="video/mp4" />
+                Tu navegador no soporta el elemento de video.
+              </video>
+              
+              {/* Optional gradient overlay for better text readability if needed */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent pointer-events-none"></div>
+            </div>
+          </div>
+
+          {/* Author Signature */}
+          <div className="flex items-center justify-center mb-12">
+            <div className="flex items-center space-x-4 bg-white/5 backdrop-blur-sm rounded-2xl px-6 py-4 border border-white/10">
+              <div className="text-white/60 text-sm italic">
+                Hosted by
+              </div>
+              <div className="flex items-center space-x-3">
+                <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-[#C9A880]/30">
+                  <img 
+                    src="/testimonios/avatares/adrian-avatar.png" 
+                    alt="Adrià Estévez" 
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="text-left">
+                  <div className="text-white font-medium text-sm">
+                    Adrià Estévez
+                  </div>
+                  <div className="text-white/60 text-xs">
+                    Founder of Arquitectos IA
+                  </div>
+                </div>
+              </div>
+              <div className="flex items-center space-x-2 ml-2">
+                <a 
+                  href="https://youtube.com/@adriaestevez" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-white/60 hover:text-white transition-colors"
+                >
+                  <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                  </svg>
+                </a>
+                <a 
+                  href="https://twitter.com/adriaestevez" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-white/60 hover:text-white transition-colors"
+                >
+                  <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </section>

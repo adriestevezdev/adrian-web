@@ -14,11 +14,11 @@ export function NewsletterSkills() {
     "Arquitectura de Agentes de IA",
     "Vibe Coding estructurado",
     "Sistemas IA con MCPs",
-    "Expertos en Conocimiento de IA (RAG y Más)",
-    "IA Local (IA Segura y Privada)",
+    "Ingeniería de contexto",
+    "Subir a producción",
     "Casos de Uso de IA en el Mundo Real",
     "Monetización de Agentes de IA",
-    "Agentes A2A",
+    "Agentes A2A y A2Z",
     "Herramientas y Frameworks de IA"
   ];
 

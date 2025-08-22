@@ -70,100 +70,99 @@ export function NewsletterPricing() {
 
       <div className="relative z-20 container mx-auto px-6 max-w-6xl">
 
-        {/* Timeline Section */}
-        <div className="mb-12">
-          <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 mb-8">
+        {/* Hero Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="text-center mb-16"
+        >
+          <div className="text-[#C9A880] font-semibold mb-4">Pricing que Evoluciona Contigo</div>
+          <h2 className="text-4xl md:text-6xl font-bold mb-6 max-w-4xl mx-auto leading-tight text-white">
+            Únete a Arquitectos IA
+          </h2>
+          <p className="text-white/70 text-xl mb-12 max-w-2xl mx-auto">
+            Bloquea tu precio para siempre.
+          </p>
+        </motion.div>
+
+        {/* Timeline Section - Now with more prominence */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          viewport={{ once: true }}
+          className="mb-20"
+        >
+          <div className="flex flex-col lg:flex-row items-center justify-center gap-6 lg:gap-12 mb-12">
             {/* Past Price */}
-            <div className="flex flex-col items-center relative">
-              <div className="w-16 h-16 rounded-full bg-red-500/20 border-2 border-red-500 flex items-center justify-center mb-3">
-                <span className="text-red-400 font-bold">✗</span>
+            <div className="flex flex-col items-center relative group">
+              <div className="w-20 h-20 lg:w-24 lg:h-24 rounded-full bg-red-500/20 border-3 border-red-500 flex items-center justify-center mb-4 transition-all duration-300 group-hover:scale-110">
+                <span className="text-red-400 font-bold text-2xl">✗</span>
               </div>
               <div className="text-center">
-                <div className="text-red-400 font-semibold text-sm mb-1">FASE PASADA</div>
-                <div className="text-white text-xl font-bold">$39/mes</div>
-                <div className="text-red-400/80 text-xs">Ya no disponible</div>
+                <div className="text-red-400 font-bold text-lg mb-2">FASE PASADA</div>
+                <div className="text-white text-3xl lg:text-4xl font-bold mb-1">$39/mes</div>
+                <div className="text-red-400/80 text-sm">Ya no disponible</div>
               </div>
             </div>
 
             {/* Arrow */}
-            <div className="text-[#C9A880] text-2xl">→</div>
+            <div className="text-[#C9A880] text-3xl lg:text-4xl font-bold rotate-90 lg:rotate-0">→</div>
 
-            {/* Current Price */}
-            <div className="flex flex-col items-center relative">
-              <div className="w-20 h-20 rounded-full bg-[#C9A880]/20 border-4 border-[#C9A880] flex items-center justify-center mb-3 animate-pulse">
-                <span className="text-[#C9A880] font-bold text-xl">🔥</span>
+            {/* Current Price - Main focus */}
+            <div className="flex flex-col items-center relative group">
+              <div className="w-28 h-28 lg:w-32 lg:h-32 rounded-full bg-gradient-to-br from-[#C9A880]/30 to-[#C9A880]/10 border-4 border-[#C9A880] flex items-center justify-center mb-4 animate-pulse shadow-2xl shadow-[#C9A880]/20">
+                <span className="text-[#C9A880] font-bold text-3xl">🔥</span>
               </div>
-              <div className="text-center">
-                <div className="bg-[#C9A880] text-black px-3 py-1 rounded-full text-xs font-bold mb-2">AHORA MISMO</div>
-                <div className="text-[#C9A880] text-2xl font-bold">$49/mes</div>
+              <div className="text-center relative">
+                <div className="bg-gradient-to-r from-[#C9A880] to-[#D4B896] text-black px-6 py-2 rounded-full text-sm font-bold mb-3 shadow-lg">
+                  PRECIO ACTUAL
+                </div>
+                <div className="text-[#C9A880] text-4xl lg:text-5xl font-bold mb-2">$49/mes</div>
+                <div className="text-[#C9A880]/80 text-base">Acceso completo</div>
               </div>
-              <div className="absolute -top-8 left-1/2 transform -translate-x-1/2">
-                <div className="bg-green-500 text-white px-2 py-1 rounded text-xs font-bold animate-bounce">TÚ ESTÁS AQUÍ</div>
-              </div>
-            </div>
-
-            {/* Arrow */}
-            <div className="text-white/60 text-2xl">→</div>
-
-            {/* Future Price */}
-            <div className="flex flex-col items-center relative">
-              <div className="w-16 h-16 rounded-full bg-orange-500/20 border-2 border-orange-500 flex items-center justify-center mb-3">
-                <span className="text-orange-400 font-bold">⏳</span>
-              </div>
-              <div className="text-center">
-                <div className="text-orange-400 font-semibold text-sm mb-1">PRÓXIMA FASE</div>
-                <div className="text-white text-xl font-bold">$57/mes</div>
-                <div className="text-orange-400/80 text-xs">A los 50 miembros</div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-        <div className="flex flex-col lg:flex-row gap-8">
-          {/* Left column - Current Pricing */}
-          <div className="w-full lg:w-7/12 bg-[#0c0a08]/80 backdrop-blur-sm rounded-3xl p-8 border border-[#C9A880]/20 shadow-xl overflow-hidden relative">
-
-            {/* Monthly option */}
-            <div className="p-6 mb-5 bg-[#13110d] rounded-xl border border-[#C9A880]/30 transition-all duration-300 hover:border-[#C9A880]/50 relative">
-              <h3 className="text-xl font-bold text-white mb-5">Membresía Mensual</h3>
-              <div className="flex items-baseline mb-1">
-                <span className="text-4xl font-bold text-[#C9A880]">$49</span>
-                <span className="text-lg text-white/70 ml-2">/mes</span>
-              </div>
-              <div className="flex items-center mb-5 space-x-2">
-                <span className="text-red-400">Después $57</span>
-              </div>
-            </div>
-
-            {/* Annual option */}
-            <div className="p-6 bg-gradient-to-br from-[#13110d] to-[#1a1713] rounded-xl border border-[#C9A880]/40 transition-all duration-300 hover:border-[#C9A880]/70 relative overflow-hidden">
-              {/* Best value badge */}
-              <div className="absolute top-0 right-0">
-                <div className="bg-[#C9A880] text-black text-xs font-bold px-4 py-1 uppercase transform rotate-0">
-                  AHORRO ANUAL
+              <div className="absolute -top-12 left-1/2 transform -translate-x-1/2">
+                <div className="bg-green-500 text-white px-4 py-2 rounded-lg text-sm font-bold animate-bounce shadow-lg">
+                  TÚ ESTÁS AQUÍ
                 </div>
               </div>
+            </div>
 
-              <h3 className="text-xl font-bold text-white mb-5">Membresía Anual</h3>
-              <div className="flex items-baseline mb-1">
-                <span className="text-4xl font-bold text-[#C9A880]">$264</span>
-                <span className="text-lg text-white/70 ml-2">/año</span>
+            {/* Arrow */}
+            <div className="text-white/60 text-3xl lg:text-4xl font-bold rotate-90 lg:rotate-0">→</div>
+
+            {/* Future Price */}
+            <div className="flex flex-col items-center relative group">
+              <div className="w-20 h-20 lg:w-24 lg:h-24 rounded-full bg-orange-500/20 border-3 border-orange-500 flex items-center justify-center mb-4 transition-all duration-300 group-hover:scale-110">
+                <span className="text-orange-400 font-bold text-2xl">⏳</span>
               </div>
-              <div className="flex items-center mb-5 space-x-2">
-                <span className="text-red-400">Después $342</span>
+              <div className="text-center">
+                <div className="text-orange-400 font-bold text-lg mb-2">PRÓXIMA FASE</div>
+                <div className="text-white text-3xl lg:text-4xl font-bold mb-1">$57/mes</div>
+                <div className="text-orange-400/80 text-sm">A los 50 miembros</div>
               </div>
             </div>
           </div>
 
-          {/* Right column - Features */}
-          <div className="w-full lg:w-5/12 bg-[#0c0a08]/80 backdrop-blur-sm rounded-3xl p-8 border border-[#C9A880]/20 shadow-xl">
-            <h3 className="text-xl font-bold text-white mb-6">Incluye:</h3>
+        </motion.div>
 
-            <ul className="space-y-4 mb-8">
+        {/* Features Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          viewport={{ once: true }}
+          className="max-w-4xl mx-auto mb-16"
+        >
+          <div className="bg-gradient-to-br from-[#0c0a08]/80 to-[#13110d]/60 backdrop-blur-sm rounded-3xl p-12 border border-[#C9A880]/30 shadow-2xl">
+            <h3 className="text-3xl font-bold text-white mb-8 text-center">¿Qué incluye tu membresía?</h3>
+
+            <ul className="grid md:grid-cols-2 gap-6 mb-12">
               <li className="flex items-start">
                 <svg
-                  className="h-5 w-5 text-[#C9A880] mt-0.5 mr-3 flex-shrink-0"
+                  className="h-6 w-6 text-[#C9A880] mt-1 mr-4 flex-shrink-0"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 20 20"
                   fill="currentColor"
@@ -174,11 +173,11 @@ export function NewsletterPricing() {
                     clipRule="evenodd"
                   />
                 </svg>
-                <span className="text-white">Acceso a TODOS los cursos actuales y futuros</span>
+                <span className="text-white text-lg">Acceso a TODOS los cursos actuales y futuros</span>
               </li>
               <li className="flex items-start">
                 <svg
-                  className="h-5 w-5 text-[#C9A880] mt-0.5 mr-3 flex-shrink-0"
+                  className="h-6 w-6 text-[#C9A880] mt-1 mr-4 flex-shrink-0"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 20 20"
                   fill="currentColor"
@@ -189,11 +188,11 @@ export function NewsletterPricing() {
                     clipRule="evenodd"
                   />
                 </svg>
-                <span className="text-white">Sesiones en vivo semanales y talleres PRÁCTICOS</span>
+                <span className="text-white text-lg">Sesiones en vivo y talleres PRÁCTICOS</span>
               </li>
               <li className="flex items-start">
                 <svg
-                  className="h-5 w-5 text-[#C9A880] mt-0.5 mr-3 flex-shrink-0"
+                  className="h-6 w-6 text-[#C9A880] mt-1 mr-4 flex-shrink-0"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 20 20"
                   fill="currentColor"
@@ -204,11 +203,11 @@ export function NewsletterPricing() {
                     clipRule="evenodd"
                   />
                 </svg>
-                <span className="text-white">Acceso a la comunidad privada</span>
+                <span className="text-white text-lg">Acceso a la comunidad privada</span>
               </li>
               <li className="flex items-start">
                 <svg
-                  className="h-5 w-5 text-[#C9A880] mt-0.5 mr-3 flex-shrink-0"
+                  className="h-6 w-6 text-[#C9A880] mt-1 mr-4 flex-shrink-0"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 20 20"
                   fill="currentColor"
@@ -219,41 +218,44 @@ export function NewsletterPricing() {
                     clipRule="evenodd"
                   />
                 </svg>
-                <span className="text-white">Plantillas y recursos para Vibe Coding Estructurado y Agentes IA Profesionales</span>
+                <span className="text-white text-lg">Plantillas y recursos para Vibe Coding Estructurado y Monetización con IA</span>
               </li>
             </ul>
 
             {/* Bonus features */}
-            <div className="space-y-4 mb-8">
-              <div className="flex items-start">
-                <span className="h-5 w-5 text-[#C9A880] mt-0.5 mr-3 flex-shrink-0">🎁</span>
-                <span className="text-[#C9A880] font-medium">BONUS - Sorteos exclusivos</span>
-              </div>
-              <div className="flex items-start">
-                <span className="h-5 w-5 text-[#C9A880] mt-0.5 mr-3 flex-shrink-0">🎁</span>
-                <span className="text-[#C9A880] font-medium">BONUS - Bolsa de Trabajo</span>
-              </div>
-              <div className="flex items-start">
-                <span className="h-5 w-5 text-[#C9A880] mt-0.5 mr-3 flex-shrink-0">🎁</span>
-                <span className="text-[#C9A880] font-medium">BONUS - Llamada 1-1 con Adrià Estévez</span>
+            <div className="border-t border-[#C9A880]/20 pt-8 mb-8">
+              <h4 className="text-xl font-bold text-[#C9A880] mb-6 text-center">BONUS EXCLUSIVOS</h4>
+              <div className="grid md:grid-cols-3 gap-6">
+                <div className="flex flex-col items-center text-center">
+                  <span className="text-3xl mb-3">🎁</span>
+                  <span className="text-[#C9A880] font-medium">Sorteos exclusivos</span>
+                </div>
+                <div className="flex flex-col items-center text-center">
+                  <span className="text-3xl mb-3">💼</span>
+                  <span className="text-[#C9A880] font-medium">Bolsa de Trabajo</span>
+                </div>
+                <div className="flex flex-col items-center text-center">
+                  <span className="text-3xl mb-3">📞</span>
+                  <span className="text-[#C9A880] font-medium">Llamadas 1-1 con Adrià Estévez</span>
+                </div>
               </div>
             </div>
 
-
             {/* CTA Button */}
-            <a href="https://www.skool.com/arquitectos-ia-5565" target="_blank" rel="noopener noreferrer">
-              <RainbowButtonDemo className="w-full py-4 text-lg font-medium">
-                <span className="flex items-center justify-center">
-                  <span className="text-xs sm:text-sm md:text-base">Unirme ahora</span>
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
-                    <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
-                  </svg>
-                </span>
-              </RainbowButtonDemo>
-            </a>
-            
+            <div className="text-center">
+              <a href="https://www.skool.com/arquitectos-ia-5565" target="_blank" rel="noopener noreferrer">
+                <RainbowButtonDemo className="px-16 py-6 text-xl font-bold">
+                  <span className="flex items-center justify-center">
+                    <span>Unirme Ahora - $49/mes</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 ml-3" viewBox="0 0 20 20" fill="currentColor">
+                      <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                    </svg>
+                  </span>
+                </RainbowButtonDemo>
+              </a>
+            </div>
           </div>
-        </div>
+        </motion.div>
 
         {/* Testimonials Section */}
         <div className="relative py-16 mt-16">
