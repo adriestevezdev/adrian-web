@@ -7,7 +7,7 @@ import { NewsletterBenefits } from "@/components/Newsletter/benefits/newsletter-
 import { NewsletterCommunity } from "@/components/Newsletter/community/newsletter-community";
 import { NewsletterCourses } from "@/components/Newsletter/courses/newsletter-courses";
 import { NewsletterGifts } from "@/components/Newsletter/gifts/newsletter-gifts";
-import { NewsletterPricing } from "@/components/Newsletter/pricing/newsletter-pricing";
+// import { NewsletterPricing } from "@/components/Newsletter/pricing/newsletter-pricing"; // Temporalmente comentada
 import { NewsletterSkills } from "@/components/Newsletter/skills/newsletter-skills";
 import { NewsletterWaitlist } from "@/components/Newsletter/waitlist/newsletter-waitlist";
 import { MarqueeDemo } from "@/components/testimonials";
@@ -79,11 +79,11 @@ export default function HomePage() {
       {/* Waitlist Form - First thing visitors see */}
       <NewsletterWaitlist />
 
-      {/* Pricing Section */}
-      <div className="relative">
+      {/* Pricing Section - Temporalmente oculta */}
+      {/* <div className="relative">
         <div className="absolute inset-0 bg-[#080604] z-0"></div>
         <NewsletterPricing />
-      </div>
+      </div> */}
 
       {/* Free Gifts Section */}
       <NewsletterGifts />

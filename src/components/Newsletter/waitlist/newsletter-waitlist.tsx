@@ -1,13 +1,17 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import { AnimatedBackground } from "@/components/Newsletter/backgrounds";
 import { NewsletterAvatarCircles } from "@/components/Newsletter/newsletter-avatar-circles";
 import { RainbowButtonDemo } from "@/components/rainbowButton";
+import { EmailPopup } from "@/components/Newsletter/email-popup";
 
 export function NewsletterWaitlist() {
+  const [showEmailPopup, setShowEmailPopup] = useState(false);
+
   const handleJoinCommunity = () => {
-    window.open('https://www.skool.com/arquitectos-ia', '_blank');
+    setShowEmailPopup(true);
   };
 
   return (
@@ -45,7 +49,7 @@ export function NewsletterWaitlist() {
           <div className="max-w-xs mx-auto mb-12">
             <RainbowButtonDemo
               onClick={handleJoinCommunity}
-              className="w-full py-4 transform transition-transform hover:scale-[1.02] active:scale-[0.98] text-lg"
+              className="w-full py-4 text-lg"
             >
               <span className="font-medium flex items-center justify-center">
                 Únete Ahora
@@ -125,6 +129,12 @@ export function NewsletterWaitlist() {
           </div>
         </div>
       </section>
+
+      {/* Email Popup */}
+      <EmailPopup 
+        isOpen={showEmailPopup} 
+        onClose={() => setShowEmailPopup(false)} 
+      />
     </>
   );
 }
