@@ -32,6 +32,13 @@ export async function POST(request: Request) {
       );
     }
 
+    // Agregar parámetros por defecto recomendados por la API de Beehiiv
+    const requestData = {
+      ...subscriberData,
+      reactivate_existing: subscriberData.reactivate_existing ?? true, // Reactivar suscriptores que se dieron de baja
+      send_welcome_email: subscriberData.send_welcome_email ?? true, // Enviar email de bienvenida para confirmar
+    };
+
     // Realizar la solicitud a la API de Beehiiv
     const response = await fetch(
       `${BEEHIIV_API_URL}/publications/${BEEHIIV_PUB_ID}/subscriptions`,
@@ -41,7 +48,7 @@ export async function POST(request: Request) {
           'Authorization': `Bearer ${BEEHIIV_API_KEY}`,
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(subscriberData),
+        body: JSON.stringify(requestData),
       }
     );
 
@@ -78,7 +85,9 @@ export async function POST(request: Request) {
       // Comprobar si es un error de duplicado (email ya registrado)
       const isDuplicate = errorMessage.includes("already subscribed") ||
         errorMessage.includes("already exists") ||
-        responseData?.code === "existing_subscription";
+        errorMessage.includes("already active") ||
+        responseData?.code === "existing_subscription" ||
+        response.status === 409; // Conflict status for existing subscribers
 
       if (isDuplicate) {
         // Devolver éxito para emails ya registrados

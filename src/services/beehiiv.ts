@@ -10,7 +10,7 @@ interface BeehiivSubscriberData {
   referring_site?: string;
   custom_fields?: { name: string; value: string }[];
   send_welcome_email?: boolean;
-  reactivate_existing?: boolean;
+  reactivate_existing?: boolean; // Set to true to reactivate unsubscribed users
 }
 
 interface BeehiivService {

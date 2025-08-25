@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { X, Mail, ArrowRight } from "lucide-react";
+import { beehiivService } from '@/services/beehiiv';
 
 interface EmailPopupProps {
   isOpen: boolean;
@@ -12,6 +13,7 @@ export function EmailPopup({ isOpen, onClose }: EmailPopupProps) {
   const [email, setEmail] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [isAlreadySubscribed, setIsAlreadySubscribed] = useState(false);
   const [error, setError] = useState("");
 
   if (!isOpen) return null;
@@ -22,26 +24,34 @@ export function EmailPopup({ isOpen, onClose }: EmailPopupProps) {
     setError("");
 
     try {
-      const response = await fetch('/api/newsletter/beehiiv-subscribe', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ email }),
+      const result = await beehiivService.createSubscription({ 
+        email,
+        utm_source: "popup",
+        utm_medium: "bootcamp",
+        utm_campaign: "september_2025",
+        custom_fields: [
+          { name: "signup_source", value: "bootcamp_popup" }
+        ]
       });
 
-      if (response.ok) {
-        setIsSuccess(true);
+      if (result.success) {
+        if (result.alreadySubscribed) {
+          setIsAlreadySubscribed(true);
+        } else {
+          setIsSuccess(true);
+        }
         setEmail("");
         setTimeout(() => {
           onClose();
           setIsSuccess(false);
-        }, 2000);
+          setIsAlreadySubscribed(false);
+        }, 2500);
       } else {
-        setError("Hubo un error. Por favor, inténtalo de nuevo.");
+        setError(result.message || "Hubo un error. Por favor, inténtalo de nuevo.");
       }
     } catch (error) {
-      setError("Error de conexión. Por favor, inténtalo de nuevo.");
+      console.error('Error en popup subscription:', error);
+      setError(error instanceof Error ? error.message : "Error de conexión. Por favor, inténtalo de nuevo.");
     } finally {
       setIsSubmitting(false);
     }
@@ -58,14 +68,19 @@ export function EmailPopup({ isOpen, onClose }: EmailPopupProps) {
           <X className="w-6 h-6" />
         </button>
 
-        {isSuccess ? (
+        {(isSuccess || isAlreadySubscribed) ? (
           <div className="text-center">
             <div className="w-16 h-16 bg-[#C9A880]/20 rounded-full flex items-center justify-center mx-auto mb-4">
               <Mail className="w-8 h-8 text-[#C9A880]" />
             </div>
-            <h3 className="text-2xl font-bold mb-2 text-white">¡Estás en la lista!</h3>
+            <h3 className="text-2xl font-bold mb-2 text-white">
+              {isAlreadySubscribed ? "¡Ya estás en la lista!" : "¡Estás en la lista!"}
+            </h3>
             <p className="text-gray-400">
-              Te notificaré el 15 de Septiembre cuando abramos nuevas plazas.
+              {isAlreadySubscribed 
+                ? "Tu email ya estaba registrado. Te notificaremos el 15 de Septiembre cuando abramos nuevas plazas."
+                : "Te notificaré el 15 de Septiembre cuando abramos nuevas plazas."
+              }
             </p>
           </div>
         ) : (

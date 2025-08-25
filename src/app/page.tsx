@@ -9,6 +9,7 @@ import { NewsletterCourses } from "@/components/Newsletter/courses/newsletter-co
 import { NewsletterGifts } from "@/components/Newsletter/gifts/newsletter-gifts";
 // import { NewsletterPricing } from "@/components/Newsletter/pricing/newsletter-pricing"; // Temporalmente comentada
 import { NewsletterSkills } from "@/components/Newsletter/skills/newsletter-skills";
+import { NewsletterTestimonials } from "@/components/Newsletter/testimonials/newsletter-testimonials";
 import { NewsletterWaitlist } from "@/components/Newsletter/waitlist/newsletter-waitlist";
 import { MarqueeDemo } from "@/components/testimonials";
 
@@ -84,6 +85,9 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-[#080604] z-0"></div>
         <NewsletterPricing />
       </div> */}
+
+      {/* Testimonials with Images Section */}
+      <NewsletterTestimonials />
 
       {/* Free Gifts Section */}
       <NewsletterGifts />
