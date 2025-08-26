@@ -1,10 +1,11 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
 import { RainbowButtonDemo } from "@/components/rainbowButton";
+import { EmailPopup } from "@/components/Newsletter/email-popup";
 
 interface Testimonial {
   id: number;
@@ -13,6 +14,12 @@ interface Testimonial {
 }
 
 export function NewsletterPricing() {
+  const [showEmailPopup, setShowEmailPopup] = useState(false);
+
+  const handleJoinBootcamp = () => {
+    setShowEmailPopup(true);
+  };
+
   const testimonials: Testimonial[] = [
     {
       id: 1,
@@ -227,16 +234,17 @@ export function NewsletterPricing() {
 
             {/* CTA Button */}
             <div className="text-center">
-              <a href="https://www.skool.com/arquitectos-ia" target="_blank" rel="noopener noreferrer">
-                <RainbowButtonDemo className="px-16 py-6 text-xl font-bold">
-                  <span className="flex items-center justify-center">
-                    <span>Unirme Ahora - $49/mes</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 ml-3" viewBox="0 0 20 20" fill="currentColor">
-                      <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
-                    </svg>
-                  </span>
-                </RainbowButtonDemo>
-              </a>
+              <RainbowButtonDemo 
+                onClick={handleJoinBootcamp}
+                className="px-16 py-6 text-xl font-bold cursor-pointer"
+              >
+                <span className="flex items-center justify-center">
+                  <span>Unirme Ahora - $49/mes</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 ml-3" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                  </svg>
+                </span>
+              </RainbowButtonDemo>
             </div>
           </div>
         </motion.div>
@@ -303,20 +311,33 @@ export function NewsletterPricing() {
 
             {/* CTA Button */}
             <div className="text-center mt-16">
-              <a href="https://www.skool.com/arquitectos-ia" target="_blank" rel="noopener noreferrer">
-                <RainbowButtonDemo className="px-12 py-6 text-xl font-bold">
-                  <span className="flex items-center justify-center">
-                    <span>Únete a +40 Estudiantes</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
-                      <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
-                    </svg>
-                  </span>
-                </RainbowButtonDemo>
-              </a>
+              <RainbowButtonDemo 
+                onClick={handleJoinBootcamp}
+                className="px-12 py-6 text-xl font-bold cursor-pointer"
+              >
+                <span className="flex items-center justify-center">
+                  <span>Únete a +40 Estudiantes</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                  </svg>
+                </span>
+              </RainbowButtonDemo>
             </div>
           </div>
         </div>
       </div>
+      
+      {/* Email Popup */}
+      <EmailPopup 
+        isOpen={showEmailPopup} 
+        onClose={() => setShowEmailPopup(false)} 
+        utmSource="pricing"
+        utmMedium="cta_button"
+        customFields={[
+          { name: "button_location", value: "pricing_section" },
+          { name: "button_text", value: "Únete a +40 Estudiantes" }
+        ]}
+      />
     </section>
   );
 }

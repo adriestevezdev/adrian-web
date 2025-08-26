@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 import { AnimatedBackground } from "@/components/Newsletter/backgrounds";
 import { NewsletterAvatarCircles } from "@/components/Newsletter/newsletter-avatar-circles";
 import { RainbowButtonDemo } from "@/components/rainbowButton";
@@ -37,12 +36,14 @@ export function NewsletterWaitlist() {
 
           {/* Main minimalist headline */}
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white leading-tight">
-            De la Idea a la App con <span className="bg-gradient-to-r from-[#C9A880] to-[#A78355] bg-clip-text text-transparent">IA</span>
+            <span className="bg-gradient-to-r from-[#C9A880] to-[#A78355] bg-clip-text text-transparent">Construye Tu App Con IA</span><br />
+            en 30 Días (Sin Código)
           </h1>
 
           {/* Subtitle */}
-          <p className="text-white/70 text-lg md:text-xl max-w-2xl mx-auto mb-12 font-light">
-            Aprende, construye y crece en una comunidad de Arquitectos IA
+          <p className="text-white/70 text-lg md:text-xl max-w-4xl mx-auto mb-12 font-light">
+            El plan paso a paso que convierte principiantes en arquitectos de la inteligencia artificial.<br />
+            Comienza a construir conmigo y otros +40 estudiantes.
           </p>
 
           {/* Single prominent CTA button */}
@@ -52,7 +53,7 @@ export function NewsletterWaitlist() {
               className="w-full py-4 text-lg"
             >
               <span className="font-medium flex items-center justify-center">
-                Únete Ahora
+                Quiero Mi App en 30 Días
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
                   <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
                 </svg>
@@ -134,6 +135,12 @@ export function NewsletterWaitlist() {
       <EmailPopup 
         isOpen={showEmailPopup} 
         onClose={() => setShowEmailPopup(false)} 
+        utmSource="waitlist"
+        utmMedium="hero_button"
+        customFields={[
+          { name: "button_location", value: "hero_section" },
+          { name: "button_text", value: "Quiero Mi App en 30 Días" }
+        ]}
       />
     </>
   );

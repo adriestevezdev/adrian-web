@@ -7,9 +7,12 @@ import { beehiivService } from '@/services/beehiiv';
 interface EmailPopupProps {
   isOpen: boolean;
   onClose: () => void;
+  utmSource?: string;
+  utmMedium?: string;
+  customFields?: { name: string; value: string }[];
 }
 
-export function EmailPopup({ isOpen, onClose }: EmailPopupProps) {
+export function EmailPopup({ isOpen, onClose, utmSource = "popup", utmMedium = "bootcamp", customFields = [] }: EmailPopupProps) {
   const [email, setEmail] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
@@ -26,11 +29,12 @@ export function EmailPopup({ isOpen, onClose }: EmailPopupProps) {
     try {
       const result = await beehiivService.createSubscription({ 
         email,
-        utm_source: "popup",
-        utm_medium: "bootcamp",
+        utm_source: utmSource,
+        utm_medium: utmMedium,
         utm_campaign: "september_2025",
         custom_fields: [
-          { name: "signup_source", value: "bootcamp_popup" }
+          { name: "signup_source", value: `${utmSource}_${utmMedium}` },
+          ...customFields
         ]
       });
 

@@ -344,18 +344,25 @@ export function NewsletterHero() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-5 mb-8 md:mb-0">
-              <SmoothScrollLink href="#newsletter-form" className="w-full sm:w-auto">
-                <div className="w-full sm:w-auto">
-                  <RainbowButtonDemo className="px-7 py-3 text-base">
-                    <span className="flex items-center">
-                      QUIERO UNIRME
-                      <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
-                        <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
-                      </svg>
-                    </span>
-                  </RainbowButtonDemo>
-                </div>
-              </SmoothScrollLink>
+              <div className="w-full sm:w-auto">
+                <RainbowButtonDemo 
+                  onClick={() => {
+                    // Scroll to newsletter form for better UX
+                    const element = document.getElementById('newsletter-form');
+                    if (element) {
+                      element.scrollIntoView({ behavior: 'smooth' });
+                    }
+                  }}
+                  className="px-7 py-3 text-base cursor-pointer"
+                >
+                  <span className="flex items-center">
+                    QUIERO UNIRME
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
+                      <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                    </svg>
+                  </span>
+                </RainbowButtonDemo>
+              </div>
 
               <Link href="#benefits">
                 <button className="border border-[#C9A880]/50 hover:border-[#C9A880] text-white font-medium py-3 px-7 rounded-xl text-base transition-all duration-300">
