@@ -6,6 +6,7 @@ import Image from "next/image";
 
 import { RainbowButtonDemo } from "@/components/rainbowButton";
 import { EmailPopup } from "@/components/Newsletter/email-popup";
+import { NewsletterAvatarCircles } from "@/components/Newsletter/newsletter-avatar-circles";
 
 interface Testimonial {
   id: number;
@@ -80,6 +81,11 @@ export function NewsletterTestimonials() {
         <div className="relative py-16">
           
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            {/* Avatar circles above testimonials */}
+            <div className="flex items-center justify-center mb-12">
+              <NewsletterAvatarCircles className="" />
+            </div>
+
             {/* Section Header */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}

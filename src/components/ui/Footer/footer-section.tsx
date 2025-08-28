@@ -29,15 +29,6 @@ function Footerdemo() {
               >
                 ✉
               </a>
-              <a 
-                href="https://linkedin.com/in/adriaestevez"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[#C9A880] hover:text-[#A78355] transition-colors duration-300"
-                title="LinkedIn"
-              >
-                in
-              </a>
             </div>
           </div>
         </motion.div>

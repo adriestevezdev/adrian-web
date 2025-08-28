@@ -26,7 +26,7 @@ export function NewsletterGifts() {
 
                 Soy Adrià Estévez, entusiasta de la tecnología, desarrollador de software y emprendedor con más de tres años DEDICADOS al dominio de la IA, especialmente al Vibe Coding, MCPs y Agentes de IA.
 
-                Con un canal de YouTube que supera los 9.000 suscriptores, he ayudado a CIENTOS de personas a construir y aprovechar la IA para resolver problemas del mundo real.
+                Con un canal de YouTube que supera los 11.000 suscriptores, he ayudado a CIENTOS de personas a construir y aprovechar la IA para resolver problemas del mundo real.
               </p>
 
               <p className="mb-6 text-gray-300 text-lg">
