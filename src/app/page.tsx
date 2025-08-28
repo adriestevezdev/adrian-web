@@ -11,7 +11,6 @@ import { NewsletterGifts } from "@/components/Newsletter/gifts/newsletter-gifts"
 import { NewsletterSkills } from "@/components/Newsletter/skills/newsletter-skills";
 import { NewsletterTestimonials } from "@/components/Newsletter/testimonials/newsletter-testimonials";
 import { NewsletterWaitlist } from "@/components/Newsletter/waitlist/newsletter-waitlist";
-import { MarqueeDemo } from "@/components/testimonials";
 
 export default function HomePage() {
   // Implementar scroll suave para los enlaces de anclaje y manejar hash en URL
@@ -103,13 +102,6 @@ export default function HomePage() {
       {/* Skills Section */}
       <NewsletterSkills />
 
-      {/* Testimonials Marquee */}
-      <section className="relative w-full overflow-hidden bg-[#0a0a0a] pt-4 pb-16">
-        <div className="absolute inset-0 flex items-center justify-center -z-10">
-          <div className="h-full w-full bg-gradient-to-r from-[#C9A880]/20 to-[#C9A880]/10 blur-[120px]" />
-        </div>
-        <MarqueeDemo />
-      </section>
 
       {/* Cursos IA Section */}
       <NewsletterCourses />

@@ -273,60 +273,6 @@ export function NewsletterCourses() {
           </div>
         </div>
 
-        {/* Testimonios de la Comunidad */}
-        <div className="mt-24">
-          <h3 className="text-2xl font-bold mb-3 text-center">
-            Testimonios de la <span className="bg-gradient-to-r from-[#C9A880] to-[#A78355] bg-clip-text text-transparent">Comunidad</span>
-          </h3>
-          <p className="text-gray-400 max-w-2xl mx-auto text-center mb-12">
-            Esto es lo que dicen algunos de los miembros sobre su experiencia.
-          </p>
-
-          {/* Avatares */}
-          <div className="flex justify-center items-center space-x-4 mb-12">
-            <Image src="/avatares/avatar1.webp" alt="Avatar 1" width={60} height={60} className="rounded-full border-2 border-[#C9A880]/50" />
-            <Image src="/avatares/avatar2.webp" alt="Avatar 2" width={80} height={80} className="rounded-full border-2 border-[#C9A880]" />
-            <Image src="/avatares/avatar3.webp" alt="Avatar 3" width={60} height={60} className="rounded-full border-2 border-[#C9A880]/50" />
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Testimonio 1 */}
-            <div className="bg-[#0c0c0c]/80 border border-[#C9A880]/20 rounded-xl p-6">
-              <p className="text-gray-300 mb-4">"Desde que me uní a la comunidad, he podido construir mi propio agente de IA para mi negocio. ¡Increíble!"</p>
-              <div className="flex items-center">
-                <Image src="/avatares/avatar1.webp" alt="Avatar 1" width={40} height={40} className="rounded-full" />
-                <div className="ml-4">
-                  <p className="font-bold">Ana García</p>
-                  <p className="text-sm text-gray-500">Fundadora de Startup</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Testimonio 2 */}
-            <div className="bg-[#0c0c0c]/80 border border-[#C9A880]/20 rounded-xl p-6">
-              <p className="text-gray-300 mb-4">"El contenido es súper actualizado y práctico. He aprendido más aquí en un mes que en un año de tutoriales."</p>
-              <div className="flex items-center">
-                <Image src="/avatares/avatar2.webp" alt="Avatar 2" width={40} height={40} className="rounded-full" />
-                <div className="ml-4">
-                  <p className="font-bold">Carlos Rodríguez</p>
-                  <p className="text-sm text-gray-500">Desarrollador Freelance</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Testimonio 3 */}
-            <div className="bg-[#0c0c0c]/80 border border-[#C9A880]/20 rounded-xl p-6">
-              <p className="text-gray-300 mb-4">"La comunidad es lo mejor. Siempre hay alguien dispuesto a ayudar y las sesiones en vivo son oro puro."</p>
-              <div className="flex items-center">
-                <Image src="/avatares/avatar3.webp" alt="Avatar 3" width={40} height={40} className="rounded-full" />
-                <div className="ml-4">
-                  <p className="font-bold">Sofía Martínez</p>
-                  <p className="text-sm text-gray-500">Emprendedora</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
 
         {/* Espaciador adicional para resolver el problema de color con el footer */}
         <div className="h-16"></div>
