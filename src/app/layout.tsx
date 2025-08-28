@@ -6,7 +6,7 @@ import "../styles/transitions.css";
 import { ClientScrollHandler } from '@/components/client-scroll-handler';
 
 export const metadata: Metadata = {
-  title: "Adrià Estévez",
+  title: "Desde Cero a App en 30 días",
   description: "Comunidad IA y Cursos",
 };
 
