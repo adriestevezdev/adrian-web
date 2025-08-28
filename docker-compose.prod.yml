@@ -36,7 +36,7 @@ services:
     labels:
       - "traefik.enable=true"
       # Frontend service - Principal domain
-      - "traefik.http.routers.nextjs.rule=Host(`adriaestevez.com`) || Host(`www.adriaestevez.com`)"
+      - "traefik.http.routers.nextjs.rule=Host(`arquitectos-ia.com`) || Host(`www.arquitectos-ia.com`)"
       - "traefik.http.routers.nextjs.entrypoints=websecure"
       - "traefik.http.routers.nextjs.tls.certresolver=letsencrypt"
       - "traefik.http.routers.nextjs.service=nextjs-service"
