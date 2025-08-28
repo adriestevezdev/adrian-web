@@ -82,7 +82,7 @@ export function NewsletterTestimonials() {
           
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
             {/* Avatar circles above testimonials */}
-            <div className="flex items-center justify-center mb-12">
+            <div className="flex items-center justify-center mb-4">
               <NewsletterAvatarCircles className="" />
             </div>
 
