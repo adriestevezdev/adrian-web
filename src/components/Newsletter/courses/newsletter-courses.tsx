@@ -251,12 +251,7 @@ export function NewsletterCourses() {
             />
 
             <FAQItem
-              question="¿Enseñas tecnologías que se usan DE VERDAD o solo teoría?"
-              answer="Te lo digo MUY claro: NO enseño teoría inútil. Cada tecnología y framework que incluyo está ACTUALMENTE siendo usado en la industria real. No pierdo tu tiempo (ni el mío) con herramientas obsoletas. Todo lo que aprenderás podrás aplicarlo INMEDIATAMENTE en proyectos reales, y son exactamente las mismas herramientas que están buscando las empresas que contratan."
-            />
-
-            <FAQItem
-              question="¿Mantienes el contenido ACTUALIZADO con los cambios de la IA?"
+              question="¿El contenido se mantiene ACTUALIZADO?"
               answer="Si hay algo que me OBSESIONA es mantener todo al día. La IA cambia cada semana, y me aseguro de que nuestro contenido refleje eso. No como otros cursos que grabaron hace 2 años y siguen vendiendo lo mismo. Actualizamos MENSUALMENTE con nuevos módulos y revisamos TODO el material existente para incorporar los últimos avances. Si compras hoy, tendrás acceso a TODAS las actualizaciones futuras."
             />
 
@@ -267,7 +262,7 @@ export function NewsletterCourses() {
 
             <FAQItem
               question="¿Y si me apunto y luego veo que NO es lo que esperaba?"
-              answer="Tranquilo. Lo tengo MUY CLARO: si no estás satisfecho, no quiero tu dinero. Por eso ofrezco una garantía COMPLETA de 5 días. Prueba el contenido, explora la comunidad, haz preguntas, y si después de todo eso sientes que no es para ti... te devuelvo TODO tu dinero sin hacer preguntas incómodas. Así de simple. Sin letra pequeña, sin excusas. No quiero que nadie se quede con algo que no le APORTA VALOR."
+              answer="Tranquilo. Lo tengo MUY CLARO: si no estás satisfecho, no quiero tu dinero. Por eso ofrezco una garantía COMPLETA de 14 días. Prueba el contenido, explora la comunidad, haz preguntas, y si después de todo eso sientes que no es para ti... te devuelvo TODO tu dinero sin hacer preguntas incómodas. Así de simple. Sin letra pequeña, sin excusas. No quiero que nadie se quede con algo que no le APORTA VALOR."
             />
 
             <FAQItem
@@ -275,6 +270,61 @@ export function NewsletterCourses() {
               answer="He creado un sistema de soporte MULTICAPA: 1) Acceso a la comunidad privada donde conectarás con otros estudiantes QUE ESTÁN HACIENDO LO MISMO que tú, 2) Sesiones grupales SEMANALES donde resolvemos dudas en directo, 3) La posibilidad de programar sesiones 1-a-1 de mentoría (sí, conmigo), y 4) Soporte técnico garantizado en menos de 24 HORAS para cualquier pregunta o problema. En resumen: NUNCA estarás solo en este viaje."
             />
 
+          </div>
+        </div>
+
+        {/* Testimonios de la Comunidad */}
+        <div className="mt-24">
+          <h3 className="text-2xl font-bold mb-3 text-center">
+            Testimonios de la <span className="bg-gradient-to-r from-[#C9A880] to-[#A78355] bg-clip-text text-transparent">Comunidad</span>
+          </h3>
+          <p className="text-gray-400 max-w-2xl mx-auto text-center mb-12">
+            Esto es lo que dicen algunos de los miembros sobre su experiencia.
+          </p>
+
+          {/* Avatares */}
+          <div className="flex justify-center items-center space-x-4 mb-12">
+            <Image src="/avatares/avatar1.webp" alt="Avatar 1" width={60} height={60} className="rounded-full border-2 border-[#C9A880]/50" />
+            <Image src="/avatares/avatar2.webp" alt="Avatar 2" width={80} height={80} className="rounded-full border-2 border-[#C9A880]" />
+            <Image src="/avatares/avatar3.webp" alt="Avatar 3" width={60} height={60} className="rounded-full border-2 border-[#C9A880]/50" />
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Testimonio 1 */}
+            <div className="bg-[#0c0c0c]/80 border border-[#C9A880]/20 rounded-xl p-6">
+              <p className="text-gray-300 mb-4">"Desde que me uní a la comunidad, he podido construir mi propio agente de IA para mi negocio. ¡Increíble!"</p>
+              <div className="flex items-center">
+                <Image src="/avatares/avatar1.webp" alt="Avatar 1" width={40} height={40} className="rounded-full" />
+                <div className="ml-4">
+                  <p className="font-bold">Ana García</p>
+                  <p className="text-sm text-gray-500">Fundadora de Startup</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Testimonio 2 */}
+            <div className="bg-[#0c0c0c]/80 border border-[#C9A880]/20 rounded-xl p-6">
+              <p className="text-gray-300 mb-4">"El contenido es súper actualizado y práctico. He aprendido más aquí en un mes que en un año de tutoriales."</p>
+              <div className="flex items-center">
+                <Image src="/avatares/avatar2.webp" alt="Avatar 2" width={40} height={40} className="rounded-full" />
+                <div className="ml-4">
+                  <p className="font-bold">Carlos Rodríguez</p>
+                  <p className="text-sm text-gray-500">Desarrollador Freelance</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Testimonio 3 */}
+            <div className="bg-[#0c0c0c]/80 border border-[#C9A880]/20 rounded-xl p-6">
+              <p className="text-gray-300 mb-4">"La comunidad es lo mejor. Siempre hay alguien dispuesto a ayudar y las sesiones en vivo son oro puro."</p>
+              <div className="flex items-center">
+                <Image src="/avatares/avatar3.webp" alt="Avatar 3" width={40} height={40} className="rounded-full" />
+                <div className="ml-4">
+                  <p className="font-bold">Sofía Martínez</p>
+                  <p className="text-sm text-gray-500">Emprendedora</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
