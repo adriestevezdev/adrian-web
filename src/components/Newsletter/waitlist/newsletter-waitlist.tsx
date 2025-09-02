@@ -16,7 +16,7 @@ export function NewsletterWaitlist() {
     <>
 
 
-      <section id="newsletter-form" className="relative pt-8 pb-16 mt-0 bg-[#080604] min-h-screen flex items-center justify-center">
+      <section id="newsletter-form" className="relative py-16 mt-0 bg-[#080604] min-h-screen flex items-center justify-center">
         {/* Animated Background */}
         <AnimatedBackground />
 
