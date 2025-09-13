@@ -107,19 +107,19 @@ const upcomingCourses = [
     id: 1,
     title: "Agentes de Conocimiento Avanzado",
     description: "Domina RAG, Memoria y técnicas avanzadas para construir potentes agentes de conocimiento.",
-    icon: <BookOpen className="h-10 w-10 text-white" />
+    icon: <BookOpen className="h-12 w-12 md:h-14 md:w-14 text-white" />
   },
   {
     id: 2,
     title: "Agentes IA para el Mundo Real",
     description: "Aprende a construir agentes IA para casos de uso específicos del mundo real y aplicaciones empresariales.",
-    icon: <Rocket className="h-10 w-10 text-white" />
+    icon: <Rocket className="h-12 w-12 md:h-14 md:w-14 text-white" />
   },
   {
     id: 3,
     title: "Inmersión en IA Local",
     description: "Guía completa para usar IA local para mayor privacidad, control y reducción de costes.",
-    icon: <Database className="h-10 w-10 text-white" />
+    icon: <Database className="h-12 w-12 md:h-14 md:w-14 text-white" />
   }
 ];
 
@@ -161,9 +161,9 @@ const FAQItem = ({ question, answer }: { question: string; answer: string }) => 
         onClick={() => setIsOpen(!isOpen)}
         aria-expanded={isOpen}
       >
-        <h4 className="text-lg font-medium">{question}</h4>
-        <div className="flex items-center justify-center w-8 h-8 rounded-full bg-black/40 border border-[#C9A880]/30 text-[#C9A880]">
-          {isOpen ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
+        <h4 className="text-lg md:text-xl font-medium">{question}</h4>
+        <div className="flex items-center justify-center w-10 h-10 md:w-12 md:h-12 rounded-full bg-black/40 border border-[#C9A880]/30 text-[#C9A880]">
+          {isOpen ? <ChevronUp size={24} /> : <ChevronDown size={24} />}
         </div>
       </button>
 
@@ -171,7 +171,7 @@ const FAQItem = ({ question, answer }: { question: string; answer: string }) => 
         className={`mt-3 text-gray-400 overflow-hidden transition-all duration-300 ${isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
           }`}
       >
-        <p className="pb-2">{answer}</p>
+        <p className="pb-2 text-sm md:text-base">{answer}</p>
       </div>
     </div>
   );
@@ -180,22 +180,22 @@ const FAQItem = ({ question, answer }: { question: string; answer: string }) => 
 // Componente para cada módulo del curso
 const ModuleCard = ({ module }: { module: typeof courseModules[0] }) => {
   return (
-    <div className="bg-[#0a0a0a] border border-[#C9A880]/20 hover:border-[#C9A880]/40 rounded-xl p-6 transition-all duration-300">
+    <div className="bg-[#0a0a0a] border-2 border-[#C9A880]/20 hover:border-[#C9A880]/40 rounded-xl p-8 md:p-10 transition-all duration-300">
       <div className="flex items-start space-x-4">
         <div className="bg-black/60 rounded-lg p-3 border border-[#C9A880]/20">
           {module.icon}
         </div>
         <div className="flex-1">
           <div className="flex items-center justify-between mb-3">
-            <div className="bg-[#131313] px-3 py-1 rounded-full text-xs">
+            <div className="bg-[#131313] px-4 py-2 rounded-full text-sm md:text-base">
               Módulo {module.id}
             </div>
-            <div className={`text-xs px-3 py-1 rounded-full ${module.available ? 'bg-[#C9A880]/20 text-[#C9A880]' : 'bg-gray-800/30 text-gray-400'}`}>
+            <div className={`text-sm md:text-base px-4 py-2 rounded-full ${module.available ? 'bg-[#C9A880]/20 text-[#C9A880]' : 'bg-gray-800/30 text-gray-400'}`}>
               {module.available ? 'Disponible en Lanzamiento' : 'Próximamente'}
             </div>
           </div>
-          <h3 className="text-lg font-bold mb-2">{module.title}</h3>
-          <p className="text-sm text-gray-400">{module.description}</p>
+          <h3 className="text-xl md:text-2xl font-bold mb-3">{module.title}</h3>
+          <p className="text-base md:text-lg text-gray-400">{module.description}</p>
         </div>
       </div>
     </div>
@@ -205,15 +205,15 @@ const ModuleCard = ({ module }: { module: typeof courseModules[0] }) => {
 // Componente para cursos próximos
 const UpcomingCourseCard = ({ course }: { course: typeof upcomingCourses[0] }) => {
   return (
-    <div className="bg-[#0a0a0a] border border-[#C9A880]/20 hover:border-[#C9A880]/40 rounded-xl p-8 transition-all duration-300 flex flex-col h-full">
+    <div className="bg-[#0a0a0a] border-2 border-[#C9A880]/20 hover:border-[#C9A880]/40 rounded-xl p-10 md:p-12 transition-all duration-300 flex flex-col h-full">
       <div className="flex-1 flex flex-col items-center justify-center text-center pt-4">
-        <div className="bg-black/60 rounded-full p-5 mb-6 w-20 h-20 flex items-center justify-center border border-[#C9A880]/20 mt-4">
+        <div className="bg-black/60 rounded-full p-6 mb-8 w-24 h-24 md:w-28 md:h-28 flex items-center justify-center border-2 border-[#C9A880]/20 mt-4">
           <div className="flex items-center justify-center">
             {course.icon}
           </div>
         </div>
-        <h3 className="text-xl font-bold mb-4">{course.title}</h3>
-        <p className="text-sm text-gray-400">{course.description}</p>
+        <h3 className="text-2xl md:text-3xl font-bold mb-6">{course.title}</h3>
+        <p className="text-base md:text-lg lg:text-xl text-gray-400">{course.description}</p>
       </div>
     </div>
   );
@@ -221,25 +221,25 @@ const UpcomingCourseCard = ({ course }: { course: typeof upcomingCourses[0] }) =
 
 export function NewsletterCourses() {
   return (
-    <section className="relative py-24 pb-36 bg-[#0a0a0a]">
+    <section className="relative py-32 pb-44 bg-[#0a0a0a]">
       {/* Fondos con gradientes */}
       <div className="absolute inset-0 flex items-center justify-center -z-10">
         <div className="h-full w-full bg-gradient-to-r from-[#C9A880]/20 to-[#C9A880]/10 blur-[120px]" />
       </div>
 
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-6 md:px-8">
 
 
         {/* Preguntas Frecuentes */}
-        <div className="mt-24">
-          <h3 className="text-2xl font-bold mb-3 text-center">
+        <div className="mt-32">
+          <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-6 text-center">
             Las Dudas que TODOS <span className="bg-gradient-to-r from-[#C9A880] to-[#A78355] bg-clip-text text-transparent">Me Preguntan</span>
           </h3>
-          <p className="text-gray-400 max-w-2xl mx-auto text-center mb-12">
+          <p className="text-gray-400 text-base md:text-lg max-w-3xl mx-auto text-center mb-16">
             Estas son las preguntas que me hacen a diario y aquí tienes las respuestas SIN FILTROS.
           </p>
 
-          <div className="max-w-3xl mx-auto bg-[#0c0c0c]/80 border border-[#C9A880]/20 rounded-xl p-6">
+          <div className="max-w-4xl mx-auto bg-[#0c0c0c]/80 border-2 border-[#C9A880]/20 rounded-2xl p-8 md:p-10">
             <FAQItem
               question="¿NECESITO conocimientos previos para empezar?"
               answer="NO necesitas experiencia previa en IA. Mi módulo de introducción está pensado para CUALQUIER nivel. Pero ojo, si ya tienes nociones básicas de programación, avanzarás MÁS RÁPIDO. Lo importante es que tengas GANAS DE APRENDER, el resto lo ponemos nosotros."

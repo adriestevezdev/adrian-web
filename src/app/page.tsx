@@ -107,7 +107,7 @@ export default function HomePage() {
       <NewsletterCourses />
 
       {/* Spacer */}
-      <div className="h-4 bg-[#0a0a0a]"></div>
+      <div className="h-8 md:h-12 bg-[#0a0a0a]"></div>
 
       {/* Footer */}
       <Footer />

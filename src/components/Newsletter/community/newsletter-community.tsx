@@ -30,11 +30,11 @@ export function NewsletterCommunity() {
           <AnimatedButton>¿Para quién es esto?</AnimatedButton>
         </div>
 
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-6 text-white">
+        <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-6 text-white">
           La Comunidad para <span className="bg-gradient-to-r from-[#C9A880] to-[#A78355] bg-clip-text text-transparent">Ti</span>
         </h2>
 
-        <p className="text-gray-300 text-center max-w-3xl mx-auto mb-12">
+        <p className="text-base md:text-lg text-gray-300 text-center max-w-3xl mx-auto mb-12">
           Esta comunidad NO es para todo el mundo.
           Si buscas teoría, certificados bonitos o promesas vacías... este NO es tu sitio.
           Pero si quieres RESULTADOS TANGIBLES, sigue leyendo.
@@ -52,10 +52,10 @@ export function NewsletterCommunity() {
             >
               <div className="flex flex-col h-full">
                 {target.icon}
-                <h3 className="text-xl font-bold mb-4 text-white transition-colors duration-300 group-hover:text-[#C9A880]">
+                <h3 className="text-lg md:text-xl font-bold mb-4 text-white transition-colors duration-300 group-hover:text-[#C9A880]">
                   {target.title}
                 </h3>
-                <p className="text-gray-300 text-sm leading-relaxed">
+                <p className="text-gray-300 text-sm md:text-base leading-relaxed">
                   {target.content}
                 </p>
               </div>

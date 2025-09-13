@@ -94,14 +94,14 @@ export function NewsletterTestimonials() {
               viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <div className="text-[#C9A880] font-semibold mb-2">Testimonios de la Comunidad</div>
-              <h2 className="text-4xl md:text-5xl font-bold mb-4 max-w-4xl mx-auto leading-tight">
+              <div className="text-[#C9A880] font-semibold text-base mb-2">Testimonios de la Comunidad</div>
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 max-w-4xl mx-auto leading-tight">
                 <span className="text-white">Personas No Técnicas Que Ahora </span>
                 <span className="bg-gradient-to-r from-[#C9A880] via-[#D4B896] to-[#C9A880] bg-clip-text text-transparent">
                   Construyen Apps Reales
                 </span>
               </h2>
-              <p className="text-white/70 text-lg">
+              <p className="text-white/70 text-lg md:text-xl">
                 97% de nuestros estudiantes de la comunidad dicen: "Debería haber empezado antes"
               </p>
             </motion.div>

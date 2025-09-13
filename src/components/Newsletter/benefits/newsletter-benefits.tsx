@@ -44,7 +44,7 @@ export function NewsletterBenefits() {
           <AnimatedButton>Beneficios de la Comunidad</AnimatedButton>
         </div>
 
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-white">
+        <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-12 text-white">
           Lo que vas a conseguir (y NO es poca cosa) al unirte a <span className="bg-gradient-to-r from-[#C9A880] to-[#A78355] bg-clip-text text-transparent">nuestra comunidad</span>
         </h2>
 
@@ -60,10 +60,10 @@ export function NewsletterBenefits() {
             >
               <div className="flex flex-col h-full">
                 {benefit.icon}
-                <h3 className="text-xl font-bold mb-4 text-white transition-colors duration-300 group-hover:text-[#C9A880]">
+                <h3 className="text-lg md:text-xl font-bold mb-4 text-white transition-colors duration-300 group-hover:text-[#C9A880]">
                   {benefit.title}
                 </h3>
-                <div className="space-y-4 text-gray-300 text-sm leading-relaxed flex-grow">
+                <div className="space-y-4 text-gray-300 text-sm md:text-base leading-relaxed flex-grow">
                   {benefit.content.map((paragraph, i) => (
                     <p key={i}>{paragraph}</p>
                   ))}

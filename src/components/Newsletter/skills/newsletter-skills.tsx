@@ -50,37 +50,37 @@ export function NewsletterSkills() {
   ];
 
   return (
-    <section className="py-16 pb-12 bg-black">
-      <div className="max-w-6xl mx-auto px-4">
+    <section className="py-24 pb-20 bg-black">
+      <div className="max-w-7xl mx-auto px-6 md:px-8">
         {/* What You'll Learn Section - Mantener el diseño minimalista actual */}
-        <div className="mb-24">
+        <div className="mb-32">
           <div className="flex justify-center mb-6">
-            <div className="rounded-full bg-black border border-[#333] px-4 py-1.5">
-              <span className="text-sm text-white font-medium">Desarrolla Habilidades FUNDAMENTALES</span>
+            <div className="rounded-full bg-black border border-[#333] px-6 py-3">
+              <span className="text-base md:text-lg text-white font-medium">Desarrolla Habilidades FUNDAMENTALES</span>
             </div>
           </div>
 
-          <h2 className="text-3xl md:text-5xl font-bold text-center mb-6">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-10">
             Lo Que <span className="text-[#C9A880]">Aprenderás</span>
           </h2>
 
-          <p className="text-gray-400 text-center max-w-3xl mx-auto mb-12">
+          <p className="text-gray-400 text-base md:text-lg text-center max-w-4xl mx-auto mb-16">
             Nuestro currículum NO es teórico. Todo lo que enseñamos es fruto de EXPERIENCIA REAL
             y está documentado con RESULTADOS REALES. Aquí no vendemos humo.
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
             {skillTopics.map((skill, index) => (
               <div
                 key={index}
-                className="bg-[#0a0a0a] border border-[#222] hover:border-[#333] rounded-xl p-4 transition-colors duration-300 flex items-center"
+                className="bg-[#0a0a0a] border-2 border-[#222] hover:border-[#333] rounded-xl p-6 md:p-8 transition-colors duration-300 flex items-center"
               >
                 <div className="mr-3 flex-shrink-0">
-                  <div className="bg-[#1c1c1c] rounded-full p-1.5">
-                    <Check className="h-4 w-4 text-[#C9A880]" />
+                  <div className="bg-[#1c1c1c] rounded-full p-2.5">
+                    <Check className="h-6 w-6 md:h-7 md:w-7 text-[#C9A880]" />
                   </div>
                 </div>
-                <span className="text-white text-sm">{skill}</span>
+                <span className="text-white text-sm md:text-base">{skill}</span>
               </div>
             ))}
           </div>
@@ -88,29 +88,29 @@ export function NewsletterSkills() {
 
         {/* Why These Skills Matter Section - Restaurar el diseño con MagicCard */}
         <div>
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-6 text-white">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-10 text-white">
             Por Qué Estas <span className="bg-gradient-to-r from-[#C9A880] to-[#A78355] bg-clip-text text-transparent">Habilidades Importan</span>
           </h2>
 
-          <p className="text-gray-300 text-center max-w-3xl mx-auto mb-12">
+          <p className="text-gray-300 text-base md:text-lg text-center max-w-4xl mx-auto mb-16">
             La demanda de experiencia en IA está creciendo rápidamente en TODAS las industrias y quien no se adapte quedará FUERA del mercado.
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
             {stats.map((stat, index) => (
               <MagicCard
                 key={index}
-                className="cursor-pointer p-6 h-auto flex flex-col text-left"
+                className="cursor-pointer p-8 md:p-10 h-auto flex flex-col text-left"
                 gradientSize={300}
                 gradientColor={theme === "dark" ? "#262626" : "#D9D9D955"}
                 gradientFrom="#C9A880"
                 gradientTo="#A78355"
               >
                 <div className="flex flex-col h-full">
-                  <h3 className="text-3xl font-bold text-[#C9A880] mb-3 group-hover:text-white transition-colors duration-300">
+                  <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#C9A880] mb-5 group-hover:text-white transition-colors duration-300">
                     {stat.percentage}
                   </h3>
-                  <p className="text-white mb-4 text-sm md:text-base">
+                  <p className="text-white mb-6 text-sm md:text-base">
                     {stat.text}
                   </p>
 
@@ -118,10 +118,10 @@ export function NewsletterSkills() {
                     href={stat.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center text-[#C9A880]/70 text-sm mt-auto hover:text-[#C9A880] transition-colors"
+                    className="flex items-center text-[#C9A880]/70 text-base md:text-lg mt-auto hover:text-[#C9A880] transition-colors"
                   >
                     <span>{stat.source}</span>
-                    <ExternalLink className="h-3.5 w-3.5 ml-1.5" />
+                    <ExternalLink className="h-5 w-5 md:h-6 md:w-6 ml-2" />
                   </a>
                 </div>
               </MagicCard>

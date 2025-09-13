@@ -63,41 +63,41 @@ export function EmailPopup({ isOpen, onClose, utmSource = "popup", utmMedium = "
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm">
-      <div className="relative bg-[#0a0a0a] border border-[#C9A880]/30 rounded-2xl p-8 max-w-md w-full mx-4 shadow-2xl">
+      <div className="relative bg-[#0a0a0a] border-2 border-[#C9A880]/30 rounded-3xl p-10 md:p-12 max-w-lg md:max-w-xl w-full mx-4 shadow-2xl">
         {/* Close button */}
         <button
           onClick={onClose}
           className="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors"
         >
-          <X className="w-6 h-6" />
+          <X className="w-8 h-8" />
         </button>
 
         {(isSuccess || isAlreadySubscribed) ? (
           <div className="text-center">
-            <div className="w-16 h-16 bg-[#C9A880]/20 rounded-full flex items-center justify-center mx-auto mb-4">
-              <Mail className="w-8 h-8 text-[#C9A880]" />
+            <div className="w-20 h-20 md:w-24 md:h-24 bg-[#C9A880]/20 rounded-full flex items-center justify-center mx-auto mb-6">
+              <Mail className="w-10 h-10 md:w-12 md:h-12 text-[#C9A880]" />
             </div>
-            <h3 className="text-2xl font-bold mb-2 text-white">
+            <h3 className="text-3xl md:text-4xl font-bold mb-4 text-white">
               {isAlreadySubscribed ? "¡Ya estás en la lista!" : "¡Estás en la lista!"}
             </h3>
-            <p className="text-gray-400">
+            <p className="text-gray-400 text-lg md:text-xl">
               {isAlreadySubscribed 
-                ? "Tu email ya estaba registrado. Te notificaremos el 15 de Septiembre cuando abramos nuevas plazas."
-                : "Te notificaré el 15 de Septiembre cuando abramos nuevas plazas."
+                ? "Tu email ya estaba registrado. Te notificaremos el 29 de Septiembre cuando abramos nuevas plazas."
+                : "Te notificaré el 29 de Septiembre cuando abramos nuevas plazas."
               }
             </p>
           </div>
         ) : (
           <>
             <div className="text-center mb-6">
-              <div className="w-16 h-16 bg-[#C9A880]/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Mail className="w-8 h-8 text-[#C9A880]" />
+              <div className="w-20 h-20 md:w-24 md:h-24 bg-[#C9A880]/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                <Mail className="w-10 h-10 md:w-12 md:h-12 text-[#C9A880]" />
               </div>
-              <h3 className="text-2xl font-bold mb-2 text-white">
-                Bootcamp IA - 15 Septiembre
+              <h3 className="text-3xl md:text-4xl font-bold mb-4 text-white">
+                Bootcamp IA - 29 Septiembre
               </h3>
-              <p className="text-gray-400 text-sm">
-                Únete al bootcamp para desarrollar con Inteligencia Artificial. Comienza el 15 de Septiembre.
+              <p className="text-gray-400 text-base md:text-lg">
+                Únete al bootcamp para desarrollar con Inteligencia Artificial. Comienza el 29 de Septiembre.
               </p>
             </div>
 
@@ -108,22 +108,22 @@ export function EmailPopup({ isOpen, onClose, utmSource = "popup", utmMedium = "
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="tu@email.com"
-                  className="w-full px-4 py-3 bg-black/40 border border-[#C9A880]/20 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-[#C9A880]/50 focus:bg-black/60 transition-all"
+                  className="w-full px-5 py-4 md:py-5 bg-black/40 border-2 border-[#C9A880]/20 rounded-xl text-lg md:text-xl text-white placeholder-gray-500 focus:outline-none focus:border-[#C9A880]/50 focus:bg-black/60 transition-all"
                   required
                 />
               </div>
 
               {error && (
-                <p className="text-red-400 text-sm text-center">{error}</p>
+                <p className="text-red-400 text-base md:text-lg text-center">{error}</p>
               )}
 
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-gradient-to-r from-[#C9A880] to-[#A78355] hover:from-[#CEB089] hover:to-[#B08A5A] hover:scale-[1.02] hover:shadow-md text-black font-medium py-3 rounded-lg disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center space-x-2 transition-all duration-500 ease-out"
+                className="w-full bg-gradient-to-r from-[#C9A880] to-[#A78355] hover:from-[#CEB089] hover:to-[#B08A5A] hover:scale-[1.02] hover:shadow-md text-black font-medium py-4 md:py-5 text-lg md:text-xl rounded-xl disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center space-x-3 transition-all duration-500 ease-out"
               >
                 <span>{isSubmitting ? "Enviando..." : "Unirme a la lista de espera"}</span>
-                {!isSubmitting && <ArrowRight className="w-4 h-4" />}
+                {!isSubmitting && <ArrowRight className="w-5 h-5 md:w-6 md:h-6" />}
               </button>
             </form>
           </>

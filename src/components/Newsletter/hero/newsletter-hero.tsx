@@ -333,13 +333,13 @@ export function NewsletterHero() {
               <Logo width={70} height={70} className="h-16 w-auto" />
             </div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-7 text-white leading-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 text-white leading-tight">
               <span className="bg-gradient-to-r from-[#C9A880] to-[#A78355] bg-clip-text text-transparent">Domina la IA:</span><br />
               Tu Ventaja Definitiva<br />
               <span className="text-[#C9A880]">Sobre los Demás</span>
             </h1>
 
-            <p className="text-white/90 text-lg mb-10 max-w-xl">
+            <p className="text-white/90 text-lg md:text-xl mb-10 max-w-xl">
               Únete a la comunidad #1 donde aprenderás a dominar los Agentes IA y transformarás por completo tu negocio y carrera profesional mientras los demás se quedan estancados.
             </p>
 
@@ -353,7 +353,7 @@ export function NewsletterHero() {
                       element.scrollIntoView({ behavior: 'smooth' });
                     }
                   }}
-                  className="px-7 py-3 text-base cursor-pointer"
+                  className="px-8 py-4 text-base md:text-lg cursor-pointer"
                 >
                   <span className="flex items-center">
                     QUIERO UNIRME
@@ -365,7 +365,7 @@ export function NewsletterHero() {
               </div>
 
               <Link href="#benefits">
-                <button className="border border-[#C9A880]/50 hover:border-[#C9A880] text-white font-medium py-3 px-7 rounded-xl text-base transition-all duration-300">
+                <button className="border border-[#C9A880]/50 hover:border-[#C9A880] text-white font-medium py-4 px-8 rounded-xl text-base md:text-lg transition-all duration-300">
                   Ver los beneficios
                 </button>
               </Link>
@@ -432,7 +432,7 @@ export function NewsletterHero() {
                   </button>
 
                   {/* Current time */}
-                  <span className="text-white text-xs mr-2 font-medium">
+                  <span className="text-white text-sm md:text-base mr-3 font-medium">
                     {formatTime(currentTime)}
                   </span>
 
@@ -453,7 +453,7 @@ export function NewsletterHero() {
                   </div>
 
                   {/* Duration */}
-                  <span className="text-white text-xs ml-2 mr-2 font-medium">
+                  <span className="text-white text-sm md:text-base ml-3 mr-3 font-medium">
                     {formatTime(duration)}
                   </span>
 
@@ -465,7 +465,7 @@ export function NewsletterHero() {
                       onClick={toggleCaptions}
                       aria-label={showCaptions ? "Desactivar subtítulos" : "Activar subtítulos"}
                     >
-                      <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 md:h-7 md:w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                         <rect x="2" y="6" width="20" height="12" rx="2" ry="2"></rect>
                         <path d="M7 12h2"></path>
                         <path d="M11 12h6"></path>
@@ -481,19 +481,19 @@ export function NewsletterHero() {
                         aria-label={isMuted ? "Activar sonido" : "Silenciar"}
                       >
                         {isMuted ? (
-                          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 md:h-7 md:w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                             <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
                             <line x1="23" y1="9" x2="17" y2="15"></line>
                             <line x1="17" y1="9" x2="23" y2="15"></line>
                           </svg>
                         ) : volume > 0.5 ? (
-                          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 md:h-7 md:w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                             <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
                             <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
                             <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
                           </svg>
                         ) : (
-                          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 md:h-7 md:w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                             <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
                             <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
                           </svg>
@@ -560,11 +560,11 @@ export function NewsletterHero() {
                       aria-label={isFullscreen ? "Salir de pantalla completa" : "Pantalla completa"}
                     >
                       {isFullscreen ? (
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 md:h-7 md:w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                           <path d="M8 3v3a2 2 0 0 1-2 2H3m18 0h-3a2 2 0 0 1-2-2V3m0 18v-3a2 2 0 0 1 2-2h3M3 16h3a2 2 0 0 1 2 2v3"></path>
                         </svg>
                       ) : (
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 md:h-7 md:w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                           <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path>
                         </svg>
                       )}
@@ -647,18 +647,18 @@ export function NewsletterHero() {
         {/* Contenido */}
         <div className="relative z-20 text-center px-6 max-w-4xl mx-auto">
           {/* Banner de "Spots limitados" destacado - Con estilo de la plataforma */}
-          <div className="inline-flex items-center justify-center px-6 py-2.5 bg-gradient-to-r from-[#C9A880] to-[#A78355] text-black rounded-full font-medium text-sm mb-8 mx-auto shadow-lg border border-[#C9A880]/30">
+          <div className="inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-[#C9A880] to-[#A78355] text-black rounded-full font-medium text-sm md:text-base mb-8 mx-auto shadow-lg border border-[#C9A880]/30">
             <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-2" viewBox="0 0 20 20" fill="currentColor">
               <path fillRule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clipRule="evenodd" />
             </svg>
             ¡OJO! SOLO 50 PLAZAS PARA MIEMBROS FUNDADORES
           </div>
 
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 text-white">
             Únete a la <span className="bg-gradient-to-r from-[#C9A880] to-[#A78355] bg-clip-text text-transparent">waitlist</span>
           </h1>
 
-          <p className="text-white/80 max-w-2xl mx-auto mb-10">
+          <p className="text-white/80 text-base md:text-lg max-w-2xl mx-auto mb-12">
             <span className="text-[#C9A880] font-medium">Conviértete en miembro fundador</span> de nuestra Comunidad de Arquitectos IA y bloquea tu precio especial de early adopter ¡para siempre! 🔥
 
             <br /><br />
@@ -709,15 +709,15 @@ export function NewsletterHero() {
                   checked={accepted}
                   onChange={() => setAccepted(!accepted)}
                 />
-                <div className={`w-5 h-5 rounded border transition-all duration-300 ${accepted ? 'bg-[#C9A880] border-[#C9A880]' : 'border-[#C9A880]/40 bg-black/30'} flex items-center justify-center`}>
+                <div className={`w-6 h-6 md:w-7 md:h-7 rounded border transition-all duration-300 ${accepted ? 'bg-[#C9A880] border-[#C9A880]' : 'border-[#C9A880]/40 bg-black/30'} flex items-center justify-center`}>
                   {accepted && (
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-3.5 w-3.5 text-black" viewBox="0 0 20 20" fill="currentColor">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 md:h-5 md:w-5 text-black" viewBox="0 0 20 20" fill="currentColor">
                       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                     </svg>
                   )}
                 </div>
               </div>
-              <label htmlFor="privacy" className="text-base text-white/90 cursor-pointer">
+              <label htmlFor="privacy" className="text-lg md:text-xl text-white/90 cursor-pointer">
                 He leído y acepto la <Link href="#" className="text-[#C9A880] hover:underline font-medium">política de cookies</Link> y <Link href="#" className="text-[#C9A880] hover:underline font-medium">privacidad</Link>.
               </label>
             </div>
@@ -735,7 +735,7 @@ export function NewsletterHero() {
                   <RainbowButtonDemo
                     onClick={handleSubmit}
                     disabled={isSubmitting}
-                    className="w-full py-3.5 transform transition-transform hover:scale-[1.01] active:scale-[0.99]"
+                    className="w-full py-4 transform transition-transform hover:scale-[1.01] active:scale-[0.99]"
                   >
                     <span className="text-lg font-medium flex items-center justify-center">
                       {isSubmitting ? (
@@ -748,7 +748,7 @@ export function NewsletterHero() {
                         </>
                       ) : (
                         <>
-                          <span className="text-xs sm:text-sm md:text-base">¡QUIERO SER MIEMBRO FUNDADOR!</span>
+                          <span className="text-sm sm:text-base md:text-lg">¡QUIERO SER MIEMBRO FUNDADOR!</span>
                           <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
                             <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
                           </svg>
@@ -757,7 +757,7 @@ export function NewsletterHero() {
                     </span>
                   </RainbowButtonDemo>
                   <div className="px-4 py-3 bg-[#C9A880]/10 rounded-lg border border-[#C9A880]/20">
-                    <p className="text-xs text-[#C9A880] text-center font-medium">
+                    <p className="text-sm md:text-base lg:text-lg text-[#C9A880] text-center font-medium">
                       Acceso prioritario · Recursos EXCLUSIVOS · Precio especial GARANTIZADO para siempre
                     </p>
                   </div>
