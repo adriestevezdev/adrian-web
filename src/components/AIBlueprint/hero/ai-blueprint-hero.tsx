@@ -54,7 +54,7 @@ export function AIPlantillaHero() {
               </div>
             ))}
           </div>
-          <span className="text-gray-400 text-sm ml-3">Únete a +40 emprendedores sin experiencia técnica</span>
+          <span className="text-gray-400 text-sm ml-3">Únete a +60 emprendedores sin experiencia técnica</span>
         </motion.div>
 
         {/* Main headline */}

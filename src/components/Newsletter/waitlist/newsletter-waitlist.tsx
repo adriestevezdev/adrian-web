@@ -38,7 +38,7 @@ export function NewsletterWaitlist() {
           {/* Subtitle */}
           <p className="text-white/70 text-lg md:text-xl max-w-4xl mx-auto mb-12 font-light">
             El plan paso a paso que convierte principiantes en arquitectos de la inteligencia artificial.<br />
-            Comienza a construir conmigo y otros +40 estudiantes.
+            Comienza a construir conmigo y otros +60 estudiantes.
           </p>
 
           {/* Single prominent CTA button */}

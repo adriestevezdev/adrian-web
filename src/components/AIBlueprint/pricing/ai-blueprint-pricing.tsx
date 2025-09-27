@@ -40,7 +40,7 @@ export function AIPlantillaPricing() {
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             <span className="text-white">Únete a </span>
             <span className="bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 bg-clip-text text-transparent">
-              +40 Emprendedores
+              +60 Emprendedores
             </span>
             <br />
             <span className="text-white">Ya Construyendo Apps</span>

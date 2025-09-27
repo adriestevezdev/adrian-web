@@ -122,7 +122,7 @@ export function AIPlantillaTestimonials() {
         {/* CTA Button */}
         <div className="text-center mt-16">
           <button className="bg-blue-600 hover:bg-blue-700 text-white px-12 py-6 rounded-xl font-bold text-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-blue-500/25">
-            Únete a +40 Estudiantes
+            Únete a +60 Estudiantes
           </button>
         </div>
       </div>
