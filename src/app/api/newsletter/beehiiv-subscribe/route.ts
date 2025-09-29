@@ -36,7 +36,7 @@ export async function POST(request: Request) {
     const requestData = {
       ...subscriberData,
       reactivate_existing: subscriberData.reactivate_existing ?? true, // Reactivar suscriptores que se dieron de baja
-      send_welcome_email: subscriberData.send_welcome_email ?? true, // Enviar email de bienvenida para confirmar
+      send_welcome_email: subscriberData.send_welcome_email ?? false, // No enviar email de bienvenida
     };
 
     // Realizar la solicitud a la API de Beehiiv

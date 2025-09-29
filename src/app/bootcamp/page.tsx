@@ -1,0 +1,116 @@
+"use client";
+
+import { useEffect } from "react";
+
+import { Footer } from "@/components/footer-component";
+import { NewsletterBenefits } from "@/components/Newsletter/benefits/newsletter-benefits";
+import { NewsletterCommunity } from "@/components/Newsletter/community/newsletter-community";
+import { NewsletterCourses } from "@/components/Newsletter/courses/newsletter-courses";
+import { NewsletterGifts } from "@/components/Newsletter/gifts/newsletter-gifts";
+// import { NewsletterPricing } from "@/components/Newsletter/pricing/newsletter-pricing"; // Temporalmente comentada
+import { NewsletterSkills } from "@/components/Newsletter/skills/newsletter-skills";
+import { NewsletterTestimonials } from "@/components/Newsletter/testimonials/newsletter-testimonials";
+import { NewsletterWaitlist } from "@/components/Newsletter/waitlist/newsletter-waitlist";
+
+export default function HomePage() {
+  // Implementar scroll suave para los enlaces de anclaje y manejar hash en URL
+  useEffect(() => {
+    // Función para hacer scroll a un elemento
+    const scrollToElement = (elementId: string) => {
+      const element = document.getElementById(elementId);
+      if (element) {
+        const rect = element.getBoundingClientRect();
+        const absoluteTop = rect.top + window.scrollY;
+        window.scrollTo({
+          top: absoluteTop - 100, // Offset para que no quede pegado al borde superior
+          behavior: 'smooth'
+        });
+      }
+    };
+
+    // Manejar clics en enlaces de anclaje
+    const handleAnchorClick = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      const anchor = target.closest('a');
+
+      if (anchor && anchor.getAttribute('href')?.startsWith('#')) {
+        e.preventDefault();
+        const targetId = anchor.getAttribute('href')?.replace('#', '');
+        if (targetId) {
+          scrollToElement(targetId);
+          // Actualizar URL sin recargar
+          history.pushState(null, '', `#${targetId}`);
+        }
+      }
+    };
+
+    document.addEventListener('click', handleAnchorClick);
+
+    // Manejar hash en URL al cargar
+    const handleInitialHash = () => {
+      // Restaurar scroll normal primero
+      document.body.style.overflow = '';
+
+      const hash = window.location.hash;
+      if (hash) {
+        // Dar tiempo a que se renderice todo
+        setTimeout(() => {
+          const targetId = hash.replace('#', '');
+          scrollToElement(targetId);
+        }, 500);
+      }
+    };
+
+    // Asegurar que al cargar la página, solo se vea la sección hero inicialmente
+    document.body.style.overflow = 'hidden';
+
+    // Después de un tiempo, restaurar el scroll y manejar hash si existe
+    const timer = setTimeout(handleInitialHash, 800);
+
+    return () => {
+      document.removeEventListener('click', handleAnchorClick);
+      document.body.style.overflow = '';
+      clearTimeout(timer);
+    };
+  }, []);
+
+  return (
+    <div className="min-h-screen bg-black text-white">
+      {/* Waitlist Form - First thing visitors see */}
+      <NewsletterWaitlist />
+
+      {/* Pricing Section - Temporalmente oculta */}
+      {/* <div className="relative">
+        <div className="absolute inset-0 bg-[#080604] z-0"></div>
+        <NewsletterPricing />
+      </div> */}
+
+      {/* Testimonials with Images Section */}
+      <NewsletterTestimonials />
+
+      {/* Free Gifts Section */}
+      <NewsletterGifts />
+
+      {/* Benefits Section */}
+      <section id="benefits" className="mt-0 bg-[#0a0a0a]">
+        <NewsletterBenefits />
+      </section>
+
+      {/* Community Section */}
+      <NewsletterCommunity />
+
+      {/* Skills Section */}
+      <NewsletterSkills />
+
+
+      {/* Cursos IA Section */}
+      <NewsletterCourses />
+
+      {/* Spacer */}
+      <div className="h-8 md:h-12 bg-[#0a0a0a]"></div>
+
+      {/* Footer */}
+      <Footer />
+    </div>
+  );
+}
