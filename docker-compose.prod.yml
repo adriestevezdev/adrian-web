@@ -26,7 +26,6 @@ services:
       - traefik.http.routers.redirect-skool.entrypoints=web,websecure
       - traefik.http.routers.redirect-skool.tls.certresolver=letsencrypt
       - traefik.http.routers.redirect-skool.middlewares=skool-redirect
-      - traefik.http.routers.redirect-skool.service=noop@internal
 
       # Middleware: 301 permanente a Skool
       - traefik.http.middlewares.skool-redirect.redirectregex.regex=^https?://(www\.)?arquitectos-ia\.com/?(.*)
