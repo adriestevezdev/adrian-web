@@ -126,8 +126,8 @@ export function NewsletterForm() {
 
       {submitted ? (
         <div className="p-4 bg-green-500/20 rounded-lg">
-          <p className="text-green-400 font-medium">¡GENIAL! Revisa tu email en los próximos 5 minutos para confirmar tu consultoría.</p>
-          <p className="text-sm text-gray-300 mt-2">Si no ves nada, comprueba tu carpeta de spam (a veces pasa).</p>
+          <p className="text-green-400 font-medium">✅ Correo enviado. Revisa tu bandeja de entrada.</p>
+          <p className="text-sm text-gray-300 mt-2">Por si acaso, <strong>comprueba spam</strong>.</p>
         </div>
       ) : (
         <form onSubmit={handleSubmit} className="flex flex-col gap-2 max-w-lg mx-auto">

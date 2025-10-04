@@ -79,12 +79,12 @@ export default function ClaudeCodeTipsPage() {
             <div className="max-w-md mx-auto">
               <div className="bg-[#2a2a2a] border-2 border-[#FF6B35]/30 rounded-lg p-8">
                 <h3 className="text-2xl font-bold mb-3 text-white">
-                  {isAlreadySubscribed ? "¡Ya estás suscrito!" : "¡Bienvenido!"}
+                  {isAlreadySubscribed ? "¡Ya estás suscrito!" : "✅ Correo enviado"}
                 </h3>
                 <p className="text-gray-400">
                   {isAlreadySubscribed
                     ? "Tu email ya está en nuestra lista. Recibirás la próxima edición."
-                    : "¡Perfecto! Estás suscrito. Recibirás contenido exclusivo cada semana."
+                    : <>Revisa tu bandeja de entrada y, por si acaso, <strong>comprueba spam</strong>.</>
                   }
                 </p>
               </div>

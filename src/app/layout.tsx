@@ -1,4 +1,6 @@
 import { ToastProvider } from '@/components/ui/toast';
+import CookieConsentComponent from '@/components/CookieConsent';
+import MetaPixel from '@/components/MetaPixel';
 
 import type { Metadata } from "next";
 import "./globals.css";
@@ -22,6 +24,8 @@ export default function RootLayout({
           {children}
           <ClientScrollHandler />
           <ToastProvider />
+          <CookieConsentComponent />
+          <MetaPixel />
         </div>
       </body>
     </html>

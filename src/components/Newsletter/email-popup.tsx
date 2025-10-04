@@ -78,12 +78,12 @@ export function EmailPopup({ isOpen, onClose, utmSource = "popup", utmMedium = "
               <Mail className="w-10 h-10 md:w-12 md:h-12 text-[#C9A880]" />
             </div>
             <h3 className="text-3xl md:text-4xl font-bold mb-4 text-white">
-              {isAlreadySubscribed ? "¡Ya estás en la lista!" : "¡Estás en la lista!"}
+              {isAlreadySubscribed ? "¡Ya estás en la lista!" : "✅ Correo enviado"}
             </h3>
             <p className="text-gray-400 text-lg md:text-xl">
-              {isAlreadySubscribed 
-                ? "Tu email ya estaba registrado. Te notificaremos el 29 de Septiembre cuando abramos nuevas plazas."
-                : "Te notificaré el 29 de Septiembre cuando abramos nuevas plazas."
+              {isAlreadySubscribed
+                ? "Tu email ya estaba registrado. Te avisaremos cuando abramos nuevas plazas."
+                : <>Revisa tu bandeja de entrada y, por si acaso, <strong>comprueba spam</strong>.</>
               }
             </p>
           </div>

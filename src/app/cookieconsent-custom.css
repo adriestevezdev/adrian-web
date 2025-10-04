@@ -1,0 +1,244 @@
+/* Custom CookieConsent styles matching the landing page dark theme */
+
+#cc-main {
+  /* Font styling */
+  --cc-font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+
+  /* Dark theme colors matching the landing page */
+  --cc-bg: #0a0a0a;
+  --cc-text: #ffffff;
+  --cc-btn-primary-bg: #FF8C42; /* Orange color matching landing page */
+  --cc-btn-primary-text: #000000;
+  --cc-btn-primary-hover-bg: #FF6B35; /* Darker orange on hover */
+  --cc-btn-secondary-bg: #1a1a1a;
+  --cc-btn-secondary-text: #ffffff;
+  --cc-btn-secondary-hover-bg: #2a2a2a;
+  --cc-toggle-bg-off: #333333;
+  --cc-toggle-bg-on: #FF8C42; /* Orange color for active toggles */
+  --cc-toggle-bg-readonly: #666666;
+  --cc-toggle-knob-bg: #ffffff;
+  --cc-toggle-knob-icon-color: #ecf2fa;
+  --cc-cookie-category-block-bg: #1a1a1a;
+  --cc-cookie-category-block-bg-hover: #2a2a2a;
+  --cc-section-border: #333333;
+  --cc-cookie-table-border: #333333;
+  --cc-overlay-bg: rgba(0, 0, 0, 0.8);
+  --cc-webkit-scrollbar-bg: #1a1a1a;
+  --cc-webkit-scrollbar-bg-hover: #2a2a2a;
+
+  /* Border radius - slightly rounded for modern look */
+  --cc-modal-border-radius: 12px;
+  --cc-btn-border-radius: 8px;
+
+  /* Transition */
+  --cc-modal-transition-duration: 0.25s;
+
+  /* Spacing */
+  --cc-modal-margin: 1.5rem;
+
+  /* Z-index */
+  --cc-z-index: 2147483647;
+}
+
+/* Additional custom styling */
+#cc-main .cm,
+#cc-main .pm {
+  /* Add subtle border and shadow for depth */
+  border: 1px solid rgba(255, 140, 66, 0.3);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7),
+    0 0 30px rgba(255, 140, 66, 0.2);
+  backdrop-filter: blur(10px);
+  background: rgba(10, 10, 10, 0.95) !important;
+}
+
+/* Bar layout styling - alargado horizontal */
+#cc-main .cm--bar {
+  border-radius: 0;
+  border-left: none;
+  border-right: none;
+  border-bottom: none;
+  max-width: 100% !important;
+  margin: 0 !important;
+}
+
+#cc-main .cm--bar .cm__body {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 1.25rem 3rem;
+}
+
+#cc-main .cm--bar .cm__texts {
+  flex: 1;
+  max-width: 60%;
+}
+
+#cc-main .cm--bar .cm__btns {
+  flex-shrink: 0;
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 0 !important;
+}
+
+#cc-main .cm--bar .cm__btn {
+  white-space: nowrap;
+  padding: 0.625rem 1.25rem !important;
+  font-size: 0.9rem;
+}
+
+/* Style links with orange color */
+#cc-main a {
+  color: #FF8C42;
+  text-decoration: underline;
+}
+
+#cc-main a:hover {
+  color: #FF6B35;
+}
+
+/* Style section titles */
+#cc-main .section__title {
+  color: #FF8C42;
+  font-weight: 600;
+}
+
+/* Cookie table styling */
+#cc-main .cookie-table {
+  border-color: rgba(255, 140, 66, 0.2);
+}
+
+#cc-main .cookie-table th {
+  background-color: #1a1a1a;
+  color: #FF8C42;
+  border-color: rgba(255, 140, 66, 0.2);
+}
+
+#cc-main .cookie-table td {
+  border-color: rgba(255, 140, 66, 0.2);
+}
+
+/* Hover effect on buttons with orange accent */
+#cc-main .cm__btn,
+#cc-main .pm__btn {
+  transition: all 0.3s ease;
+  font-weight: 500;
+  padding: 0.75rem 1.5rem;
+}
+
+#cc-main .cm__btn:hover,
+#cc-main .pm__btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 140, 66, 0.5);
+}
+
+/* Primary button styling */
+#cc-main .cm__btn--primary,
+#cc-main .pm__btn--primary {
+  background: linear-gradient(135deg, #FF8C42 0%, #FF6B35 100%);
+  border: none;
+  font-weight: 600;
+}
+
+#cc-main .cm__btn--primary:hover,
+#cc-main .pm__btn--primary:hover {
+  background: linear-gradient(135deg, #FFA05E 0%, #FF7F4D 100%);
+}
+
+/* Cookie title styling */
+#cc-main .cm__title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  color: #ffffff;
+}
+
+/* Description text */
+#cc-main .cm__desc,
+#cc-main .pm__desc {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  opacity: 1;
+  color: #ffffff;
+}
+
+/* Preferences modal sections */
+#cc-main .section {
+  border-color: rgba(255, 140, 66, 0.2);
+}
+
+/* Toggle switch active state glow */
+#cc-main .section__toggle.toggle--on {
+  box-shadow: 0 0 8px rgba(255, 140, 66, 0.5);
+}
+
+/* Scrollbar styling for dark theme */
+#cc-main ::-webkit-scrollbar {
+  width: 8px;
+}
+
+#cc-main ::-webkit-scrollbar-track {
+  background: var(--cc-webkit-scrollbar-bg);
+  border-radius: 4px;
+}
+
+#cc-main ::-webkit-scrollbar-thumb {
+  background: #FF8C42;
+  border-radius: 4px;
+}
+
+#cc-main ::-webkit-scrollbar-thumb:hover {
+  background: #FF6B35;
+}
+
+/* Overlay styling */
+#cc-main #cm,
+#cc-main #s-inr {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Button container spacing */
+#cc-main .cm__btns,
+#cc-main .pm__btns {
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+/* Adjust overlay darkness with strong blur effect */
+/* The overlay is created when disablePageInteraction is true */
+#cc-main div[id$="-ov"] {
+  background: rgba(0, 0, 0, 0.85) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  transition: backdrop-filter 0.3s ease;
+}
+
+/* Force white text for all content */
+#cc-main .pm__title,
+#cc-main .pm__section-title,
+#cc-main .section__title,
+#cc-main .section__desc,
+#cc-main .pm__section-desc,
+#cc-main .pm__text,
+#cc-main .section__category-title,
+#cc-main .cookie-table td,
+#cc-main p {
+  color: #ffffff !important;
+}
+
+/* Secondary button text white */
+#cc-main .cm__btn--secondary,
+#cc-main .pm__btn--secondary {
+  color: #ffffff !important;
+}

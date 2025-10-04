@@ -18,6 +18,13 @@ pnpm lint             # Run Next.js linting
 # Package manager: Uses pnpm (see pnpm-lock.yaml)
 ```
 
+## Environment Variables
+
+Required environment variables (see `.env.example`):
+- `NEXT_PUBLIC_API_URL` - Django backend API URL (default: `http://127.0.0.1:8000/api`)
+- `BEEHIIV_API_KEY` - Beehiiv API key for newsletter integration
+- `BEEHIIV_PUB_ID` - Beehiiv publication ID
+
 ## Architecture & Key Systems
 
 ### Newsletter System (Beehiiv Integration)
@@ -31,6 +38,15 @@ pnpm lint             # Run Next.js linting
 - **Components**: Auth modals in `src/components/Auth/`
 - **Backend**: Communicates with Django backend via `src/services/api.ts`
 - **Features**: Registration, login, profile management, avatar uploads
+
+### Cookie Consent & Analytics Integration
+- **Library**: `vanilla-cookieconsent` for GDPR-compliant cookie consent
+- **Components**:
+  - `src/components/CookieConsent.tsx` - Main consent modal configuration
+  - `src/components/MetaPixel.tsx` - Conditionally loads Meta Pixel based on consent
+- **Flow**: Meta Pixel only loads after user accepts analytics cookies
+- **Custom Styles**: `src/app/cookieconsent-custom.css` for consent modal styling
+- **Categories**: Necessary (always enabled) and Analytics (opt-in for Meta Pixel)
 
 ### UI Components Structure
 ```
@@ -51,6 +67,10 @@ src/components/
 - **Theme**: Dark mode only (`className="dark"` in layout)
 - **Animations**: Extensive custom animations defined in `tailwind.config.ts`
 - **Fonts**: Geist font family optimized with `next/font`
+- **Custom CSS Files**:
+  - `src/styles/transitions.css` - Page transition animations
+  - `src/app/cookieconsent-custom.css` - Cookie consent modal styling
+  - `src/app/globals.css` - Global styles and Tailwind imports
 
 ### API Integration Pattern
 - **Base Service**: `src/services/api.ts` - centralized API client
@@ -91,3 +111,5 @@ src/components/
 - Beehiiv integration includes smart duplicate subscriber handling
 - Authentication system expects Django backend API
 - All animations and transitions are custom-built with Tailwind
+- Cookie consent and Meta Pixel are loaded globally in layout.tsx
+- API service automatically handles trailing slashes to avoid Django 301 redirects
