@@ -27,6 +27,7 @@ services:
       - traefik.http.routers.redirect-skool-http.entrypoints=web
       - traefik.http.routers.redirect-skool-http.priority=100
       - traefik.http.routers.redirect-skool-http.middlewares=https-redirect
+      - traefik.http.routers.redirect-skool-http.service=noop-service
 
       # Router HTTPS: redirige a Skool
       - traefik.http.routers.redirect-skool-https.rule=Host(`arquitectos-ia.com`) || Host(`www.arquitectos-ia.com`)
@@ -34,6 +35,10 @@ services:
       - traefik.http.routers.redirect-skool-https.priority=100
       - traefik.http.routers.redirect-skool-https.tls.certresolver=letsencrypt
       - traefik.http.routers.redirect-skool-https.middlewares=skool-redirect
+      - traefik.http.routers.redirect-skool-https.service=noop-service
+
+      # Servicio dummy para routers de redirección (devuelve 503 si el middleware falla)
+      - traefik.http.services.noop-service.loadbalancer.servers.url=http://localhost:9999
 
       # Middleware: HTTPS redirect
       - traefik.http.middlewares.https-redirect.redirectscheme.scheme=https

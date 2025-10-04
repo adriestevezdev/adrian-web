@@ -3,6 +3,15 @@ global:
   checkNewVersion: true
   sendAnonymousUsage: false
 
+## LOGGING
+log:
+  level: DEBUG
+  format: common
+
+accessLog:
+  format: common
+  bufferingSize: 100
+
 ## API AND DASHBOARD CONFIGURATION
 api:
   dashboard: true
