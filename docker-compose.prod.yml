@@ -44,6 +44,13 @@ services:
 
       # Apply middlewares from file provider for main domain
       - "traefik.http.routers.nextjs.middlewares=security-headers@file,compress@file"
+
+      # Claude subdomain - redirects to /claude
+      - "traefik.http.routers.nextjs-claude.rule=Host(`claude.arquitectos-ia.com`)"
+      - "traefik.http.routers.nextjs-claude.entrypoints=websecure"
+      - "traefik.http.routers.nextjs-claude.tls.certresolver=letsencrypt"
+      - "traefik.http.routers.nextjs-claude.service=nextjs-service"
+      - "traefik.http.routers.nextjs-claude.middlewares=security-headers@file,compress@file,claude-path@file"
     networks:
       - proxy
 

@@ -31,3 +31,9 @@ http:
           # Generated with: docker run --rm httpd:2.4-alpine htpasswd -nb admin FuturPrive2024!
           # Credentials: admin / FuturPrive2024!
           - "admin:$apr1$qug.ckNS$8HIQIfXX.9ZYJUQbooBc31"
+
+    # Claude subdomain middleware - rewrite root to /claude
+    claude-path:
+      replacePathRegex:
+        regex: "^/$"
+        replacement: "/claude"
