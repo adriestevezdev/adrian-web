@@ -21,14 +21,26 @@ services:
     labels:
       - traefik.enable=true
 
-      # === Redirección 301 del dominio raíz y www a Skool (con TLS) ===
-      - traefik.http.routers.redirect-skool.rule=Host(`arquitectos-ia.com`) || Host(`www.arquitectos-ia.com`)
-      - traefik.http.routers.redirect-skool.entrypoints=web,websecure
-      - traefik.http.routers.redirect-skool.tls.certresolver=letsencrypt
-      - traefik.http.routers.redirect-skool.middlewares=skool-redirect
+      # === Redirección 301 del dominio raíz y www a Skool ===
+      # Router HTTP: redirige primero a HTTPS (mayor prioridad que la global)
+      - traefik.http.routers.redirect-skool-http.rule=Host(`arquitectos-ia.com`) || Host(`www.arquitectos-ia.com`)
+      - traefik.http.routers.redirect-skool-http.entrypoints=web
+      - traefik.http.routers.redirect-skool-http.priority=100
+      - traefik.http.routers.redirect-skool-http.middlewares=https-redirect
+
+      # Router HTTPS: redirige a Skool
+      - traefik.http.routers.redirect-skool-https.rule=Host(`arquitectos-ia.com`) || Host(`www.arquitectos-ia.com`)
+      - traefik.http.routers.redirect-skool-https.entrypoints=websecure
+      - traefik.http.routers.redirect-skool-https.priority=100
+      - traefik.http.routers.redirect-skool-https.tls.certresolver=letsencrypt
+      - traefik.http.routers.redirect-skool-https.middlewares=skool-redirect
+
+      # Middleware: HTTPS redirect
+      - traefik.http.middlewares.https-redirect.redirectscheme.scheme=https
+      - traefik.http.middlewares.https-redirect.redirectscheme.permanent=true
 
       # Middleware: 301 permanente a Skool
-      - traefik.http.middlewares.skool-redirect.redirectregex.regex=^https?://(www\.)?arquitectos-ia\.com/?(.*)
+      - traefik.http.middlewares.skool-redirect.redirectregex.regex=^https://(?:www\.)?arquitectos-ia\.com/?(.*)
       - traefik.http.middlewares.skool-redirect.redirectregex.replacement=https://www.skool.com/arquitectos-ia
       - traefik.http.middlewares.skool-redirect.redirectregex.permanent=true
 
