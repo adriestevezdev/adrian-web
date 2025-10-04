@@ -3,10 +3,13 @@ services:
     image: traefik:v3.0
     container_name: traefik
     restart: unless-stopped
+    security_opt:
+      - no-new-privileges:true
     ports:
       - "80:80"
       - "443:443"
     volumes:
+      - /etc/localtime:/etc/localtime:ro
       - /var/run/docker.sock:/var/run/docker.sock:ro
       - ./traefik/traefik.yml:/etc/traefik/traefik.yml:ro
       - ./traefik/dynamic:/etc/traefik/dynamic:ro
@@ -18,13 +21,14 @@ services:
     labels:
       - traefik.enable=true
 
-      # Redirigir dominio raíz y www a Skool
-      - traefik.http.routers.redirect-skool.rule=Host(`arquitectos-ia.com`,`www.arquitectos-ia.com`)
+      # === Redirección 301 del dominio raíz y www a Skool (con TLS) ===
+      - traefik.http.routers.redirect-skool.rule=Host(`arquitectos-ia.com`) || Host(`www.arquitectos-ia.com`)
       - traefik.http.routers.redirect-skool.entrypoints=web,websecure
       - traefik.http.routers.redirect-skool.tls.certresolver=letsencrypt
       - traefik.http.routers.redirect-skool.middlewares=skool-redirect
       - traefik.http.routers.redirect-skool.service=noop@internal
 
+      # Middleware: 301 permanente a Skool
       - traefik.http.middlewares.skool-redirect.redirectregex.regex=^https?://(www\.)?arquitectos-ia\.com/?(.*)
       - traefik.http.middlewares.skool-redirect.redirectregex.replacement=https://www.skool.com/arquitectos-ia
       - traefik.http.middlewares.skool-redirect.redirectregex.permanent=true
@@ -44,14 +48,14 @@ services:
       - NEXT_PUBLIC_BEEHIIV_API_KEY=${BEEHIIV_API_KEY}
       - NEXT_PUBLIC_BEEHIIV_PUB_ID=${BEEHIIV_PUB_ID}
     labels:
-      - "traefik.enable=true"
-      # Claude subdomain - serves the Next.js app
-      - "traefik.http.routers.nextjs-claude.rule=Host(`claude.arquitectos-ia.com`)"
-      - "traefik.http.routers.nextjs-claude.entrypoints=websecure"
-      - "traefik.http.routers.nextjs-claude.tls.certresolver=letsencrypt"
-      - "traefik.http.routers.nextjs-claude.service=nextjs-service"
-      - "traefik.http.services.nextjs-service.loadbalancer.server.port=3000"
-      - "traefik.http.routers.nextjs-claude.middlewares=security-headers@file,compress@file"
+      - traefik.enable=true
+      # Servir la app en claude.arquitectos-ia.com
+      - traefik.http.routers.nextjs-claude.rule=Host(`claude.arquitectos-ia.com`)
+      - traefik.http.routers.nextjs-claude.entrypoints=websecure
+      - traefik.http.routers.nextjs-claude.tls.certresolver=letsencrypt
+      - traefik.http.routers.nextjs-claude.service=nextjs-service
+      - traefik.http.services.nextjs-service.loadbalancer.server.port=3000
+      - traefik.http.routers.nextjs-claude.middlewares=security-headers@file,compress@file
     networks:
       - proxy
 
