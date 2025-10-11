@@ -84,7 +84,10 @@ export default function ClaudeCodeTipsPage() {
                 <p className="text-gray-400">
                   {isAlreadySubscribed
                     ? "Tu email ya está en nuestra lista. Recibirás la próxima edición."
-                    : <>Revisa tu bandeja de entrada y, por si acaso, <strong>comprueba spam</strong>.</>
+                    : <>
+                        Revisa tu bandeja de entrada y, por si acaso, <strong>comprueba spam</strong> y márcalo como <strong>&quot;no es spam&quot;</strong>.
+                        Si está en <strong>promociones</strong>, muévelo a tu <strong>bandeja principal</strong>.
+                      </>
                   }
                 </p>
               </div>
