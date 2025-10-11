@@ -83,7 +83,10 @@ export function EmailPopup({ isOpen, onClose, utmSource = "popup", utmMedium = "
             <p className="text-gray-400 text-lg md:text-xl">
               {isAlreadySubscribed
                 ? "Tu email ya estaba registrado. Te avisaremos cuando abramos nuevas plazas."
-                : <>Revisa tu bandeja de entrada y, por si acaso, <strong>comprueba spam</strong>.</>
+                : <>
+                    Revisa tu bandeja de entrada y, por si acaso, <strong>comprueba spam</strong> y márcalo como <strong>&quot;no es spam&quot;</strong>.
+                    Si está en <strong>promociones</strong>, muévelo a tu <strong>bandeja principal</strong>.
+                  </>
               }
             </p>
           </div>
