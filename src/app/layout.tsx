@@ -1,6 +1,4 @@
 import { ToastProvider } from '@/components/ui/toast';
-import CookieConsentComponent from '@/components/CookieConsent';
-import MetaPixel from '@/components/MetaPixel';
 import { WhatsAppBubble } from '@/components/WhatsAppBubble';
 
 import type { Metadata } from "next";
@@ -25,8 +23,6 @@ export default function RootLayout({
           {children}
           <ClientScrollHandler />
           <ToastProvider />
-          <CookieConsentComponent />
-          <MetaPixel />
           <WhatsAppBubble />
         </div>
       </body>
