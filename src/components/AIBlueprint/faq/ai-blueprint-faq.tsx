@@ -17,55 +17,45 @@ export function AIPlantillaFAQ() {
     {
       id: 1,
       question: "¿Tienen política de reembolso?",
-      answer: "¡Sí! Ofrecemos una garantía de devolución de dinero de 30 días. Si no estás completamente satisfecho con la comunidad, te reembolsamos tu compra completa, sin preguntas."
+      answer: "¡Sí! Ofrecemos una garantía de devolución de dinero de 14 días. Si no estás completamente satisfecho con la formación, te reembolsamos tu compra completa, sin preguntas."
     },
     {
       id: 2,
-      question: "¿Ofrecen descuentos?",
-      answer: "Ocasionalmente ofrecemos promociones por tiempo limitado. La mejor manera de mantenerte actualizado sobre descuentos es suscribirte a nuestro newsletter. Sin embargo, creemos que el curso ofrece un valor excepcional a su precio actual."
+      question: "¿Para quién es la formación?",
+      answer: "La formación + comunidad está diseñada para developers, personas no técnicas, emprendedores y dueños de negocios que quieren construir sus propias aplicaciones sin aprender programación tradicional. Es perfecta para personas que tienen ideas pero no quieren contratar desarrolladores."
     },
     {
       id: 3,
-      question: "¿Para quién es la comunidad?",
-      answer: "La comunidad está diseñada para fundadores no técnicos, emprendedores y dueños de negocios que quieren construir sus propias aplicaciones sin aprender programación tradicional. Es perfecta para personas que tienen ideas de apps pero no quieren contratar desarrolladores costosos."
+      question: "¿Qué aprenderé?",
+      answer: "Cubre todo desde configurar tu entorno de desarrollo hasta desplegar una aplicación completa con funciones de IA, autenticación de usuarios, pagos y más. Aprenderás a usar herramientas, asistentes de IA y plataformas modernas para construir aplicaciones profesionales."
     },
     {
       id: 4,
-      question: "¿Qué cubre exactamente la plantilla?",
-      answer: "La plantilla cubre todo desde configurar tu entorno de desarrollo hasta desplegar una aplicación completa con funciones de IA, autenticación de usuarios, pagos y más. Aprenderás a usar herramientas no-code, asistentes de IA y plataformas modernas para construir aplicaciones profesionales."
+      question: "¿Necesito habilidades de programación?",
+      answer: "¡No! La comunidad está preparada para todo tipo de niveles, aunque si ya tienes una base obtendrás resultados mucho más rapido. Usamos constructores visuales, asistentes de IA y plataformas no-code para crear aplicaciones."
     },
     {
       id: 5,
-      question: "¿Necesito habilidades de programación?",
-      answer: "¡No! La comunidad está específicamente diseñada para personas no técnicas. Usamos constructores visuales, asistentes de IA y plataformas no-code para crear aplicaciones. No necesitas experiencia previa en programación."
-    },
-    {
-      id: 6,
-      question: "¿Qué computadora necesito?",
-      answer: "Puedes usar cualquier computadora moderna - Mac, Windows o Linux. La mayoría de las herramientas que usamos están basadas en web, así que solo necesitas una conexión a internet confiable y un navegador web moderno."
-    },
-    {
-      id: 7,
       question: "¿Qué herramientas de IA se usan?",
       answer: "Usamos una variedad de herramientas de IA incluyendo Claude, ChatGPT, Cursor AI y otros asistentes de desarrollo impulsados por IA. Aprenderás cómo hacer prompts efectivos con estas herramientas e integrar capacidades de IA en tus aplicaciones."
     },
     {
-      id: 8,
+      id: 6,
       question: "¿Qué pasa si me quedo atascado?",
       answer: "Tendrás acceso a nuestra comunidad exclusiva donde puedes hacer preguntas y obtener ayuda tanto de mí como de otros estudiantes. Además, tienes acceso directo a mí para orientación personalizada cuando la necesites."
     },
     {
-      id: 9,
+      id: 7,
       question: "¿Hay costos adicionales?",
       answer: "El curso cubre herramientas gratuitas y de pago. Mientras que muchas herramientas tienen niveles gratuitos suficientes para aprender, algunas características avanzadas o despliegues en producción pueden requerir suscripciones de pago a servicios de terceros (como hosting o APIs de IA)."
     },
     {
-      id: 10,
+      id: 8,
       question: "¿Qué son las actualizaciones de por vida?",
       answer: "Como las herramientas de IA y no-code evolucionan rápidamente, actualizo continuamente el contenido del curso para reflejar las mejores prácticas y herramientas más recientes. Una vez que compras, obtienes acceso a todas las actualizaciones futuras sin costo adicional."
     },
     {
-      id: 11,
+      id: 9,
       question: "¿Es esto como Lovable o Replit?",
       answer: "Aunque sí cubrimos algunas plataformas de desarrollo impulsadas por IA, este curso va mucho más profundo. Aprenderás los principios detrás de la construcción de aplicaciones escalables, no solo cómo usar herramientas específicas. Este conocimiento se transfiere entre plataformas y te servirá a largo plazo."
     }
@@ -123,7 +113,7 @@ export function AIPlantillaFAQ() {
                   <ChevronDownIcon className="w-5 h-5 text-gray-400" />
                 </motion.div>
               </button>
-              
+
               <AnimatePresence>
                 {expandedFAQ === item.id && (
                   <motion.div
@@ -156,10 +146,13 @@ export function AIPlantillaFAQ() {
           </p>
           <div className="flex items-center justify-center gap-4 text-sm">
             <span className="text-gray-500">¿Necesitas ayuda?</span>
-            <div className="flex items-center gap-2">
-              <span className="text-blue-400">✕</span>
-              <span className="text-blue-400">✉</span>
-            </div>
+            <a
+              href="mailto:contacto@adriaestevez.com"
+              aria-label="Enviar correo a contacto@adriaestevez.com"
+              className="text-blue-400 hover:text-blue-300 transition-colors"
+            >
+              ✉
+            </a>
           </div>
         </motion.div>
       </div>

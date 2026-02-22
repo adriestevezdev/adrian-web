@@ -1,6 +1,7 @@
 import { ToastProvider } from '@/components/ui/toast';
 import CookieConsentComponent from '@/components/CookieConsent';
 import MetaPixel from '@/components/MetaPixel';
+import { WhatsAppBubble } from '@/components/WhatsAppBubble';
 
 import type { Metadata } from "next";
 import "./globals.css";
@@ -26,6 +27,7 @@ export default function RootLayout({
           <ToastProvider />
           <CookieConsentComponent />
           <MetaPixel />
+          <WhatsAppBubble />
         </div>
       </body>
     </html>

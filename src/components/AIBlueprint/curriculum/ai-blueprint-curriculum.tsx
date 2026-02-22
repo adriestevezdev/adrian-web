@@ -16,12 +16,6 @@ interface LessonModule {
 export function AIPlantillaCurriculum() {
   const [expandedModule, setExpandedModule] = useState<number | null>(null);
 
-  const testimonial = {
-    text: "Como alguien completamente nuevo en programación, la comunidad ha sido fantástica. Las lecciones logran un equilibrio perfecto entre claridad y ambición. Esta es una de las mejores inversiones en mi propio camino. Por ejemplo, Supabase para autenticación de usuario funcionó perfectamente desde el primer intento.",
-    author: "Shawn Hank",
-    role: "Entusiasta de la Tecnología"
-  };
-
   const modules: LessonModule[] = [
     {
       id: 1,
@@ -131,40 +125,9 @@ export function AIPlantillaCurriculum() {
     <section className="relative bg-[#0a0a0a] pt-48 pb-16">
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-[#0a0a0a] via-blue-900/10 to-[#0a0a0a]" />
-      
+
 
       <div className="relative z-10 max-w-6xl mx-auto px-6 py-16">
-        {/* Testimonial Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
-          <div className="flex justify-center mb-4">
-            {[...Array(5)].map((_, i) => (
-              <span key={i} className="text-yellow-400 text-xl">⭐</span>
-            ))}
-          </div>
-          
-          <blockquote className="text-lg md:text-xl text-gray-300 max-w-4xl mx-auto mb-6 leading-relaxed">
-            "{testimonial.text}"
-          </blockquote>
-          
-          <div className="flex items-center justify-center gap-3">
-            <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#C9A880] to-[#8B7355] flex items-center justify-center">
-              <span className="text-sm font-semibold text-white">
-                {testimonial.author.split(' ').map(n => n[0]).join('')}
-              </span>
-            </div>
-            <div className="text-left">
-              <div className="text-white font-semibold">{testimonial.author}</div>
-              <div className="text-gray-400 text-sm">{testimonial.role}</div>
-            </div>
-          </div>
-        </motion.div>
-
         {/* Curriculum Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -230,7 +193,7 @@ export function AIPlantillaCurriculum() {
                     )}
                   </div>
                 </button>
-                
+
                 <AnimatePresence>
                   {expandedModule === module.id && module.description && (
                     <motion.div
