@@ -261,7 +261,7 @@ export function NewsletterPricing() {
               viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <div className="text-[#C9A880] font-semibold mb-2">Testimonios de la Comunidad</div>
+              <div className="text-[#C9A880] font-semibold mb-2">Testimonios del Mastery</div>
               <h2 className="text-4xl md:text-5xl font-bold mb-4 max-w-4xl mx-auto leading-tight">
                 <span className="text-white">Personas No Técnicas Que Ahora </span>
                 <span className="bg-gradient-to-r from-[#C9A880] via-[#D4B896] to-[#C9A880] bg-clip-text text-transparent">
@@ -269,7 +269,7 @@ export function NewsletterPricing() {
                 </span>
               </h2>
               <p className="text-white/70 text-lg">
-                97% de nuestros estudiantes de la comunidad dicen: "Debería haber empezado antes"
+                97% de nuestros estudiantes del Mastery dicen: "Debería haber empezado antes"
               </p>
             </motion.div>
 
@@ -316,7 +316,7 @@ export function NewsletterPricing() {
                 className="px-12 py-6 text-xl font-bold cursor-pointer"
               >
                 <span className="flex items-center justify-center">
-                  <span>Únete a +60 Estudiantes</span>
+                  <span>Únete a +400 Estudiantes</span>
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
                     <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
                   </svg>
@@ -335,7 +335,7 @@ export function NewsletterPricing() {
         utmMedium="cta_button"
         customFields={[
           { name: "button_location", value: "pricing_section" },
-          { name: "button_text", value: "Únete a +60 Estudiantes" }
+          { name: "button_text", value: "Únete a +400 Estudiantes" }
         ]}
       />
     </section>

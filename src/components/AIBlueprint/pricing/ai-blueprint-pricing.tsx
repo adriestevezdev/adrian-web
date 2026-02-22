@@ -94,7 +94,7 @@ export function AIPlantillaPricing() {
                   </div>
 
                   <motion.a
-                    href="https://wa.me/34693468959?text=Hola%20Adri%2C%20quiero%20pedir%20la%20admisi%C3%B3n%20a%20Arquitectos%20IA"
+                    href="https://wa.me/34693468959?text=Hola%20Adri%2C%20quiero%20pedir%20la%20admisi%C3%B3n%20a%20AI%20Developer%20Mastery"
                     target="_blank"
                     rel="noopener noreferrer"
                     whileHover={{ scale: 1.05 }}

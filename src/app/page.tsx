@@ -1,12 +1,18 @@
 "use client";
 
 import { useEffect } from "react";
-import { AIPlantillaHero } from "@/components/AIBlueprint/hero/ai-blueprint-hero";
-import { AIPlantillaTestimonials } from "@/components/AIBlueprint/testimonials/ai-blueprint-testimonials";
-import { AIPlantillaPricing } from "@/components/AIBlueprint/pricing/ai-blueprint-pricing";
-import { AIPlantillaFAQ } from "@/components/AIBlueprint/faq/ai-blueprint-faq";
 
-export default function AIPlantillaPage() {
+import { Footer } from "@/components/footer-component";
+import { NewsletterBenefits } from "@/components/Newsletter/benefits/newsletter-benefits";
+import { NewsletterCommunity } from "@/components/Newsletter/community/newsletter-community";
+import { NewsletterCourses } from "@/components/Newsletter/courses/newsletter-courses";
+import { NewsletterGifts } from "@/components/Newsletter/gifts/newsletter-gifts";
+// import { NewsletterPricing } from "@/components/Newsletter/pricing/newsletter-pricing"; // Temporalmente comentada
+import { NewsletterSkills } from "@/components/Newsletter/skills/newsletter-skills";
+import { NewsletterTestimonials } from "@/components/Newsletter/testimonials/newsletter-testimonials";
+import { NewsletterWaitlist } from "@/components/Newsletter/waitlist/newsletter-waitlist";
+
+export default function HomePage() {
   // Implementar scroll suave para los enlaces de anclaje y manejar hash en URL
   useEffect(() => {
     // Función para hacer scroll a un elemento
@@ -70,25 +76,41 @@ export default function AIPlantillaPage() {
 
   return (
     <div className="min-h-screen bg-black text-white">
-      {/* Hero Section */}
-      <div>
-        <AIPlantillaHero />
-      </div>
+      {/* Waitlist Form - First thing visitors see */}
+      <NewsletterWaitlist />
 
-{/* Testimonials Section */}
-      <section id="testimonials" className="relative">
-        <AIPlantillaTestimonials />
+      {/* Pricing Section - Temporalmente oculta */}
+      {/* <div className="relative">
+        <div className="absolute inset-0 bg-[#080604] z-0"></div>
+        <NewsletterPricing />
+      </div> */}
+
+      {/* Testimonials with Images Section */}
+      <NewsletterTestimonials />
+
+      {/* Free Gifts Section */}
+      <NewsletterGifts />
+
+      {/* Benefits Section */}
+      <section id="benefits" className="mt-0 bg-[#0a0a0a]">
+        <NewsletterBenefits />
       </section>
 
-      {/* Pricing Section */}
-      <section id="pricing" className="relative">
-        <AIPlantillaPricing />
-      </section>
+      {/* Community Section */}
+      <NewsletterCommunity />
 
-      {/* FAQ Section */}
-      <section id="faq" className="relative">
-        <AIPlantillaFAQ />
-      </section>
+      {/* Skills Section */}
+      <NewsletterSkills />
+
+
+      {/* Cursos IA Section */}
+      <NewsletterCourses />
+
+      {/* Spacer */}
+      <div className="h-8 md:h-12 bg-[#0a0a0a]"></div>
+
+      {/* Footer */}
+      <Footer />
     </div>
   );
 }

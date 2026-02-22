@@ -97,10 +97,10 @@ export function EmailPopup({ isOpen, onClose, utmSource = "popup", utmMedium = "
                 <Mail className="w-10 h-10 md:w-12 md:h-12 text-[#C9A880]" />
               </div>
               <h3 className="text-3xl md:text-4xl font-bold mb-4 text-white">
-                Bootcamp IA - 29 Septiembre
+                AI Developer Mastery
               </h3>
               <p className="text-gray-400 text-base md:text-lg">
-                Únete al bootcamp para desarrollar con Inteligencia Artificial. Comienza el 29 de Septiembre.
+                Únete a AI Developer Mastery y empieza a desarrollar con Inteligencia Artificial.
               </p>
             </div>
 

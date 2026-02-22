@@ -16,7 +16,7 @@ export function Logo({ width = 96, height = 96, className = "" }: LogoProps) {
   return fallbackToImg ? (
     <img
       src="/logo_arquitectosIA.png"
-      alt="ArquitectosIA Logo"
+      alt="AI Developer Mastery Logo"
       width={width}
       height={height}
       className={className}
@@ -24,7 +24,7 @@ export function Logo({ width = 96, height = 96, className = "" }: LogoProps) {
   ) : (
     <Image
       src="/logo_arquitectosIA.png"
-      alt="ArquitectosIA Logo"
+      alt="AI Developer Mastery Logo"
       width={width}
       height={height}
       className={className}

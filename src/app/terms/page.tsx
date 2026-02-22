@@ -14,7 +14,7 @@ export default function TermsAndConditionsPage() {
           <Logo width={40} height={40} className="h-10 w-auto group-hover:scale-105 transition-transform" />
           <a href="/" className="ml-2 group">
             <span className="text-white text-xl md:text-2xl font-semibold group-hover:text-white/90 transition-colors">
-              Arquitectos IA <span className="text-[#C9A880] group-hover:text-[#D9B890] transition-colors">Community</span>
+              AI Developer Mastery <span className="text-[#C9A880] group-hover:text-[#D9B890] transition-colors">Community</span>
             </span>
           </a>
         </div>
@@ -30,7 +30,7 @@ export default function TermsAndConditionsPage() {
             <section>
               <h2 className="text-2xl font-semibold mb-4 text-[#C9A880]">1. Introducción</h2>
               <p className="mb-4">
-                Estos Términos y Condiciones ("Términos") rigen tu acceso y uso del sitio web de Arquitectos IA Community, accesible en arquitectosia.com ("Sitio"), así como cualquier contenido, funcionalidad y servicios ofrecidos en o a través del Sitio.
+                Estos Términos y Condiciones ("Términos") rigen tu acceso y uso del sitio web de AI Developer Mastery, accesible en arquitectosia.com ("Sitio"), así como cualquier contenido, funcionalidad y servicios ofrecidos en o a través del Sitio.
               </p>
               <p className="mb-4">
                 Al acceder o utilizar nuestro Sitio, aceptas estar sujeto a estos Términos. Si no estás de acuerdo con alguna parte de estos Términos, no tendrás derecho a acceder al Sitio.
@@ -60,7 +60,7 @@ export default function TermsAndConditionsPage() {
             <section>
               <h2 className="text-2xl font-semibold mb-4 text-[#C9A880]">4. Membresía y Pagos</h2>
               <p className="mb-4">
-                Arquitectos IA Community ofrece diferentes niveles de membresía, incluyendo una opción de lista de espera gratuita y membresías de pago con diferentes beneficios.
+                AI Developer Mastery ofrece diferentes niveles de membresía, incluyendo una opción de lista de espera gratuita y membresías de pago con diferentes beneficios.
               </p>
               <p className="mb-4">
                 Para las membresías de pago:
@@ -82,7 +82,7 @@ export default function TermsAndConditionsPage() {
             <section>
               <h2 className="text-2xl font-semibold mb-4 text-[#C9A880]">5. Propiedad Intelectual</h2>
               <p className="mb-4">
-                El Sitio y todo su contenido, características y funcionalidades (incluyendo, pero no limitado a, toda la información, software, texto, imágenes, marcas, logotipos, diseños y código) son propiedad de Arquitectos IA Community o de nuestros licenciantes y están protegidos por leyes de propiedad intelectual.
+                El Sitio y todo su contenido, características y funcionalidades (incluyendo, pero no limitado a, toda la información, software, texto, imágenes, marcas, logotipos, diseños y código) son propiedad de AI Developer Mastery o de nuestros licenciantes y están protegidos por leyes de propiedad intelectual.
               </p>
               <p className="mb-4">
                 No puedes reproducir, distribuir, modificar, crear obras derivadas, exhibir públicamente, ejecutar públicamente, republicar, descargar, almacenar o transmitir cualquier material de nuestro Sitio, excepto:
@@ -130,7 +130,7 @@ export default function TermsAndConditionsPage() {
             <section>
               <h2 className="text-2xl font-semibold mb-4 text-[#C9A880]">8. Limitación de Responsabilidad</h2>
               <p className="mb-4">
-                En ningún caso Arquitectos IA Community, sus directores, empleados, socios, agentes, proveedores o afiliados serán responsables por cualquier daño indirecto, incidental, especial, consecuente o punitivo, incluyendo sin limitación, pérdida de beneficios, datos, uso, buena voluntad u otras pérdidas intangibles, resultantes de:
+                En ningún caso AI Developer Mastery, sus directores, empleados, socios, agentes, proveedores o afiliados serán responsables por cualquier daño indirecto, incidental, especial, consecuente o punitivo, incluyendo sin limitación, pérdida de beneficios, datos, uso, buena voluntad u otras pérdidas intangibles, resultantes de:
               </p>
               <ul className="list-disc pl-6 space-y-2">
                 <li>Tu acceso o uso o incapacidad para acceder o usar el Sitio.</li>
@@ -143,7 +143,7 @@ export default function TermsAndConditionsPage() {
             <section>
               <h2 className="text-2xl font-semibold mb-4 text-[#C9A880]">9. Indemnización</h2>
               <p>
-                Aceptas defender, indemnizar y mantener indemne a Arquitectos IA Community, sus afiliados, licenciantes y proveedores de servicios, y sus respectivos funcionarios, directores, empleados, contratistas, agentes, licenciantes, proveedores, sucesores y cesionarios de y contra cualquier reclamación, responsabilidad, daño, juicio, premio, pérdida, costo, gasto o tarifa (incluyendo honorarios razonables de abogados) que surjan de o estén relacionados con tu violación de estos Términos.
+                Aceptas defender, indemnizar y mantener indemne a AI Developer Mastery, sus afiliados, licenciantes y proveedores de servicios, y sus respectivos funcionarios, directores, empleados, contratistas, agentes, licenciantes, proveedores, sucesores y cesionarios de y contra cualquier reclamación, responsabilidad, daño, juicio, premio, pérdida, costo, gasto o tarifa (incluyendo honorarios razonables de abogados) que surjan de o estén relacionados con tu violación de estos Términos.
               </p>
             </section>
 

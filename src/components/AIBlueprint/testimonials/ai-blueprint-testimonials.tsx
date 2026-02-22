@@ -71,7 +71,7 @@ export function AIPlantillaTestimonials() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <div className="text-[#C9A880] font-semibold mb-2">Testimonios de la Comunidad</div>
+          <div className="text-[#C9A880] font-semibold mb-2">Testimonios del Mastery</div>
           <h2 className="text-4xl md:text-5xl font-bold mb-4 max-w-4xl mx-auto leading-tight">
             <span className="text-white">Personas No Técnicas Que Ahora </span>
             <span className="bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 bg-clip-text text-transparent">
@@ -122,12 +122,12 @@ export function AIPlantillaTestimonials() {
         {/* CTA Button */}
         <div className="text-center mt-16">
           <a
-            href="https://wa.me/34693468959?text=Hola%20Adri%2C%20quiero%20pedir%20la%20admisi%C3%B3n%20a%20Arquitectos%20IA"
+            href="https://wa.me/34693468959?text=Hola%20Adri%2C%20quiero%20pedir%20la%20admisi%C3%B3n%20a%20AI%20Developer%20Mastery"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-blue-600 hover:bg-blue-700 text-white px-12 py-6 rounded-xl font-bold text-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-blue-500/25"
           >
-            Únete a +60 Estudiantes
+            Únete a +400 Estudiantes
           </a>
         </div>
       </div>

@@ -293,7 +293,7 @@ export default function ThankYouPage() {
           <Logo width={40} height={40} className="h-10 w-auto group-hover:scale-105 transition-transform" />
           <a href="/" className="ml-2 group">
             <span className="text-white text-xl md:text-2xl font-semibold group-hover:text-white/90 transition-colors">
-              Arquitectos IA <span className="text-[#C9A880] group-hover:text-[#D9B890] transition-colors">Community</span>
+              AI Developer Mastery <span className="text-[#C9A880] group-hover:text-[#D9B890] transition-colors">Community</span>
             </span>
           </a>
         </div>
@@ -319,7 +319,7 @@ export default function ThankYouPage() {
 
           <p className="mb-4">La mayoría se queda en la superfície, pero tú has decidido ir un paso más allá.</p>
 
-          <p className="mb-4">Te he reservado tu plaza en la Comunidad de Arquitectos IA y <span className="text-[#C9A880] font-semibold">me pondré en contacto contigo en cuanto abramos las puertas.</span></p>
+          <p className="mb-4">Te he reservado tu plaza en la Comunidad de AI Developer Mastery y <span className="text-[#C9A880] font-semibold">me pondré en contacto contigo en cuanto abramos las puertas.</span></p>
 
           <p className="mb-6">Mientras tanto, te he preparado este vídeo que deberías ver AHORA MISMO si quieres entender por qué lo que estamos construyendo es tan diferente a todo lo demás.</p>
         </motion.div>
@@ -593,7 +593,7 @@ export default function ThankYouPage() {
               <div>
                 <h3 className="text-xl font-semibold mb-2 text-[#C9A880]">1. Esto NO es para todo el mundo</h3>
                 <p className="text-white/80">
-                  Lo digo en serio. Arquitectos IA no es otra comunidad más. No buscamos a cualquiera. Buscamos a personas que quieren resultados REALES. Si esperas teorías bonitas que nunca se aplican, hay miles de sitios que te pueden servir. Pero si buscas estrategias COMPROBADAS por gente que maneja de verdad... este es tu sitio.
+                  Lo digo en serio. AI Developer Mastery no es otra comunidad más. No buscamos a cualquiera. Buscamos a personas que quieren resultados REALES. Si esperas teorías bonitas que nunca se aplican, hay miles de sitios que te pueden servir. Pero si buscas estrategias COMPROBADAS por gente que maneja de verdad... este es tu sitio.
                 </p>
               </div>
 

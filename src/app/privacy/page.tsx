@@ -14,7 +14,7 @@ export default function PrivacyPolicyPage() {
           <Logo width={40} height={40} className="h-10 w-auto group-hover:scale-105 transition-transform" />
           <a href="/" className="ml-2 group">
             <span className="text-white text-xl md:text-2xl font-semibold group-hover:text-white/90 transition-colors">
-              Arquitectos IA <span className="text-[#C9A880] group-hover:text-[#D9B890] transition-colors">Community</span>
+              AI Developer Mastery <span className="text-[#C9A880] group-hover:text-[#D9B890] transition-colors">Community</span>
             </span>
           </a>
         </div>
@@ -30,7 +30,7 @@ export default function PrivacyPolicyPage() {
             <section>
               <h2 className="text-2xl font-semibold mb-4 text-[#C9A880]">1. Introducción</h2>
               <p className="mb-4">
-                En Arquitectos IA Community, accesible desde arquitectosia.com, una de nuestras principales prioridades es la privacidad de nuestros visitantes. Este documento de Política de Privacidad contiene los tipos de información que se recopilan y registran por Arquitectos IA Community y cómo la utilizamos.
+                En AI Developer Mastery, accesible desde arquitectosia.com, una de nuestras principales prioridades es la privacidad de nuestros visitantes. Este documento de Política de Privacidad contiene los tipos de información que se recopilan y registran por AI Developer Mastery y cómo la utilizamos.
               </p>
               <p>
                 Si tienes preguntas adicionales o requieres más información sobre nuestra Política de Privacidad, no dudes en contactarnos a través de nuestro formulario de contacto.

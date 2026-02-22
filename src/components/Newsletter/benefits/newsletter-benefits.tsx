@@ -41,11 +41,11 @@ export function NewsletterBenefits() {
     <section className="py-16 pb-12 bg-[#0a0a0a] mt-0">
       <div className="max-w-6xl mx-auto px-4">
         <div className="flex justify-center mb-2">
-          <AnimatedButton>Beneficios de la Comunidad</AnimatedButton>
+          <AnimatedButton>Beneficios del Mastery</AnimatedButton>
         </div>
 
         <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-12 text-white">
-          Lo que vas a conseguir (y NO es poca cosa) al unirte a <span className="bg-gradient-to-r from-[#C9A880] to-[#A78355] bg-clip-text text-transparent">nuestra comunidad</span>
+          Lo que vas a conseguir (y NO es poca cosa) al unirte al <span className="bg-gradient-to-r from-[#C9A880] to-[#A78355] bg-clip-text text-transparent">Mastery</span>
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
