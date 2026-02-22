@@ -234,17 +234,18 @@ export function NewsletterPricing() {
 
             {/* CTA Button */}
             <div className="text-center">
-              <RainbowButtonDemo 
-                onClick={handleJoinBootcamp}
-                className="px-16 py-6 text-xl font-bold cursor-pointer"
-              >
-                <span className="flex items-center justify-center">
-                  <span>Unirme Ahora - $49/mes</span>
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 ml-3" viewBox="0 0 20 20" fill="currentColor">
-                    <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
-                  </svg>
-                </span>
-              </RainbowButtonDemo>
+              <a href="https://api.whatsapp.com/send/?phone=34693468959&text=Hola+Adri%2C+quiero+pedir+la+admisi%C3%B3n+a+AI+Developer+Mastery&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer">
+                <RainbowButtonDemo
+                  className="px-16 py-6 text-xl font-bold cursor-pointer"
+                >
+                  <span className="flex items-center justify-center">
+                    <span>Unirme Ahora - $49/mes</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 ml-3" viewBox="0 0 20 20" fill="currentColor">
+                      <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                    </svg>
+                  </span>
+                </RainbowButtonDemo>
+              </a>
             </div>
           </div>
         </motion.div>
@@ -311,17 +312,18 @@ export function NewsletterPricing() {
 
             {/* CTA Button */}
             <div className="text-center mt-16">
-              <RainbowButtonDemo 
-                onClick={handleJoinBootcamp}
-                className="px-12 py-6 text-xl font-bold cursor-pointer"
-              >
-                <span className="flex items-center justify-center">
-                  <span>Únete a +400 Estudiantes</span>
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
-                    <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
-                  </svg>
-                </span>
-              </RainbowButtonDemo>
+              <a href="https://api.whatsapp.com/send/?phone=34693468959&text=Hola+Adri%2C+quiero+pedir+la+admisi%C3%B3n+a+AI+Developer+Mastery&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer">
+                <RainbowButtonDemo
+                  className="px-12 py-6 text-xl font-bold cursor-pointer"
+                >
+                  <span className="flex items-center justify-center">
+                    <span>Únete a +400 Estudiantes</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
+                      <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                    </svg>
+                  </span>
+                </RainbowButtonDemo>
+              </a>
             </div>
           </div>
         </div>
