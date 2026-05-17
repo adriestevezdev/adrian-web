@@ -18,7 +18,7 @@ const avatars = [
         profileUrl: "#",
     },
     {
-        imageUrl: "/testimonios/avatares/avatar_juan-carlos.jfif",
+        imageUrl: "/testimonios/avatares/avatar_juan-carlos.jpg",
         profileUrl: "#",
     },
     {
