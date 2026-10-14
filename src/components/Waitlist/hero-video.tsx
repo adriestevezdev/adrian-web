@@ -83,7 +83,7 @@ export function HeroVideo({ src, poster }: HeroVideoProps) {
           <button
             type="button"
             onClick={handlePlayClick}
-            aria-label={isUnlocked ? "Reproducir la masterclass" : "Desbloquear la masterclass"}
+            aria-label={isUnlocked ? "Reproducir el vídeo" : "Desbloquear el vídeo"}
             className="group absolute inset-0 flex flex-col items-center justify-center gap-4 bg-black/30 transition-colors hover:bg-black/15"
           >
             <span className="flex h-20 w-20 items-center justify-center rounded-full bg-white shadow-xl transition-transform group-hover:scale-105">
@@ -94,7 +94,7 @@ export function HeroVideo({ src, poster }: HeroVideoProps) {
             {!isUnlocked && (
               <span className="flex items-center gap-1.5 rounded-full bg-black/70 px-3 py-1 text-xs font-medium text-white/85 backdrop-blur">
                 <Lock className="h-3 w-3" />
-                Masterclass gratuita
+                Únete a la lista para verlo
               </span>
             )}
           </button>
@@ -125,13 +125,13 @@ export function HeroVideo({ src, poster }: HeroVideoProps) {
               <Lock className="h-5 w-5" />
             </span>
             <h2 id="desbloquear-titulo" className="mt-4 text-2xl font-bold text-white">
-              Desbloquea la masterclass gratuita
+              Muy pronto: masterclass gratuita
             </h2>
             <p className="mt-2 mb-6 text-white/65">
-              Déjame tu email y el vídeo se desbloquea al momento. Además entras en la lista de espera y te aviso antes que a nadie
-              cuando abra plazas.
+              Estoy preparando una masterclass gratuita para construir tu producto con agentes de IA. Únete a la lista de espera y
+              te la envío por email en cuanto esté lista. Mientras tanto, te desbloqueo este vídeo al momento.
             </p>
-            <WaitlistForm stacked buttonLabel="Desbloquear el vídeo" onSuccess={handleUnlocked} />
+            <WaitlistForm stacked buttonLabel="Unirme y ver el vídeo" onSuccess={handleUnlocked} />
           </div>
         </div>
       )}
