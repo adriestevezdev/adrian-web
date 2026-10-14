@@ -37,14 +37,14 @@
   section[id] {
     scroll-margin-top: 80px;
   }
-  /* Específicamente para el formulario de newsletter */
-  #newsletter-form {
+  /* Específicamente para el formulario de la lista de espera */
+  #registro {
     scroll-margin-top: 100px; /* Más espacio para asegurar visibilidad */
     scroll-behavior: smooth;
     position: relative;
   }
   /* Indicador visual cuando llegamos al destino del scroll */
-  #newsletter-form::before {
+  #registro::before {
     content: "";
     position: absolute;
     top: 0;
@@ -57,7 +57,7 @@
     transition: opacity 0.4s, transform 0.4s;
     z-index: 50;
   }
-  #newsletter-form:target::before {
+  #registro:target::before {
     opacity: 1;
     transform: scaleX(1);
   }

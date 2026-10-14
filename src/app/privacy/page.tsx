@@ -96,7 +96,7 @@ export default function PrivacyPolicyPage() {
                 Específicamente, utilizamos:
               </p>
               <ul className="list-disc pl-6 space-y-2">
-                <li>Beehiiv para gestionar nuestra lista de correo y enviar comunicaciones</li>
+                <li>Resend para enviar los correos electrónicos (tu email se guarda en nuestro propio servidor)</li>
                 <li>Google Analytics para analizar el tráfico del sitio web</li>
                 <li>Stripe para procesar pagos (cuando corresponda)</li>
               </ul>

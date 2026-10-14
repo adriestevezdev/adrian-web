@@ -1,11 +1,10 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
 import { RainbowButtonDemo } from "@/components/rainbowButton";
-import { EmailPopup } from "@/components/Newsletter/email-popup";
 import { NewsletterAvatarCircles } from "@/components/Newsletter/newsletter-avatar-circles";
 
 interface Testimonial {
@@ -14,13 +13,13 @@ interface Testimonial {
   author: string;
 }
 
-export function NewsletterTestimonials() {
-  const [showEmailPopup, setShowEmailPopup] = useState(false);
+interface NewsletterTestimonialsProps {
+  ctaHref: string;
+  ctaLabel: string;
+  newTab?: boolean;
+}
 
-  const handleJoinBootcamp = () => {
-    setShowEmailPopup(true);
-  };
-
+export function NewsletterTestimonials({ ctaHref, ctaLabel, newTab = false }: NewsletterTestimonialsProps) {
   const testimonials: Testimonial[] = [
     {
       id: 1,
@@ -74,7 +73,7 @@ export function NewsletterTestimonials() {
   };
 
   return (
-    <section className="relative py-20 bg-[#080604] border-t border-[#C9A880]/15">
+    <section id="testimonios" className="relative py-20 bg-[#080604] border-t border-[#C9A880]/15">
       {/* Background gradient effect */}
       <div className="absolute inset-0 bg-gradient-to-b from-[#0a0806] to-[#050302] z-10"></div>
 
@@ -99,7 +98,7 @@ export function NewsletterTestimonials() {
               viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <div className="text-[#C9A880] font-semibold text-base mb-2">Testimonios del Mastery</div>
+              <div className="text-[#C9A880] font-semibold text-base mb-2">Testimonios de alumnos</div>
               <h2 className="text-4xl md:text-5xl font-bold mb-6 max-w-4xl mx-auto leading-tight">
                 <span className="text-white">Personas No Técnicas Que Ahora </span>
                 <span className="bg-gradient-to-r from-[#C9A880] via-[#D4B896] to-[#C9A880] bg-clip-text text-transparent">
@@ -107,7 +106,7 @@ export function NewsletterTestimonials() {
                 </span>
               </h2>
               <p className="text-white/70 text-lg md:text-xl">
-                97% de nuestros estudiantes del Mastery dicen: "Debería haber empezado antes"
+                Esto es lo que cuentan en la comunidad
               </p>
             </motion.div>
 
@@ -149,12 +148,12 @@ export function NewsletterTestimonials() {
 
             {/* CTA Button */}
             <div className="text-center mt-16">
-              <a href="https://api.whatsapp.com/send/?phone=34693468959&text=Hola+Adri%2C+quiero+pedir+la+admisi%C3%B3n+a+AI+Developer+Mastery&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer">
+              <a href={ctaHref} {...(newTab ? { target: "_blank", rel: "noopener noreferrer" } : {})}>
                 <RainbowButtonDemo
                   className="px-12 py-6 text-xl font-bold cursor-pointer"
                 >
                   <span className="flex items-center justify-center">
-                    <span>Únete a +400 Estudiantes</span>
+                    <span>{ctaLabel}</span>
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
                       <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
                     </svg>
@@ -165,18 +164,6 @@ export function NewsletterTestimonials() {
           </div>
         </div>
       </div>
-      
-      {/* Email Popup */}
-      <EmailPopup 
-        isOpen={showEmailPopup} 
-        onClose={() => setShowEmailPopup(false)} 
-        utmSource="waitlist"
-        utmMedium="hero_button"
-        customFields={[
-          { name: "button_location", value: "hero_section" },
-          { name: "button_text", value: "Quiero Mi App en 30 Días" }
-        ]}
-      />
     </section>
   );
 }

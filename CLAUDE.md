@@ -22,16 +22,26 @@ pnpm lint             # Run Next.js linting
 
 Required environment variables (see `.env.example`):
 - `NEXT_PUBLIC_API_URL` - Django backend API URL (default: `http://127.0.0.1:8000/api`)
-- `BEEHIIV_API_KEY` - Beehiiv API key for newsletter integration
-- `BEEHIIV_PUB_ID` - Beehiiv publication ID
+- `SITE_URL` - Public URL used in email links
+- `DATABASE_URL` - Postgres connection string for the funnel
+- `RESEND_API_KEY`, `EMAIL_FROM`, `EMAIL_REPLY_TO` - Email sending via Resend (without the key, emails are logged to the console)
+- `ADMIN_PASSWORD` - Basic auth password for `/embudo`
 
 ## Architecture & Key Systems
 
-### Newsletter System (Beehiiv Integration)
-- **API Routes**: `/api/newsletter/beehiiv-subscribe` and `/api/newsletter/beehiiv-count`
-- **Service**: `src/services/beehiiv.ts` - handles subscription creation and subscriber counting
-- **Environment Variables Required**: `BEEHIIV_API_KEY`, `BEEHIIV_PUB_ID`
-- **Key Feature**: Intelligent duplicate handling - treats existing subscribers as success cases
+### Waitlist (lista de espera + emails a la lista)
+- **Flow**: `/` (waitlist landing, email capture) → welcome email. Emails to the whole list (newsletter, seat openings) are written and sent from `/embudo`. WhatsApp (`/wa`) is only for questions
+- **Config**: `src/config/funnel.ts` - member login URL (Skool), hero video, course phases shown on the landing. Keep the courses in sync with the real classroom
+- **Landing**: `src/app/page.tsx` + `src/components/Waitlist/` (form, hero video, sections)
+- **Database**: `src/lib/db.ts` (Postgres via `pg`, schema created on first query) and `src/lib/leads.ts`
+- **Emails**: `src/emails/welcome.ts` (welcome copy), `src/emails/render.ts`, `src/lib/mailing.ts` (welcome + broadcasts, batched through Resend in `src/lib/email.ts`). `email_log` has UNIQUE (lead_id, email_key) so nobody gets the same email twice; re-sending a broadcast only retries failures and new people
+- **Tracking**: `/wa?src=` logs each WhatsApp click before redirecting; UTMs are stored on signup
+- **Unsubscribe**: `/baja` page + `/api/unsubscribe` (also handles one-click List-Unsubscribe)
+- **Admin**: `/embudo` (basic auth via `src/middleware.ts`; `/admin` belongs to the community platform in production): stats, "Emails a la lista" editor (test, preview, send) and leads table. Customers and unsubscribed people don't get broadcasts
+
+### Production deployment
+- Production does NOT use `docker-compose.prod.yml`/Traefik: nginx (`/etc/nginx/sites-enabled/arquitectos-ia.conf`) proxies the landing on 127.0.0.1:3004 (systemd `arquitectos-ia-landing.service`, code in `/srv/arquitectos-ia/landing/current`, env in `/etc/arquitectos-ia/landing.env`) and a community platform on 3002 for `/login`, `/community`, `/admin`…
+- Postgres 16 runs natively on the server (database `embudo`)
 
 ### Authentication System
 - **Service**: `src/services/auth.ts` - JWT-based authentication with localStorage
@@ -108,8 +118,8 @@ src/components/
 ## Important Notes
 - Uses pnpm as package manager (not npm/yarn)
 - Dark theme is hardcoded in layout.tsx
-- Beehiiv integration includes smart duplicate subscriber handling
+- Funnel data lives in our own Postgres (no Beehiiv)
 - Authentication system expects Django backend API
 - All animations and transitions are custom-built with Tailwind
-- Cookie consent and Meta Pixel are loaded globally in layout.tsx
+- Cookie consent and Meta Pixel components exist but are not currently mounted in layout.tsx
 - API service automatically handles trailing slashes to avoid Django 301 redirects

@@ -1,15 +1,23 @@
 "use client";
 
-const WHATSAPP_URL =
-  "https://wa.me/34693468959?text=Hola%20Adri%2C%20quiero%20pedir%20la%20admisi%C3%B3n%20a%20AI%20Developer%20Mastery";
+import { useEffect, useState } from "react";
 
+// WhatsApp para dudas: pasa por /wa para registrar desde qué página se abre
 export function WhatsAppBubble() {
+  const [href, setHref] = useState("/wa?src=burbuja");
+
+  useEffect(() => {
+    const page = window.location.pathname === "/" ? "landing" : window.location.pathname.split("/")[1];
+    setHref(`/wa?src=burbuja-${page}`);
+  }, []);
+
   return (
     <a
-      href={WHATSAPP_URL}
+      href={href}
       target="_blank"
       rel="noopener noreferrer"
-      aria-label="Contactar por WhatsApp"
+      aria-label="¿Dudas? Escríbeme por WhatsApp"
+      title="¿Dudas? Escríbeme por WhatsApp"
       className="fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] shadow-lg shadow-green-500/30 transition-transform duration-200 hover:scale-110 active:scale-95"
     >
       <svg
