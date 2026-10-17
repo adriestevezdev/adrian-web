@@ -3,7 +3,8 @@
 
 export const funnel = {
   brand: "Arquitectos IA",
-  memberLoginUrl: "https://www.skool.com/arquitectos-ia",
+  // Login propio de la landing (/login lo reserva nginx para la plataforma de comunidad)
+  memberLoginUrl: "/acceso",
   youtubeUrl: "https://youtube.com/@adriaestevez",
 
   // WhatsApp solo para dudas
