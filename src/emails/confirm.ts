@@ -18,7 +18,7 @@ export function buildConfirmEmail({ confirmUrl, returning }: ConfirmContext): Em
         "Hola,",
         `Soy Adrià. Alguien (seguramente tú) ha vuelto a apuntar este email a la lista de espera de **${funnel.brand}**, de la que te habías dado de baja.`,
         `Si quieres volver, confírmalo aquí: [Volver a la lista de espera](${confirmUrl})`,
-        "Si no, ignora este email y seguirás de baja. No te escribiré más.",
+        "Si no, ignora este email y seguirás de baja.",
         "Un abrazo,\nAdrià",
       ],
       footerReason: FOOTER_REASON,

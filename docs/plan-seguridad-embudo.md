@@ -52,11 +52,11 @@ Después: `nginx -t && systemctl reload nginx`, y probar que 20 intentos seguido
 
 | Paso | Hallazgos | Urgencia | Estado |
 |---|---|---|---|
-| 0. Contraseña larga en producción | F1, F2 | Hoy | Hecho 2026-10-17: tenía 9 caracteres, ahora 43 aleatorios + `ADMIN_USER=adria` (copia del env anterior en `landing.env.bak-20261017-102330`). Logs de nginx: solo 2 peticiones a `/embudo`, de una única IP, ninguna a `/embudo/exportar` |
-| 1. nginx: solo tu IP o límite | F1, F2 | Esta semana, antes del vídeo | Hecho 2026-10-17 (opción B): zona `arq_embudo` 5r/m, burst 10 → 429 a partir del intento 12. Copia en `/root/arquitectos-ia.conf.bak-20261017-102404` |
+| 0. Contraseña larga en producción | F1, F2 | Hoy | Hecho 2026-10-17: contraseña larga y aleatoria + usuario fijo. Logs de nginx revisados: sin accesos ajenos al panel ni a la exportación |
+| 1. nginx: solo tu IP o límite | F1, F2 | Esta semana, antes del vídeo | Hecho 2026-10-17 (opción B): límite por IP con 429. También en `/api/leads` |
 | 2. Middleware | F1, F2 | Antes del vídeo | Desplegado 2026-10-17 (usuario + contraseña en tiempo constante, 503 si es débil) |
 | 3. CSV | F3 | Antes del vídeo | Desplegado 2026-10-17 |
-| 4. Double opt-in | F4, F5 | Cuando se pueda (toca base de datos y correos) | Desplegado 2026-10-17; migración `migrations/001-confirmed-at.sql` lanzada antes (copia de la BD en `/root/embudo-antes-confirmed-at-20261017-124347.sql`) |
+| 4. Double opt-in | F4, F5 | Cuando se pueda (toca base de datos y correos) | Desplegado 2026-10-17; migración `migrations/001-confirmed-at.sql` lanzada antes. Correos de confirmación con tope total y tiempo entre envíos (hallazgo del reescaneo) |
 | 5. Comprobar y desplegar | todos | Tras cada paso | Desplegado 2026-10-17 (rsync a `next`, build, prueba en :3005 con envío real a `delivered@resend.dev`, cambio de carpetas; la versión anterior queda en `previous`). Commit y push: pendientes de Adrià. Reescaneo con Claude Security: pendiente |
 
 Con los pasos 0–3 hechos, en el vídeo se puede decir "ya están arregladas" de la puerta y del Excel. El paso 4 se puede contar como "lo estoy arreglando".

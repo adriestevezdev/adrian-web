@@ -8,6 +8,13 @@ import type { Lead } from "@/lib/leads";
 
 const WELCOME_KEY = "bienvenida";
 const CONFIRM_KEY = "confirmacion";
+const COMEBACK_KEY = "vuelta";
+const DAY_MS = 24 * 60 * 60 * 1000;
+// Confirmación del alta: 3 en total, una al día. "¿Quieres volver?" a quien se dio de baja: 3 en total, una cada 6 meses
+const CONFIRMATION_LIMITS = {
+  [CONFIRM_KEY]: { max: 3, gapMs: DAY_MS },
+  [COMEBACK_KEY]: { max: 3, gapMs: 180 * DAY_MS },
+};
 const BROADCAST_LOCK_BASE = 4971000;
 // Resend permite 2 llamadas por segundo por defecto
 const PAUSE_BETWEEN_BATCHES_MS = 600;
@@ -62,10 +69,26 @@ async function recordResult(leadId: number, emailKey: string, result: { id: stri
   ]);
 }
 
-// Como mucho un email de confirmación al día por persona: quien lo perdió puede volver a pedirlo,
-// pero el formulario no sirve para llenar de emails la bandeja de otro
+// Siguiente clave de confirmación (confirmacion-1, -2…) o null si ya se ha llegado al tope o es pronto para repetir.
+// El UNIQUE de email_log hace que dos altas simultáneas no consigan la misma clave.
+async function nextConfirmationKey(lead: Lead) {
+  const prefix = lead.unsubscribed_at ? COMEBACK_KEY : CONFIRM_KEY;
+  const { max, gapMs } = CONFIRMATION_LIMITS[prefix];
+  const rows = await query<{ sent: number; last_sent_at: Date | null }>(
+    "SELECT COUNT(*)::int AS sent, MAX(sent_at) AS last_sent_at FROM email_log WHERE lead_id = $1 AND email_key LIKE $2",
+    [lead.id, `${prefix}-%`],
+  );
+  const { sent, last_sent_at } = rows[0];
+  if (sent >= max) return null;
+  if (last_sent_at && Date.now() - new Date(last_sent_at).getTime() < gapMs) return null;
+  return `${prefix}-${sent + 1}`;
+}
+
+// Quien perdió el email puede volver a pedirlo, pero con tope total y tiempo entre envíos:
+// el formulario no sirve para llenar de emails la bandeja de otro ni para escribir sin fin a quien se dio de baja
 export async function sendConfirmationEmail(lead: Lead) {
-  const emailKey = `${CONFIRM_KEY}-${new Date().toISOString().slice(0, 10)}`;
+  const emailKey = await nextConfirmationKey(lead);
+  if (!emailKey) return;
   const claimed = await claimSend([lead.id], emailKey);
   if (!claimed.has(lead.id)) return;
 
