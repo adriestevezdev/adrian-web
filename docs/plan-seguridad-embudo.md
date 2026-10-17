@@ -57,6 +57,6 @@ Después: `nginx -t && systemctl reload nginx`, y probar que 20 intentos seguido
 | 2. Middleware | F1, F2 | Antes del vídeo | Desplegado 2026-10-17 (usuario + contraseña en tiempo constante, 503 si es débil) |
 | 3. CSV | F3 | Antes del vídeo | Desplegado 2026-10-17 |
 | 4. Double opt-in | F4, F5 | Cuando se pueda (toca base de datos y correos) | Desplegado 2026-10-17; migración `migrations/001-confirmed-at.sql` lanzada antes. Correos de confirmación con tope total y tiempo entre envíos (hallazgo del reescaneo) |
-| 5. Comprobar y desplegar | todos | Tras cada paso | Desplegado 2026-10-17 (rsync a `next`, build, prueba en :3005 con envío real a `delivered@resend.dev`, cambio de carpetas; la versión anterior queda en `previous`). Commit y push: pendientes de Adrià. Reescaneo con Claude Security: pendiente |
+| 5. Comprobar y desplegar | todos | Tras cada paso | Desplegado 2026-10-17 (rsync a `next`, build, prueba en :3005 con envío real a `delivered@resend.dev`, cambio de carpetas; la versión anterior queda en `previous`). Commit y push hechos (`040cdaf`, `ffa7f9b`). Reescaneo con Claude Security a esfuerzo alto sobre `67d48ba..ffa7f9b`: 0 hallazgos, verificado (2026-10-17) |
 
 Con los pasos 0–3 hechos, en el vídeo se puede decir "ya están arregladas" de la puerta y del Excel. El paso 4 se puede contar como "lo estoy arreglando".
