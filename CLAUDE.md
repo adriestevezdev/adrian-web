@@ -25,16 +25,16 @@ Required environment variables (see `.env.example`):
 - `SITE_URL` - Public URL used in email links
 - `DATABASE_URL` - Postgres connection string for the funnel
 - `RESEND_API_KEY`, `EMAIL_FROM`, `EMAIL_REPLY_TO` - Email sending via Resend (without the key, emails are logged to the console)
-- `ADMIN_PASSWORD` - Basic auth password for `/embudo`
+- `ADMIN_USER`, `ADMIN_PASSWORD` - Basic auth for `/embudo` (password of 24+ characters and not the example one, otherwise `/embudo` answers 503)
 
 ## Architecture & Key Systems
 
 ### Waitlist (lista de espera + emails a la lista)
-- **Flow**: `/` (waitlist landing, email capture) → welcome email. Emails to the whole list (newsletter, seat openings) are written and sent from `/embudo`. WhatsApp (`/wa`) is only for questions
-- **Config**: `src/config/funnel.ts` - member login URL (Skool), hero video, course phases shown on the landing. Keep the courses in sync with the real classroom
+- **Flow**: `/` (waitlist landing, email capture) → confirmation email (double opt-in) → `/confirmar` (button that POSTs to `/api/confirm`, so link scanners don't confirm) → welcome email. Emails to the whole list (newsletter, seat openings) are written and sent from `/embudo`. WhatsApp (`/wa`) is only for questions
+- **Config**: `src/config/funnel.ts` - member login URL (`/acceso`, placeholder login page in `src/app/acceso/` that does nothing yet; `/login` is taken by the community platform in nginx), hero video, course phases shown on the landing. Keep the courses in sync with the real classroom
 - **Landing**: `src/app/page.tsx` + `src/components/Waitlist/` (form, hero video, sections)
-- **Database**: `src/lib/db.ts` (Postgres via `pg`, schema created on first query) and `src/lib/leads.ts`
-- **Emails**: `src/emails/welcome.ts` (welcome copy), `src/emails/render.ts`, `src/lib/mailing.ts` (welcome + broadcasts, batched through Resend in `src/lib/email.ts`). `email_log` has UNIQUE (lead_id, email_key) so nobody gets the same email twice; re-sending a broadcast only retries failures and new people
+- **Database**: `src/lib/db.ts` (Postgres via `pg`, schema created on first query; migrations also kept as SQL in `migrations/` to run before deploying) and `src/lib/leads.ts`. Only leads with `confirmed_at` and no `unsubscribed_at` count as subscribed (count, CSV export, broadcasts). A public signup never undoes an unsubscribe: it sends a "¿quieres volver?" email instead
+- **Emails**: `src/emails/confirm.ts` (confirmation / come-back copy, max one per lead per day, sent with `after()` so the response time doesn't reveal who is already on the list), `src/emails/welcome.ts` (welcome copy), `src/emails/render.ts`, `src/lib/mailing.ts` (welcome + broadcasts, batched through Resend in `src/lib/email.ts`). `email_log` has UNIQUE (lead_id, email_key) so nobody gets the same email twice; re-sending a broadcast only retries failures and new people
 - **Tracking**: `/wa?src=` logs each WhatsApp click before redirecting; UTMs are stored on signup
 - **Unsubscribe**: `/baja` page + `/api/unsubscribe` (also handles one-click List-Unsubscribe)
 - **Admin**: `/embudo` (basic auth via `src/middleware.ts`; `/admin` belongs to the community platform in production): stats, "Emails a la lista" editor (test, preview, send) and leads table. Customers and unsubscribed people don't get broadcasts

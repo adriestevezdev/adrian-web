@@ -4,6 +4,8 @@
 export interface EmailContent {
   subject: string;
   paragraphs: string[];
+  // Por qué le llega el email, en el pie. Por defecto: porque se apuntó a la lista
+  footerReason?: string;
 }
 
 const LINK_REGEX = /\[([^\]]+)\]\(([^)\s]+)\)/g;
@@ -34,8 +36,8 @@ export function textToParagraphs(body: string) {
     .filter(Boolean);
 }
 
-export function renderEmail({ subject, paragraphs }: EmailContent, unsubscribeUrl: string) {
-  const footer = `${FOOTER_REASON} [Darme de baja](${unsubscribeUrl})`;
+export function renderEmail({ subject, paragraphs, footerReason = FOOTER_REASON }: EmailContent, unsubscribeUrl: string) {
+  const footer = `${footerReason} [Darme de baja](${unsubscribeUrl})`;
 
   const body = paragraphs
     .map((paragraph) => `<p style="margin:0 0 18px;">${paragraphToHtml(paragraph)}</p>`)

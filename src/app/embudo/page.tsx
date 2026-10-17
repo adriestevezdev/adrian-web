@@ -58,6 +58,7 @@ export default async function EmbudoPage({ searchParams }: EmbudoPageProps) {
   ]);
 
   const unsubscribed = leads.filter((lead) => lead.unsubscribed_at).length;
+  const pending = leads.filter((lead) => !lead.confirmed_at && !lead.unsubscribed_at).length;
   const converted = leads.filter((lead) => lead.converted_at).length;
   const lastWeek = leads.filter((lead) => Date.now() - new Date(lead.created_at).getTime() < 7 * 24 * 60 * 60 * 1000).length;
   const selectedStats = selected ? broadcasts.find((broadcast) => broadcast.id === selected.id) : null;
@@ -69,6 +70,7 @@ export default async function EmbudoPage({ searchParams }: EmbudoPageProps) {
     { label: "En la lista (reciben tus emails)", value: waitlist },
     { label: "Nuevos últimos 7 días", value: lastWeek },
     { label: "Clientes", value: converted },
+    { label: "Sin confirmar el email", value: pending },
     { label: "Bajas", value: unsubscribed },
   ];
 
@@ -77,7 +79,7 @@ export default async function EmbudoPage({ searchParams }: EmbudoPageProps) {
       <div className="mx-auto max-w-6xl">
         <h1 className="mb-8 text-3xl font-bold">Lista de espera</h1>
 
-        <div className="mb-10 grid grid-cols-2 gap-4 lg:grid-cols-4">
+        <div className="mb-10 grid grid-cols-2 gap-4 lg:grid-cols-5">
           {stats.map((stat) => (
             <div key={stat.label} className="rounded-xl border border-white/10 bg-white/5 p-5">
               <div className="text-sm text-white/60">{stat.label}</div>
@@ -248,6 +250,7 @@ export default async function EmbudoPage({ searchParams }: EmbudoPageProps) {
                   <td className="px-4 py-3">
                     {lead.email}
                     {lead.unsubscribed_at && <span className="ml-2 text-red-400">baja</span>}
+                    {!lead.confirmed_at && !lead.unsubscribed_at && <span className="ml-2 text-white/40">sin confirmar</span>}
                   </td>
                   <td className="whitespace-nowrap px-4 py-3">{dateFormatter.format(new Date(lead.created_at))}</td>
                   <td className="px-4 py-3">{originOf(lead)}</td>

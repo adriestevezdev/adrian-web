@@ -1,4 +1,5 @@
 import { getSiteUrl } from "@/config/funnel";
+import { buildConfirmEmail } from "@/emails/confirm";
 import { renderEmail, textToParagraphs } from "@/emails/render";
 import { buildWelcomeEmail } from "@/emails/welcome";
 import { query, withAdvisoryLock } from "@/lib/db";
@@ -6,6 +7,7 @@ import { BATCH_SIZE, sendEmail, sendEmailBatch, type OutgoingEmail } from "@/lib
 import type { Lead } from "@/lib/leads";
 
 const WELCOME_KEY = "bienvenida";
+const CONFIRM_KEY = "confirmacion";
 const BROADCAST_LOCK_BASE = 4971000;
 // Resend permite 2 llamadas por segundo por defecto
 const PAUSE_BETWEEN_BATCHES_MS = 600;
@@ -31,6 +33,7 @@ export function buildLeadUrls(lead: Pick<Lead, "token">) {
   const siteUrl = getSiteUrl();
   const token = encodeURIComponent(lead.token);
   return {
+    confirmUrl: `${siteUrl}/confirmar?t=${token}`,
     unsubscribeUrl: `${siteUrl}/baja?t=${token}`,
     oneClickUnsubscribeUrl: `${siteUrl}/api/unsubscribe?t=${token}`,
     whatsappUrl: (source: string) => `${siteUrl}/wa?t=${token}&src=${encodeURIComponent(source)}`,
@@ -57,6 +60,23 @@ async function recordResult(leadId: number, emailKey: string, result: { id: stri
     result.id,
     result.error,
   ]);
+}
+
+// Como mucho un email de confirmación al día por persona: quien lo perdió puede volver a pedirlo,
+// pero el formulario no sirve para llenar de emails la bandeja de otro
+export async function sendConfirmationEmail(lead: Lead) {
+  const emailKey = `${CONFIRM_KEY}-${new Date().toISOString().slice(0, 10)}`;
+  const claimed = await claimSend([lead.id], emailKey);
+  if (!claimed.has(lead.id)) return;
+
+  const urls = buildLeadUrls(lead);
+  const content = buildConfirmEmail({ confirmUrl: urls.confirmUrl, returning: Boolean(lead.unsubscribed_at) });
+  const email = renderEmail(content, urls.unsubscribeUrl);
+  const result = await sendEmail({ to: lead.email, ...email, unsubscribeUrl: urls.oneClickUnsubscribeUrl });
+  await recordResult(lead.id, emailKey, result);
+  if (result.error) {
+    console.error(`[email] Error enviando la confirmación a ${lead.email}: ${result.error}`);
+  }
 }
 
 export async function sendWelcomeEmail(lead: Lead) {
@@ -126,7 +146,8 @@ export async function sendBroadcast(broadcast: Broadcast) {
 
     const recipients = await query<Lead>(
       `SELECT l.* FROM leads l
-        WHERE l.unsubscribed_at IS NULL
+        WHERE l.confirmed_at IS NOT NULL
+          AND l.unsubscribed_at IS NULL
           AND l.converted_at IS NULL
           AND NOT EXISTS (SELECT 1 FROM email_log e WHERE e.lead_id = l.id AND e.email_key = $1)
         ORDER BY l.created_at`,

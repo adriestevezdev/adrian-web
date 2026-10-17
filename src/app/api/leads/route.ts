@@ -1,12 +1,19 @@
-import { NextResponse } from "next/server";
+import { after, NextResponse } from "next/server";
 
-import { isValidEmail, normalizeEmail, upsertLead, type LeadUtms } from "@/lib/leads";
-import { sendWelcomeEmail } from "@/lib/mailing";
+import { isSubscribed, isValidEmail, normalizeEmail, upsertLead, type LeadUtms } from "@/lib/leads";
+import { sendConfirmationEmail } from "@/lib/mailing";
 
 const UTM_KEYS = ["utm_source", "utm_medium", "utm_campaign", "utm_content"] as const;
 
+// Quita los caracteres de control y los que inician una fórmula en Excel (la exportación CSV ya los neutraliza)
 function cleanUtm(value: unknown) {
-  return typeof value === "string" && value.trim() ? value.trim().slice(0, 120) : undefined;
+  if (typeof value !== "string") return undefined;
+  const text = value
+    .replace(/[\u0000-\u001f\u007f]/g, "")
+    .replace(/^[=+\-@\s]+/, "")
+    .trim()
+    .slice(0, 120);
+  return text || undefined;
 }
 
 export async function POST(request: Request) {
@@ -34,11 +41,19 @@ export async function POST(request: Request) {
   }
 
   try {
-    const { lead, created } = await upsertLead(email, utms);
-    if (created) {
-      await sendWelcomeEmail(lead);
+    const { lead } = await upsertLead(email, utms);
+    // Nuevo, pendiente o dado de baja: email con el enlace de confirmación. El email sale después de responder,
+    // para que la respuesta tarde lo mismo y no delate quién está ya en la lista
+    if (!isSubscribed(lead)) {
+      after(async () => {
+        try {
+          await sendConfirmationEmail(lead);
+        } catch (error) {
+          console.error("[leads] Error enviando la confirmación:", error);
+        }
+      });
     }
-    // No se devuelve el token: con él se podría dar de baja a cualquiera conociendo su email
+    // No se devuelve el token ni si ya estaba: con el token se podría dar de baja a cualquiera conociendo su email
     return NextResponse.json({ ok: true });
   } catch (error) {
     console.error("[leads] Error registrando lead:", error);

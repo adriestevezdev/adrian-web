@@ -59,9 +59,10 @@ export function WaitlistForm({ align = "left", buttonLabel = "Apuntarme a la lis
   if (isDone) {
     return (
       <div className={`w-full max-w-xl rounded-xl border border-[#C9A880]/40 bg-[#C9A880]/10 px-5 py-4 ${alignment}`} role="status">
-        <p className="font-semibold text-white">¡Ya estás en la lista!</p>
+        <p className="font-semibold text-white">¡Ya casi está! Revisa tu email</p>
         <p className="mt-1 text-sm text-white/70">
-          Te acabo de enviar un email de confirmación. Cuando abra la próxima convocatoria, serás de los primeros en saberlo.
+          Te he enviado un enlace para confirmar tu dirección. Al confirmarla entras en la lista y, cuando abra la próxima
+          convocatoria, serás de los primeros en saberlo. Si ya estabas en la lista, no tienes que hacer nada.
         </p>
       </div>
     );

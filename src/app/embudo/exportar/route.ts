@@ -4,9 +4,14 @@ export const dynamic = "force-dynamic";
 
 const COLUMNS = ["email", "fecha_alta", "estado", "utm_source", "utm_medium", "utm_campaign", "utm_content"] as const;
 
+// Excel/Sheets ejecutan como fórmula lo que empieza por estos caracteres
+const FORMULA_START = /^[=+\-@\t\r]/;
+
+// Siempre entre comillas, y con ' delante si parece una fórmula para que se abra como texto
 function csvCell(value: string | null) {
   const text = value ?? "";
-  return /[",\n;]/.test(text) ? `"${text.replace(/"/g, '""')}"` : text;
+  const safe = FORMULA_START.test(text) ? `'${text}` : text;
+  return `"${safe.replace(/"/g, '""')}"`;
 }
 
 // Descarga la lista (sin las bajas) en CSV para importarla en otra herramienta. Protegido por el middleware de /embudo.

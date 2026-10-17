@@ -14,6 +14,19 @@ CREATE TABLE IF NOT EXISTS leads (
   created_at TIMESTAMPTZ NOT NULL DEFAULT now()
 );
 
+-- Doble confirmación: solo cuenta como suscrito quien ha pulsado el enlace del email.
+-- Al añadir la columna, quienes ya estaban en la lista se dan por confirmados (se apuntaron con consentimiento).
+DO $$
+BEGIN
+  IF NOT EXISTS (
+    SELECT 1 FROM information_schema.columns
+     WHERE table_schema = current_schema() AND table_name = 'leads' AND column_name = 'confirmed_at'
+  ) THEN
+    ALTER TABLE leads ADD COLUMN confirmed_at TIMESTAMPTZ;
+    UPDATE leads SET confirmed_at = created_at;
+  END IF;
+END $$;
+
 CREATE TABLE IF NOT EXISTS broadcasts (
   id SERIAL PRIMARY KEY,
   subject TEXT NOT NULL,
